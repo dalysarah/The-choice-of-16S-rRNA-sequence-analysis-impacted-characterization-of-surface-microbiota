@@ -1,0 +1,147 @@
+---
+title: "Multivariate Data Analysis"
+author: "Sarah Daly"
+date: "September 15 2023"
+output:
+  word_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+Purpose:  Determine data characteristics for statistical testing
+
+Run multivariate statistical tests on the data 
+
+Input:  csv
+Output: csv, tif 
+
+#Set Working Directory
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review Paper/Manuscript/Code/Outersect Calculations")
+```
+
+#Load Libraries 
+```{r}
+#Load libraries 
+library(car)
+```
+
+#Load Data
+```{r}
+df_filtered<- read.csv("20240109_Listeria_No_v01.csv" , na.strings="NA")
+head(df_filtered)
+```
+
+#ANOVA
+```{r}
+setwd(("./anova"))  #Output in folder
+
+dat = df_filtered
+#Create ANOVA Model for Variable 
+#Balanced means all  treatment combinations have same number of observations
+
+#What dependeant vars to do anova on
+dep_var = c("No..Genera")
+
+#Create empty dataframe to store p_values
+fill_df <-c("Dependent_var" ,"Levene_p"  ,"Levene_passed" , "Shapiro_p", "Shapiro_passed")
+fill_df = as.data.frame(t(fill_df))
+class(fill_df)
+names(fill_df) = c("Dependent_var" ,"Levene_p"  ,"Levene_passed" , "Shapiro_p", "Shapiro_passed")
+fill_df
+
+for (item in dep_var) {
+ 
+  #model.aov <- aov(dat[,item] ~ Density + Depth + Norm/Depth, data=df_filtered)
+  model.aov <- aov(dat[,item] ~ Density + Depth , data=dat)
+  print(item)
+print(summary(model.aov))
+#capture output 
+ capture.output(summary(model.aov), file = paste(item,"anova.txt"))
+
+ #Check anova assumptions 
+ #Linear Regression###############
+ model.lm <- lm(dat[,item] ~ Density+Depth, data=dat)
+print(item)
+ #capture output 
+ capture.output(summary(model.lm), file = paste(item,"linear regression.txt"))
+ 
+ #QQPLOT#####
+ print(qqPlot(model.aov$residuals)) #Points should fall mostly within the bands for normal dist. of residuals
+
+ #Export plot to .tif file 
+tiff(paste(item, "qqplot.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(qqPlot(model.aov$residuals))
+dev.off()
+ 
+ print(hist(model.aov$residuals)) #normal distribution of residuals
+ 
+ #Histogram of Residuals #####
+ #Export plot to .tif file 
+ tiff(paste(item, "residuals histogram.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print((hist(model.aov$residuals)))
+dev.off()
+ 
+#pp=leveneTest(df_filtered[,item] ~ Density*Depth*ASVOTU*Norm, data=df_filtered) #no
+pp=leveneTest(dat[,item] ~ Density*Depth, data=dat) #no
+
+p_value_levene = pp$`Pr(>F)`[1]
+
+levene_pass <- "test"
+if (p_value_levene > 0.05) {levene_pass <- "Pass"}
+if (p_value_levene <= 0.05) {levene_pass <- "Fail"}
+
+#Reject the null hypothesis that the samples come from a normal distribution at p<5%
+st = shapiro.test(model.aov$residuals)
+p_val_shap = st$p.value
+
+shap_pass <- "test"
+if (p_val_shap > 0.05) {shap_pass <- "Pass"}
+if (p_val_shap <= 0.05) {shap_pass <- "Fail"}
+
+#Bind results to dataframe
+data_list<- c(item, signif(p_value_levene,4), levene_pass, signif(p_val_shap,4), shap_pass)
+fill_df <-rbind(fill_df, data_list)
+
+#Does the equal variance assumption seem reasonable? Are the studentized residuals equally spread around zero? Residual = Observed value - Predicted value 
+library(MASS)
+stud.res=studres(model.lm)
+plot(model.lm$fitted.values, stud.res)
+abline(0,0)
+
+#find Cook's distance for each observation in the dataset
+cooksD <- cooks.distance(model.lm)
+plot(cooksD, main = "Cooks Distance for Influential Obs")
+
+tiff(paste(item, "vif.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(plot(cooksD, main = "Cooks Distance for Influential Obs"))
+dev.off()
+
+#Try re-running model after removing outliers 
+
+vif_values <- vif(model.lm)
+vif_values
+
+#create horizontal bar chart to display each VIF value
+#VIF 10 or above is cause for concern 
+bp<-barplot(vif_values, main = "VIF Values", horiz = TRUE, col = "steelblue") 
+abline(v = bp[bp = 5], lwd = 3, lty = 2)
+#add vertical line at 5
+
+tiff(paste(item, "vif.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(bp)
+dev.off()
+
+}
+
+fill_df
+write.csv(fill_df, "p_vals_anova.csv")
+
+setwd("..")
+getwd()
+
+```
+
+
+
+

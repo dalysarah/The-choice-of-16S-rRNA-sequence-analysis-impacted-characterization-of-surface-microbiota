@@ -1,0 +1,98 @@
+---
+title: "Outersect low abundance genera environmental samples"
+author: "Sarah Daly"
+date: '2023-08-25'
+output:
+  html_document: default
+  word_document: default
+editor_options:
+  chunk_output_type: console
+---
+Purpose:  Generate outersect (non-overlapping taxa) between ASV and OTU pipelines 
+Input:  .CSV GENERA LISTS 
+
+#Set Working Directory
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review Paper/Manuscript/Code/Outersect Calculations")
+```
+
+#Outersect calculations 
+```{r}
+#Compare ASV and OTU #######################################
+#Find taxa that overlap
+#Important files 
+rare_all<- read.csv("Rare_taxa.csv")
+head(rare_all)
+rare2<- read.csv("Rare taxa_all below 0.01.csv")
+
+head(all)
+
+library(VennDiagram)
+
+outersect <- function(x, y) {
+  sort(c(setdiff(x, y),
+         setdiff(y, x)))
+}
+
+#################################################################
+#Create a Function 
+#var1 = pipeline 1 (data frame column from 'all')
+#var2 = pipeline 2 (data frame column from 'all')
+#name1 = name of pipeline 1 (string)
+#name2 = name of pipeline 2 (string)
+
+overlap_gen<- function(var1, var2, name1, name2){
+setwd("./Venn")
+
+diff = outersect(var1, var2)
+write.csv(diff, paste(name1, name2, "Differences Genus.csv"))
+
+venn <- venn.diagram(
+  x = list(var1, var2),
+  category.names = c(name1 ,name2),  #Names shouldbe in order of list()
+  filename = NULL,
+  fill = c("red", "yellow"),  #change lenght based on number of items in list()
+  margin = 0.1)
+
+grid::grid.newpage()
+grid::grid.draw(venn)    
+
+#Export plot to .tif file 
+tiff(paste(name1,name2, "Venn overlap.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(grid::grid.draw(venn))
+dev.off()
+
+setwd("..")
+  getwd()
+}
+
+###################################################################
+###########OVerlap 1% to 0.1%########
+
+overlap_gen(rare_all$High_30_ASV_0.001, rare_all$High_30_OTU_0.001, "BELOW 1 PERCENT RARE-10-ASV-High", "RARE-10-otu-hIGH")
+overlap_gen(rare_all$High_10_OTU_0.001, rare_all$High_30_OTU_0.001, "BELOW 1 PERCENT RARE-0-otu-High", "RARE-30-otu-hIGH")
+overlap_gen(rare_all$High_50_OTU_0.001, rare_all$High_50_OTU_0.001, "BELOW 1 PERCENT RARE-50-otu-High", "RARE-50-otu-hIGH")
+
+overlap_gen(rare_all$Low_30_ASV_0.001, rare_all$Low_30_OTU_0.001, "BELOW 1 PERCENT RARE-30-ASV-Low", "RARE-30-otu-Low")
+overlap_gen(rare_all$Low_10_ASV_0.001, rare_all$Low_10_OTU_0.001, "BELOW 1 PERCENT RARE-10-ASV-Low", "RARE-10-otu-Low")
+overlap_gen(rare_all$Low_50_ASV_0.001, rare_all$Low_50_OTU_0.001, "BELOW 1 PERCENT RARE-50-ASV-Low", "RARE-50-otu-Low")
+overlap_gen(rare_all$Medium_10_ASV_0.001, rare_all$Medium_10_OTU_0.001, "BELOW 1 PERCENT RARE-10-ASV-Mediumn", "RARE-10-otu-Medium")
+
+overlap_gen(rare_all$Medium_30_ASV_0.001, rare_all$Medium_30_OTU_0.001, "BELOW 1 PERCENT RARE-30-ASV-Med", "RARE-30-otu-Med")
+overlap_gen(rare_all$Medium_10_ASV_0.001, rare_all$Medium_10_OTU_0.001, "BELOW 1 PERCENT RARE-10-ASV-Med", "RARE-10-otu-Med")
+overlap_gen(rare_all$Medium_50_ASV_0.001, rare_all$Medium_50_OTU_0.001, "BELOW 1 PERCENT RARE-50-ASV-Med", "RARE-50-otu-Med")
+
+#############All Below <1% ###########################################
+overlap_gen(rare2$Low_10_ASV_0.01_ID, rare2$Low_10_OTU_0.01_ID, "BELOW 0.01RARE-10-ASV-Low", "0.01RARE-10-otu-Low")
+overlap_gen(rare2$Low_30_ASV_0.01_ID, rare2$Low_30_OTU_0.01_ID, "BELOW 0.01RARE-30-ASV-Low", "0.01RARE-30-otu-Low")
+overlap_gen(rare2$Low_30_ASV_0.01_ID, rare2$Low_50_OTU_0.01_ID, "BELOW 0.01RARE-50-ASV-Low", "0.01RARE-50-otu-Low")
+
+overlap_gen(rare2$High_10_ASV_0.01_ID, rare2$High_10_OTU_0.01_ID, "BELOW 0.01RARE-10-ASV-High", "0.01RARE-10-otu-High")
+overlap_gen(rare2$High_30_ASV_0.01_ID, rare2$High_30_OTU_0.01_ID, "BELOW 0.01RARE-30-ASV-High", "0.01RARE-30-otu-High")
+overlap_gen(rare2$High_50_ASV_0.01_ID, rare2$High_50_OTU_0.01_ID, "BELOW 0.01RARE-50-ASV-High", "0.01RARE-50-otu-High")
+
+
+overlap_gen(rare2$Medium_50_ASV_0.01_ID, rare2$Medium_50_OTU_0.01_ID, "BELOW 0.01RARE-50-ASV-Medium", "0.01RARE-50-otu-Medium")
+overlap_gen(rare2$Medium_30_ASV_0.01_ID, rare2$Medium_30_OTU_0.01_ID, "BELOW 0.01RARE-30-ASV-Medium", "0.01RARE-30-otu-Medium")
+overlap_gen(rare2$Medium_10_ASV_0.01_ID, rare2$Medium_10_OTU_0.01_ID, "BELOW 0.01RARE-10-ASV-Medium", "0.01RARE-10-otu-Medium")
+```
