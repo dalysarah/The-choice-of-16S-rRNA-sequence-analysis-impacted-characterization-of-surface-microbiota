@@ -1,0 +1,83 @@
+---
+title: "Multivariate Data Analysis"
+author: "Sarah Daly"
+date: "September 15 2023"
+output:
+  word_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+Purpose:  Generate LDA plot by Sequencing and Normalization Method 
+Input:  
+20230915_multivariate_combined_all_sd_v01.csv
+
+#Set working directory
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review paper/Manuscript/Code/LDA Plot")
+
+#Load libraries 
+library(ggplot2)
+library(MASS)
+```
+
+#Load Data
+```{r}
+df_filtered<- read.csv("Diversity_Data.csv" , na.strings="NA")
+head(df_filtered)
+```
+
+
+#LDA-Figure in Paper 
+https://www.reneshbedre.com/blog/manova.html
+```{r}
+setwd(("./LDA"))
+colr_var = c("NormDepth")
+color_tones = c("indianred", "skyblue","lightsalmon", "peachpuff2")
+dat = df_new_beta
+RESPONSE=as.matrix(dat[,c("Shannon", "Chao1", "Pielou", "Beta_compare")]) #dEPENDENT VARIABLES
+DENSITY = as.factor(dat$Density)
+Normdepth = as.factor(dat$NormDepth)
+ASVOTU = as.factor(dat$ASVOTU)
+
+for (item in colr_var) {
+#linear discriminant analysis (LDA) to see the differences between each group
+set.seed(101)
+post_hoc <- lda(Normdepth ~ RESPONSE, CV=F)
+print(post_hoc)
+capture.output(post_hoc, file = "NormDepth LDA.txt")
+
+#Plot LDA
+plot_lda <- data.frame(dat$NormDepth, lda = predict(post_hoc)$x)
+
+p_lda<- ggplot(plot_lda) +
+geom_point(aes(x = lda.LD1, y = lda.LD2, color= dat[, item]), size = 4) +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+theme(text = element_text(size=22,colour="black",face="bold"))+
+    theme(legend.title = element_blank(),legend.position = c(1, 1),
+    legend.justification = c("right", "top"),
+    legend.box.just = "right",
+    legend.margin = margin(6, 6, 6, 6),
+    axis.text.y = element_text(size=22, vjust=.5, colour = 'black'),
+    axis.text.x = element_text(size=22, vjust=.5, colour = 'black'))+
+  scale_color_manual(values=c("CLR "="indianred","Rare-10"="lightsalmon", "Rare-30"= "skyblue", "Rare-50" = "plum"))+theme(legend.title=element_blank())+theme(axis.ticks.length = unit(-0.25, "cm"))+xlab(expression(bold("LDA1 (88%)")))+ylab(expression(bold("LDA2 (12%)")))+  theme(legend.background = element_blank())+
+  guides(color=guide_legend(override.aes=list(fill=NA)))
+
+print(p_lda)
+
+#Export plot 
+tiff(paste(item,"LDA group Color only clean tones.tif", sep=" "), res=300, compression = "lzw", height=9, width=10, units="in")
+print (p_lda)
+dev.off()
+
+pdf(paste(item,"LDA group Color only clean tones.pdf", sep=" "), height=9, width=10)
+print (p_lda)
+dev.off()
+}
+
+setwd("..")
+getwd()
+```
+
+
