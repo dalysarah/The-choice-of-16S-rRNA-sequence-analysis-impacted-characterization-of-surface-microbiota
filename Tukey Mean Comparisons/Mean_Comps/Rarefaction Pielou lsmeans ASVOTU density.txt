@@ -1,0 +1,20 @@
+ contrast                estimate      SE   df t.ratio p.value
+ ASV High - OTU High      0.05964 0.00772 1794   7.729  <.0001
+ ASV High - ASV Low       0.05311 0.00945 1794   5.620  <.0001
+ ASV High - OTU Low       0.11275 0.01220 1794   9.242  <.0001
+ ASV High - ASV Medium    0.04925 0.00945 1794   5.211  <.0001
+ ASV High - OTU Medium    0.10889 0.01220 1794   8.925  <.0001
+ OTU High - ASV Low      -0.00653 0.01220 1794  -0.535  0.9947
+ OTU High - OTU Low       0.05311 0.00945 1794   5.620  <.0001
+ OTU High - ASV Medium   -0.01040 0.01220 1794  -0.852  0.9575
+ OTU High - OTU Medium    0.04925 0.00945 1794   5.211  <.0001
+ ASV Low - OTU Low        0.05964 0.00772 1794   7.729  <.0001
+ ASV Low - ASV Medium    -0.00386 0.00945 1794  -0.409  0.9985
+ ASV Low - OTU Medium     0.05578 0.01220 1794   4.572  0.0001
+ OTU Low - ASV Medium    -0.06351 0.01220 1794  -5.205  <.0001
+ OTU Low - OTU Medium    -0.00386 0.00945 1794  -0.409  0.9985
+ ASV Medium - OTU Medium  0.05964 0.00772 1794   7.729  <.0001
+
+Results are averaged over the levels of: Depth 
+Note: contrasts are still on the [ scale 
+P value adjustment: tukey method for comparing a family of 6 estimates 

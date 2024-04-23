@@ -1,0 +1,15 @@
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = res.LM)
+
+$Density
+              diff         lwr       upr     p adj
+Low-High    -4.260 -9.90228509  1.382285 0.1792480
+Medium-High  1.455 -4.18728509  7.097285 0.8169534
+Medium-Low   5.715  0.07271491 11.357285 0.0463164
+
+$ASVOTU
+             diff       lwr       upr     p adj
+OTU-ASV -3.483333 -7.334125 0.3674582 0.0761533
+

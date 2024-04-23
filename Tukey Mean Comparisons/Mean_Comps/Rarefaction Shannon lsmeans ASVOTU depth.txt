@@ -1,0 +1,20 @@
+ contrast                 estimate     SE   df t.ratio p.value
+ ASV fifty - OTU fifty    0.254680 0.0332 1794   7.670  <.0001
+ ASV fifty - ASV ten      0.001258 0.0407 1794   0.031  1.0000
+ ASV fifty - OTU ten      0.255938 0.0525 1794   4.875  <.0001
+ ASV fifty - ASV thirty   0.000128 0.0407 1794   0.003  1.0000
+ ASV fifty - OTU thirty   0.254808 0.0525 1794   4.854  <.0001
+ OTU fifty - ASV ten     -0.253422 0.0525 1794  -4.827  <.0001
+ OTU fifty - OTU ten      0.001258 0.0407 1794   0.031  1.0000
+ OTU fifty - ASV thirty  -0.254552 0.0525 1794  -4.849  <.0001
+ OTU fifty - OTU thirty   0.000128 0.0407 1794   0.003  1.0000
+ ASV ten - OTU ten        0.254680 0.0332 1794   7.670  <.0001
+ ASV ten - ASV thirty    -0.001130 0.0407 1794  -0.028  1.0000
+ ASV ten - OTU thirty     0.253550 0.0525 1794   4.830  <.0001
+ OTU ten - ASV thirty    -0.255810 0.0525 1794  -4.873  <.0001
+ OTU ten - OTU thirty    -0.001130 0.0407 1794  -0.028  1.0000
+ ASV thirty - OTU thirty  0.254680 0.0332 1794   7.670  <.0001
+
+Results are averaged over the levels of: Density 
+Note: contrasts are still on the [ scale 
+P value adjustment: tukey method for comparing a family of 6 estimates 

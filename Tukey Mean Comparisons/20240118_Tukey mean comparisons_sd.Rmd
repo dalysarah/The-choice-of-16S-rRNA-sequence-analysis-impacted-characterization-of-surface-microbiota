@@ -1,0 +1,132 @@
+---
+title: "Multivariate Data Analysis"
+author: "Sarah Daly"
+date: "September 15 2023"
+output:
+  word_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+Purpose:  Generate Tukey mean comparisions for all diveristy values ASV v. OTU comparison 
+
+Input:  csv
+Output: csv, tif 
+
+#Set working directory
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review paper/Manuscript/Code/Tukey Mean Comparisons")
+
+library(ggplot2)
+
+```
+
+#Load Data
+```{r}
+df_filtered<- read.csv("Diversity_data.csv" , na.strings="NA")
+head(df_filtered)
+
+```
+
+#Mean Comparision 
+```{r}
+setwd(("./Mean_Comps"))
+
+#Create a Function 
+#norm_val = normalization to filter by 
+#div_vars = diversity metric 
+
+tukey_comp <- function(norm_val, div_vars){
+target <- c(norm_val)
+dat=filter(df_filtered, df_filtered$Norm %in% target) 
+head(dat)
+
+for (item in div_vars){
+#ANOVA First
+print(item)
+res.LM <- lm(dat[,item] ~ Density+ASVOTU+Depth, data=dat)  #Nestedfactor
+
+#Which factor is different
+t1=TukeyHSD(aov(res.LM))  
+print(res.LM)
+#capture.output((res.LM), file = paste(norm_val, item,"Tukey DENSITY +ASVOTU+DEPTH.txt"))
+
+t3=TukeyHSD(aov(res.LM), "ASVOTU")  #Yikes
+print(t3)
+t4=TukeyHSD(aov(res.LM), conf.level = 0.95) 
+print(t4)
+capture.output((t4), file = paste(item,"Tukey MODEL.txt"))
+
+tiff(paste(norm_val,item, "Tukey95 conf.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print (plot(TukeyHSD(aov((res.LM)), conf.level=.95), las = 2))
+dev.off()
+
+library(lsmeans)
+#Using lsmeans gives the same results as TukeyHSD
+lsm4 = lsmeans(res.LM, pairwise ~ ASVOTU:Depth)
+lsm5 = lsmeans(res.LM, pairwise ~ ASVOTU:Density)
+
+print(lsm4)
+print(lsm5)
+
+capture.output(lsm4$contrasts, file = paste(norm_val,item,"lsmeans ASVOTU depth.txt"))
+capture.output(lsm5$contrasts, file = paste(norm_val,item,"lsmeans ASVOTU density.txt"))
+}
+}
+################################
+#Run Function 
+div_vars <- c("Aitchinson", "Shannon", "Chao1", "Pielou")
+tukey_comp("Rarefaction", div_vars)  #Look at contrasts with same level "High-High"
+
+########################################################################
+#Create a Function for CLR
+#norm_val = normalization to filter by 
+#div_vars = diversity metric 
+tukey_comp <- function(norm_val, div_vars){
+  
+target <- c(norm_val)
+dat=filter(df_filtered, df_filtered$Norm %in% target) 
+head(dat)
+
+for (item in div_vars){
+#ANOVA First
+res.LM <- lm(dat[,item] ~ Density+ASVOTU, data=dat)  #Nestedfactor
+
+
+#Which factor is different
+t1=TukeyHSD(aov(res.LM))  #Yikes
+print(res.LM)
+#capture.output((res.LM), file = paste(norm_val, item,"CLR Tukey DENSITY +ASVOTU.txt"))
+
+t3=TukeyHSD(aov(res.LM), "ASVOTU")  #Yikes
+print(t3)
+t4=TukeyHSD(aov(res.LM), conf.level = 0.95) 
+print(t4)
+capture.output((t4), file = paste(item,"CLR Tukey MODEL.txt"))
+
+tiff(paste(norm_val,item, "CLR Tukey95 conf.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print (plot(TukeyHSD(aov((res.LM)), conf.level=.95), las = 2))
+dev.off()
+
+
+library(lsmeans)
+#Using lsmeans gives the same results as TukeyHSD. However, you can get p-values that are not adjusted
+#the Bonferonni adjusted p-value is \( \frac{\alpha}{g} \), where g is the number of comparisons. Since g=3, any adjusted p-value less than .017 is significant. Therefore they are all significant. In the end, you can use the TukeyHSD and just look at the interesting contrasts
+lsm5 = lsmeans(res.LM, pairwise ~ ASVOTU:Density)
+
+print(lsm5)
+
+capture.output(lsm5$contrasts, file = paste(norm_val,item,"CLR lsmeans ASVOTU.txt"))
+
+}
+}
+#######################################################################
+div_vars = c("Euclidean", "Shannon", "Chao1", "Pielou")
+#Run Function 
+tukey_comp("CLR", div_vars)
+
+setwd("..")
+getwd()
+```
+
+
