@@ -1,0 +1,133 @@
+---
+title: "Multivariate Data Analysis"
+author: "Sarah Daly"
+date: "September 15 2023"
+output:
+  word_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+Purpose:  Generate Diversity Boxplots ASV v. OTU v Sequencing Depth 
+
+Input Files:  20230915_multivariate_combined_all_sd_v01.csv
+
+
+#Set working directory
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review paper/Manuscript/Code/Diversity Boxplots")
+
+#Load libraries 
+library(ggplot2)
+```
+
+#Load Data
+```{r}
+df_filtered<- read.csv("Diversity_data.csv" , na.strings="NA")
+head(df_filtered)
+
+#color Vector
+color = c("darkviolet", "antiquewhite1", "aquamarine2", "azure2", "gold", "chartreuse1", "cyan4", "floralwhite", "darkslateblue", "cadetblue2", "chocolate1", "coral2", "cornflowerblue", "cornsilk3", "cyan3", "forestgreen", "darksalmon", "darkolivegreen2", "darkorange3","aliceblue", "darkorchid2", "darkslategray1", "deeppink2", "deepskyblue4", "firebrick3", "darkolivegreen1", "gray75", "darkseagreen2")
+```
+
+#Merge String names and categories for plotting 
+```{r}
+#Get rarefied data 
+target <- c("Rarefaction")
+dat_rare=filter(df_filtered, df_filtered$Norm %in% target) 
+dat_rare$Beta_compare = dat_rare$Aitchinson #Create joint column
+head(dat_rare)
+
+#Get CLR data
+target <- c("CLR")
+dat_clr=filter(df_filtered, df_filtered$Norm %in% target) 
+dat_clr$Beta_compare = dat_clr$Euclidean
+head(dat_clr)
+
+df_new_beta = rbind(dat_rare, dat_clr)
+head(df_new_beta)
+tail(df_new_beta)
+df_new_beta$Beta_compare
+
+library(stringr)
+#concatenation depth and nomr in new category
+df_new_beta$NormDepth = paste(df_new_beta$Norm, df_new_beta$Depth,sep="-")
+head(df_new_beta)
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "Rarefaction", "Rare")
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "-none", " ")
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "fifty", "50")
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "thirty", "30")
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "ten", "10")
+head(df_new_beta)
+tail(df_new_beta)
+```
+
+#Alpha by group-Figure in Paper
+```{r}
+setwd("./Div_boxplots")
+color_tones = c("indianred", "skyblue","lightsalmon")
+
+#Create function do calculate boxplots
+#y_val = y_value (vector of strings)
+#x_val = x_value (vector of strings)
+#Fill_var = fill boxplot var (vector of strings)
+#dataf = dataframe
+
+alpha_panel_rare <- function(y_val, x_val, fill_var, dataf){
+for (item in y_val){
+    for (item3 in fill_var){
+      
+#Get title for panel
+if(item=="Shannon"){title ="Shannon (Richness+Evenness)"}
+if(item=="Chao1"){title ="Chao1 (Richness)"}
+if(item=="Pielou"){title ="Shannon (Evenness)"}
+if(item=="Beta_compare"){title ="Aitchison"}
+print(title)
+
+if (item =="Beta_compare"){ylabel = "Aitchison"}
+else{ylabel=item}
+
+# adding statistical data (Wilcox test)
+alpha_sig_rare <-  ggplot(dataf, aes(x = dataf[,x_val], y = dataf[,item])) +   geom_boxplot(aes(fill=dataf[,item3]))+
+    theme_classic() +
+    scale_fill_manual(values=color) +
+  ggtitle(title)+
+  theme(axis.ticks.length = unit(-0.25, "cm"),axis.ticks.x = element_blank())+ #-0.25 #No tick marks)
+    #ylim(0,4)+
+  theme(plot.title = element_text(hjust = 0.5),legend.position="none",text = element_text(size=32,colour="black",face="bold"),axis.text.x = element_text(size=32, colour="black"),axis.text.y = element_text(size=32, colour="black"))+ # Change method
+   scale_fill_discrete("")+
+    ylab(ylabel) +#change y label
+    xlab("Normalization-Depth")+theme(
+    legend.position = c(1, 1),
+    legend.justification = c("right", "top"),
+    legend.box.just = "right",
+    legend.margin = margin(6, 6, 6, 6))+
+  scale_fill_manual(values=color_tones)+ theme(legend.title=element_blank())
+   #scale_fill_discrete("")
+    
+print(alpha_sig_rare)
+
+tiff(paste(item, x_val,item3,"BoxplotsPanels.tif", sep=" "), res=300, compression = "lzw", height=9, width=10, units="in")
+print(alpha_sig_rare)
+dev.off()
+
+pdf(paste(item, x_val,item3,"BoxplotsPanels.pdf", sep=" "),height=9, width=10)
+print(alpha_sig_rare)
+
+dev.off()
+  }
+}
+}
+#########################################################################
+#Define input Vectors for Function 
+y_val = c("Shannon", "Chao1", "Pielou", "Beta_compare")
+x_val = c("NormDepth")
+fill_var = c("ASVOTU")
+
+#Run Function 
+alpha_panel_rare (y_val, x_val, fill_var, df_new_beta)
+
+```
+
+
+
