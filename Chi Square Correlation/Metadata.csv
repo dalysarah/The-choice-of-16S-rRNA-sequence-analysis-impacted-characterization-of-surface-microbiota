@@ -1,0 +1,505 @@
+sample.id,Original.ID,Location.Sample.date,Facility,Year,Season,Room,Object,Risk,sample,Density,Fill_bins,Fill,APC_log
+sample-1,1,B.01.2,Facility 2,2022,Fall,Raw,Drain,three,sample-1,Medium,Medium,Fill,4.826074803
+sample-2,1,B.01.4,Facility 2,2023,Spring,Raw,Drain,three,sample-2,Medium,Medium,Fill,4.209515015
+sample-3,1,B.01.3,Facility 2,2023,Winter,Raw,Drain,three,sample-3,Medium,Medium,Fill,4.679427897
+sample-150,1,NL.01.2,Facility 3,2022,Fall,Raw,Floor Object,three,sample-150,High,High,Fill,5.146128036
+sample-151,1,NL.01.4,Facility 3,2023,Spring,Raw,Floor Object,three,sample-151,Low,Low,Fill,2.681241237
+sample-152,1,NL.01.3,Facility 3,2023,Winter,Raw,Floor Object,three,sample-152,Medium,Medium,Fill,3.698970004
+sample-457,1,NL.01.1,Facility 3,2022,Summer,Raw,Floor Object,three,sample-457,Low,Low,Fill,2.77815125
+sample-4,10,B.10.2,Facility 2,2022,Fall,Raw,Cleaning Tools,three,sample-4,Medium,Medium,Fill,3.06069784
+sample-5,10,B.10.3,Facility 2,2023,Winter,Raw,Cleaning Tools,three,sample-5,Low,Low,Fill,0
+sample-153,10,NL.10.2,Facility 3,2022,Fall,Post-Pasteurization ,Wall/Ceiling,three,sample-153,High,High,Fill,5.977723605
+sample-154,10,NL.10.4,Facility 3,2023,Spring,Post-Pasteurization ,Wall/Ceiling,three,sample-154,High,High,Fill,5.380211242
+sample-155,10,NL.10.3,Facility 3,2023,Winter,Post-Pasteurization ,Wall/Ceiling,three,sample-155,High,High,Fill,5.488550717
+sample-285,10,WS.10.2,Facility 1,2022,Fall,Raw,Hose,two,sample-285,Medium,Medium,Fill,4.130333768
+sample-286,10,WS.10.4,Facility 1,2023,Spring,Raw,Hose,two,sample-286,High,High,Fill,9.093421685
+sample-287,10,WS.10.3,Facility 1,2023,Winter,Raw,Hose,two,sample-287,High,High,Fill,5.326335861
+sample-458,10,NL.10.1,Facility 3,2022,Summer,Post-Pasteurization ,Wall/Ceiling,three,sample-458,High,High,Fill,7.146128036
+sample-423,10A,B.10A.1,Facility 2,2022,Summer,Raw,Cleaning Tools,three,sample-423,Low,Low,Fill,0
+sample-424,10B,B.10B.1,Facility 2,2022,Summer,Raw,Cleaning Tools,three,sample-424,Low,Low,Fill,0
+sample-6,11,B.11.2,Facility 2,2022,Fall,Raw,Cleaning Tools,two,sample-6,Low,Low,Fill,1.301029996
+sample-7,11,B.11.4,Facility 2,2023,Spring,Raw,Cleaning Tools,two,sample-7,Low,Low,Fill,2.982271233
+sample-8,11,B.11.3,Facility 2,2023,Winter,Raw,Cleaning Tools,two,sample-8,Low,Low,Fill,2.301029996
+sample-156,11,NL.11.2,Facility 3,2022,Fall,Post-Pasteurization ,Cart/Rolling Bins,three,sample-156,Medium,Medium,Fill,4.021189299
+sample-157,11,NL.11.4,Facility 3,2023,Spring,Post-Pasteurization ,Cart/Rolling Bins,three,sample-157,High,High,Fill,5.301029996
+sample-158,11,NL.11.3,Facility 3,2023,Winter,Post-Pasteurization ,Cart/Rolling Bins,three,sample-158,High,High,Fill,8.354108439
+sample-288,11,WS.11.2,Facility 1,2022,Fall,Raw,Non-FPE Structure,three,sample-288,High,High,Fill,7.459392488
+sample-289,11,WS.11.4,Facility 1,2023,Spring,Raw,Non-FPE Structure,three,sample-289,High,High,Fill,6.447158031
+sample-290,11,WS.11.3,Facility 1,2023,Winter,Raw,Non-FPE Structure,three,sample-290,High,High,Fill,7.905256049
+sample-486,11,WS.11.1,Facility 1,2022,Summer,Raw,Non-FPE Structure,three,sample-486,High,High,Fill,7.089905111
+sample-425,11A,B.11A.1,Facility 2,2022,Summer,Raw,Cleaning Tools,two,sample-425,Low,Low,Fill,0
+sample-9,12,B.12.3,Facility 2,2023,Winter,Raw,Door,three,sample-9,Medium,Medium,Fill,3.326335861
+sample-159,12,NL.12.2,Facility 3,2022,Fall,Post-Pasteurization ,Drain,three,sample-159,High,High,Fill,5.579783597
+sample-160,12,NL.12.4,Facility 3,2023,Spring,Post-Pasteurization ,Drain,three,sample-160,High,High,Fill,6.612783857
+sample-161,12,NL.12.3,Facility 3,2023,Winter,Post-Pasteurization ,Drain,three,sample-161,High,High,Fill,8.941511433
+sample-291,12,WS.12.2,Facility 1,2022,Fall,Raw,Fan/Vent,two,sample-291,Medium,Medium,Fill,4.33243846
+sample-292,12,WS.12.4,Facility 1,2023,Spring,Raw,Fan/Vent,three,sample-292,Medium,Medium,Fill,3.781036939
+sample-293,12,WS.12.3,Facility 1,2023,Winter,Raw,Fan/Vent,two,sample-293,Low,Low,Fill,2.944482672
+sample-459,12,NL.12.1,Facility 3,2022,Summer,Post-Pasteurization ,Drain,three,sample-459,High,High,Fill,6.73239376
+sample-487,12,WS.12.1,Facility 1,2022,Summer,Raw,Fan/Vent,two,sample-487,Medium,Medium,Fill,3.56937391
+sample-426,12B,B.12B.1,Facility 2,2022,Summer,Raw,Door,three,sample-426,Low,Low,Fill,1.301029996
+sample-10,13,B.13.2,Facility 2,2022,Fall,Post-Pasteurization ,Floor Object,three,sample-10,High,High,Fill,5.913283902
+sample-11,13,B.13.4,Facility 2,2023,Spring,Post-Pasteurization ,Floor Object,three,sample-11,High,High,Fill,6.666517981
+sample-12,13,B.13.3,Facility 2,2023,Winter,Post-Pasteurization ,Floor Object,three,sample-12,Medium,Medium,Fill,4.017033339
+sample-162,13,NL.13.2,Facility 3,2022,Fall,Post-Pasteurization ,Drain,three,sample-162,High,High,Fill,5.075546961
+sample-163,13,NL.13.4,Facility 3,2023,Spring,Post-Pasteurization ,Drain,three,sample-163,High,High,Fill,7.471291711
+sample-164,13,NL.13.3,Facility 3,2023,Winter,Post-Pasteurization ,Drain,three,sample-164,High,High,Fill,6.220108088
+sample-294,13,WS.13.2,Facility 1,2022,Fall,Raw,FPE Structure,two,sample-294,Medium,Medium,Fill,4.707570176
+sample-295,13,WS.13.4,Facility 1,2023,Spring,Raw,FPE Structure,two,sample-295,High,High,Fill,5.235528447
+sample-296,13,WS.13.3,Facility 1,2023,Winter,Raw,FPE Structure,two,sample-296,Low,Low,Fill,2.924279286
+sample-460,13,NL.13.1,Facility 3,2022,Summer,Post-Pasteurization ,Drain,three,sample-460,Medium,Medium,Fill,4.204119983
+sample-488,13,WS.13.1,Facility 1,2022,Summer,Raw,FPE Structure,two,sample-488,High,High,Fill,7.785329835
+sample-427,13A,B.13A.1,Facility 2,2022,Summer,Post-Pasteurization ,Floor Object,three,sample-427,Medium,Medium,Fill,3.665580991
+sample-428,13B,B.13B.1,Facility 2,2022,Summer,Post-Pasteurization ,Floor Object,three,sample-428,High,High,Fill,6.255272505
+sample-165,14,NL.14.2,Facility 3,2022,Fall,Post-Pasteurization ,Floor Object,three,sample-165,High,High,Fill,6.929418926
+sample-166,14,NL.14.4,Facility 3,2023,Spring,Post-Pasteurization ,Floor Object,three,sample-166,High,High,Fill,8.696356389
+sample-167,14,NL.14.3,Facility 3,2023,Winter,Post-Pasteurization ,Floor Object,three,sample-167,High,High,Fill,6
+sample-297,14,WS.14.2,Facility 1,2022,Fall,Warehouse,Floor Object,three,sample-297,Medium,Medium,Fill,3.526339277
+sample-298,14,WS.14.4,Facility 1,2023,Spring,Warehouse,Floor Object,three,sample-298,Low,Low,Fill,1.903089987
+sample-299,14,WS.14.3,Facility 1,2023,Winter,Warehouse,Floor Object,three,sample-299,High,High,Fill,5.488550717
+sample-461,14,NL.14.1,Facility 3,2022,Summer,Post-Pasteurization ,Floor Object,three,sample-461,High,High,Fill,7.093421685
+sample-429,14A,B.14A.1,Facility 2,2022,Summer,Post-Pasteurization ,FPE Structure,two,sample-429,Low,Low,Fill,0
+sample-430,14B,B.14B.1,Facility 2,2022,Summer,Post-Pasteurization ,FPE Structure,two,sample-430,Low,Low,Fill,1.602059991
+sample-13,15,B.15.2,Facility 2,2022,Fall,Filling,Conveyor,three,sample-13,High,High,Fill,6.505149978
+sample-14,15,B.15.4,Facility 2,2023,Spring,Filling,Conveyor,two,sample-14,High,High,Fill,8.371067862
+sample-15,15,B.15.3,Facility 2,2023,Winter,Filling,Conveyor,two,sample-15,Low,Low,Fill,3
+sample-168,15,NL.15.4,Facility 3,2023,Spring,Post-Pasteurization ,Floor Object,three,sample-168,Medium,Medium,Fill,4.326335861
+sample-169,15,NL.15.3,Facility 3,2023,Winter,Post-Pasteurization ,Floor Object,three,sample-169,Medium,Medium,Fill,4.06069784
+sample-300,15,WS.15.2,Facility 1,2022,Fall,Warehouse,Non-FPE Structure,three,sample-300,Low,Low,Fill,2.851258349
+sample-301,15,WS.15.4,Facility 1,2023,Spring,Warehouse,Non-FPE Structure,three,sample-301,Low,Low,Fill,1.903089987
+sample-462,15,NL.15.1,Facility 3,2022,Summer,Post-Pasteurization ,Floor Object,three,sample-462,Medium,Medium,Fill,3.176091259
+sample-431,15A,B.15A.1,Facility 2,2022,Summer,Filling,Conveyor,two,sample-431,High,High,Fill,6.301029996
+sample-16,16,B.16.2,Facility 2,2022,Fall,Filling,Wall/Ceiling,three,sample-16,High,High,Fill,5.36361198
+sample-17,16,B.16.4,Facility 2,2023,Spring,Filling,Wall/Ceiling,three,sample-17,High,High,Fill,6.602059991
+sample-18,16,B.16.3,Facility 2,2023,Winter,Filling,Wall/Ceiling,three,sample-18,Medium,Medium,Fill,3.662757832
+sample-302,16,WS.16.2,Facility 1,2022,Fall,Warehouse,Floor Object,three,sample-302,Low,Low,Fill,2.562292864
+sample-303,16,WS.16.4,Facility 1,2023,Spring,Warehouse,Floor Object,three,sample-303,Medium,Medium,Fill,3.593286067
+sample-489,16,WS.16.1,Facility 1,2022,Summer,Warehouse,Floor Object,three,sample-489,Medium,Medium,Fill,3.255272505
+sample-19,17,B.17.2,Facility 2,2022,Fall,Filling,Conveyor,two,sample-19,Medium,Medium,Fill,4.883661435
+sample-20,17,B.17.4,Facility 2,2023,Spring,Filling,Conveyor,two,sample-20,High,High,Fill,7.722633923
+sample-21,17,B.17.3,Facility 2,2023,Winter,Filling,Conveyor,two,sample-21,High,High,Fill,5.954242509
+sample-170,17,NL.17.2,Facility 3,2022,Fall,Post-Pasteurization ,Hose,two,sample-170,Medium,Medium,Fill,3.46834733
+sample-171,17,NL.17.4,Facility 3,2023,Spring,Post-Pasteurization ,Hose,two,sample-171,Medium,Medium,Fill,3.880813592
+sample-172,17,NL.17.3,Facility 3,2023,Winter,Post-Pasteurization ,Hose,two,sample-172,Medium,Medium,Fill,3.832508913
+sample-304,17,WS.17.2,Facility 1,2022,Fall,Warehouse,Cleaning Tools,three,sample-304,Low,Low,Fill,2.799340549
+sample-305,17,WS.17.4,Facility 1,2023,Spring,Warehouse,Cleaning Tools,three,sample-305,Medium,Medium,Fill,3.541579244
+sample-306,17,WS.17.3,Facility 1,2023,Winter,Warehouse,Cleaning Tools,three,sample-306,Medium,Medium,Fill,3.702430536
+sample-463,17,NL.17.1,Facility 3,2022,Summer,Post-Pasteurization ,Hose,three,sample-463,Low,Low,Fill,2.596597096
+sample-22,18,B.18.2,Facility 2,2022,Fall,Filling,Wall/Ceiling,three,sample-22,Low,Low,Fill,1.977723605
+sample-23,18,B.18.4,Facility 2,2023,Spring,Filling,Wall/Ceiling,three,sample-23,High,High,Fill,5.170261715
+sample-24,18,B.18.3,Facility 2,2023,Winter,Filling,Wall/Ceiling,three,sample-24,Medium,Medium,Fill,3.499687083
+sample-307,18,WS.18.2,Facility 1,2022,Fall,Warehouse,Wall/Ceiling,three,sample-307,Low,Low,Fill,1.176091259
+sample-308,18,WS.18.4,Facility 1,2023,Spring,Warehouse,Wall/Ceiling,three,sample-308,Low,Low,Fill,0
+sample-309,18,WS.18.3,Facility 1,2023,Winter,Warehouse,Wall/Ceiling,three,sample-309,Low,Low,Fill,0
+sample-432,18A,B.18A.1,Facility 2,2022,Summer,Filling,Wall/Ceiling,three,sample-432,High,High,Fill,8.305351369
+sample-25,19,B.19.2,Facility 2,2022,Fall,Filling,Cart/Rolling Bins,three,sample-25,Low,Low,Fill,0
+sample-26,19,B.19.4,Facility 2,2023,Spring,Filling,Cart/Rolling Bins,three,sample-26,High,High,Fill,7.803457116
+sample-27,19,B.19.3,Facility 2,2023,Winter,Filling,Cart/Rolling Bins,three,sample-27,Medium,Medium,Fill,4.625312451
+sample-310,19,WS.19.2,Facility 1,2022,Fall,Post-Pasteurization ,Fan/Vent,two,sample-310,Low,Low,Fill,0
+sample-433,1B,B.01B.1,Facility 2,2022,Summer,Raw,Drain,three,sample-433,Medium,Medium,Fill,3.544068044
+sample-28,2,B.02.2,Facility 2,2022,Fall,Raw,Hose,two,sample-28,Low,Low,Fill,1.301029996
+sample-29,2,B.02.4,Facility 2,2023,Spring,Raw,Hose,two,sample-29,Low,Low,Fill,2.204119983
+sample-30,2,B.02.3,Facility 2,2023,Winter,Raw,Hose,two,sample-30,Low,Low,Fill,2.880813592
+sample-174,2,NL.02.4,Facility 3,2023,Spring,Raw,Non-FPE Structure,two,sample-174,High,High,Fill,7.992995098
+sample-175,2,NL.02.3,Facility 3,2023,Winter,Raw,Non-FPE Structure,three,sample-175,High,High,Fill,6.193124598
+sample-464,2,NL.02.1,Facility 3,2022,Summer,Raw,Non-FPE Structure,two,sample-464,Medium,Medium,Fill,3.049218023
+sample-31,20,B.20.2,Facility 2,2022,Fall,Filling,Non-FPE Structure,three,sample-31,Low,Low,Fill,2.113943352
+sample-32,20,B.20.4,Facility 2,2023,Spring,Filling,Non-FPE Structure,three,sample-32,Medium,Medium,Fill,4.033423755
+sample-33,20,B.20.3,Facility 2,2023,Winter,Filling,Non-FPE Structure,three,sample-33,Low,Low,Fill,2.602059991
+sample-176,20,NL.20.3,Facility 3,2023,Winter,Post-Pasteurization ,Wall/Ceiling,three,sample-176,Low,Low,Fill,2.079181246
+sample-311,20,WS.20.2,Facility 1,2022,Fall,Post-Pasteurization ,Drain,three,sample-311,Medium,Medium,Fill,3.812913357
+sample-312,20,WS.20.4,Facility 1,2023,Spring,Post-Pasteurization ,Drain,three,sample-312,High,High,Fill,5.033423755
+sample-313,20,WS.20.3,Facility 1,2023,Winter,Post-Pasteurization ,Drain,three,sample-313,High,High,Fill,5.950364854
+sample-465,20,NL.20.1,Facility 3,2022,Summer,Post-Pasteurization ,Wall/Ceiling,three,sample-465,High,High,Fill,6.672097858
+sample-434,20A,B.20A.1,Facility 2,2022,Summer,Filling,Non-FPE Structure,three,sample-434,Medium,Medium,Fill,4.354108439
+sample-34,21,B.21.2,Facility 2,2022,Fall,Filling,Drain,three,sample-34,High,High,Fill,6.204119983
+sample-35,21,B.21.3,Facility 2,2023,Winter,Filling,Drain,three,sample-35,High,High,Fill,5.033423755
+sample-177,21,NL.21.2,Facility 3,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-177,Medium,Medium,Fill,3.311753861
+sample-178,21,NL.21.4,Facility 3,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-178,Low,Low,Fill,2.924279286
+sample-179,21,NL.21.3,Facility 3,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-179,Medium,Medium,Fill,3.994756945
+sample-314,21,WS.21.2,Facility 1,2022,Fall,Post-Pasteurization ,Door,three,sample-314,Medium,Medium,Fill,3.255272505
+sample-315,21,WS.21.4,Facility 1,2023,Spring,Post-Pasteurization ,Door,three,sample-315,Low,Low,Fill,2.857332496
+sample-316,21,WS.21.3,Facility 1,2023,Winter,Post-Pasteurization ,Door,three,sample-316,Medium,Medium,Fill,3.264817823
+sample-435,21A,B.21A.1,Facility 2,2022,Summer,Filling,Drain,three,sample-435,High,High,Fill,7.723455672
+sample-36,22,B.22.2,Facility 2,2022,Fall,Filling,Non-FPE Structure,three,sample-36,Medium,Medium,Fill,4.982271233
+sample-37,22,B.22.4,Facility 2,2023,Spring,Filling,Non-FPE Structure,three,sample-37,High,High,Fill,8.240549248
+sample-38,22,B.22.3,Facility 2,2023,Winter,Filling,Non-FPE Structure,three,sample-38,High,High,Fill,7.365487985
+sample-180,22,NL.22.4,Facility 3,2023,Spring,Filling,Drain,three,sample-180,High,High,Fill,5.772321707
+sample-181,22,NL.22.3,Facility 3,2023,Winter,Filling,Drain,three,sample-181,Medium,Medium,Fill,4.133538908
+sample-317,22,WS.22.2,Facility 1,2022,Fall,Post-Pasteurization ,Cart/Rolling Bins,three,sample-317,Low,Low,Fill,0
+sample-39,23,B.23.4,Facility 2,2023,Spring,Filling,FPE Structure,two,sample-39,Medium,Medium,Fill,3.575187845
+sample-182,23,NL.23.2,Facility 3,2022,Fall,Filling,Drain,three,sample-182,Medium,Medium,Fill,3.264817823
+sample-183,23,NL.23.4,Facility 3,2023,Spring,Filling,Drain,three,sample-183,Low,Low,Fill,0
+sample-184,23,NL.23.3,Facility 3,2023,Winter,Filling,Drain,three,sample-184,Medium,Medium,Fill,3.709269961
+sample-318,23,WS.23.2,Facility 1,2022,Fall,Post-Pasteurization ,Hose,two,sample-318,Medium,Medium,Fill,3.929418926
+sample-319,23,WS.23.3,Facility 1,2023,Winter,Post-Pasteurization ,Hose,two,sample-319,Medium,Medium,Fill,3.725911632
+sample-466,23,NL.23.1,Facility 3,2022,Summer,Filling,Drain,three,sample-466,Medium,Medium,Fill,3.204119983
+sample-436,23B,B.23B.1,Facility 2,2022,Summer,Filling,FPE Structure,two,sample-436,Medium,Medium,Fill,4.176091259
+sample-185,24,NL.24.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-185,Medium,Medium,Fill,3.541579244
+sample-186,24,NL.24.3,Facility 3,2023,Winter,Filling,Conveyor,two,sample-186,High,High,Fill,5.181843588
+sample-320,24,WS.24.2,Facility 1,2022,Fall,Post-Pasteurization ,Floor Object,three,sample-320,Low,Low,Fill,2.439332694
+sample-321,24,WS.24.4,Facility 1,2023,Spring,Post-Pasteurization ,Floor Object,three,sample-321,Medium,Medium,Fill,3.909556029
+sample-322,24,WS.24.3,Facility 1,2023,Winter,Post-Pasteurization ,Floor Object,three,sample-322,Low,Low,Fill,2.681241237
+sample-467,24,NL.24.1,Facility 3,2022,Summer,Filling,Conveyor,two,sample-467,Medium,Medium,Fill,3.354108439
+sample-490,24,WS.24.1,Facility 1,2022,Summer,Post-Pasteurization ,Floor Object,three,sample-490,Low,Low,Fill,2.946943271
+sample-437,24B,B.24B.1,Facility 2,2022,Summer,Filling,Non-FPE Structure,three,sample-437,Low,Low,Fill,0.698970004
+sample-40,25,B.25.2,Facility 2,2022,Fall,Warehouse,Fan/Vent,three,sample-40,Low,Low,Fill,1.929418926
+sample-41,25,B.25.4,Facility 2,2023,Spring,Warehouse,Fan/Vent,three,sample-41,High,High,Fill,5.204119983
+sample-42,25,B.25.3,Facility 2,2023,Winter,Warehouse,Fan/Vent,three,sample-42,Medium,Medium,Fill,3.181843588
+sample-187,25,NL.25.2,Facility 3,2022,Fall,Filling,Non-FPE Structure,three,sample-187,Low,Low,Fill,0
+sample-323,25,WS.25.2,Facility 1,2022,Fall,Post-Pasteurization ,FPE Structure,two,sample-323,Low,Low,Fill,1.954242509
+sample-324,25,WS.25.4,Facility 1,2023,Spring,Post-Pasteurization ,FPE Structure,two,sample-324,Medium,Medium,Fill,4.431363764
+sample-325,25,WS.25.3,Facility 1,2023,Winter,Post-Pasteurization ,FPE Structure,two,sample-325,High,High,Fill,5.800717078
+sample-468,25,NL.25.1,Facility 3,2022,Summer,Filling,Non-FPE Structure,three,sample-468,Low,Low,Fill,1.903089987
+sample-491,25,WS.25.1,Facility 1,2022,Summer,Post-Pasteurization ,FPE Structure,two,sample-491,Medium,Medium,Fill,3.250420002
+sample-438,25B,B.25B.1,Facility 2,2022,Summer,Warehouse,Fan/Vent,three,sample-438,Low,Low,Fill,2.857332496
+sample-43,26,B.26.2,Facility 2,2022,Fall,Warehouse,Door,three,sample-43,Medium,Medium,Fill,4.290034611
+sample-44,26,B.26.4,Facility 2,2023,Spring,Warehouse,Door,three,sample-44,Medium,Medium,Fill,3.133538908
+sample-45,26,B.26.3,Facility 2,2023,Winter,Warehouse,Door,three,sample-45,Low,Low,Fill,2.204119983
+sample-188,26,NL.26.2,Facility 3,2022,Fall,Filling,Drain,three,sample-188,Medium,Medium,Fill,4.06069784
+sample-189,26,NL.26.4,Facility 3,2023,Spring,Filling,Drain,three,sample-189,Medium,Medium,Fill,4.820857989
+sample-190,26,NL.26.3,Facility 3,2023,Winter,Filling,Drain,three,sample-190,Low,Low,Fill,1.602059991
+sample-326,26,WS.26.2,Facility 1,2022,Fall,Post-Pasteurization ,Hose,two,sample-326,Low,Low,Fill,0.698970004
+sample-327,26,WS.26.4,Facility 1,2023,Spring,Post-Pasteurization ,Hose,two,sample-327,Low,Low,Fill,1.903089987
+sample-328,26,WS.26.3,Facility 1,2023,Winter,Post-Pasteurization ,Hose,two,sample-328,Medium,Medium,Fill,4.666517981
+sample-469,26,NL.26.1,Facility 3,2022,Summer,Filling,Drain,three,sample-469,High,High,Fill,6.423245874
+sample-492,26,WS.26.1,Facility 1,2022,Summer,Post-Pasteurization ,Hose,two,sample-492,Medium,Medium,Fill,3.903089987
+sample-439,26A,B.26A.1,Facility 2,2022,Summer,Warehouse,Door,three,sample-439,Medium,Medium,Fill,3.037426498
+sample-440,26B,B.26B.1,Facility 2,2022,Summer,Warehouse,Door,three,sample-440,Low,Low,Fill,2.77815125
+sample-46,27,B.27.2,Facility 2,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-46,Medium,Medium,Fill,3.033423755
+sample-47,27,B.27.4,Facility 2,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-47,Medium,Medium,Fill,3.301029996
+sample-48,27,B.27.3,Facility 2,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-48,Low,Low,Fill,0
+sample-191,27,NL.27.2,Facility 3,2022,Fall,Filling,Cleaning Tools,two,sample-191,Low,Low,Fill,1.176091259
+sample-329,27,WS.27.2,Facility 1,2022,Fall,Post-Pasteurization ,Hose,two,sample-329,Medium,Medium,Fill,4.58546073
+sample-330,27,WS.27.4,Facility 1,2023,Spring,Post-Pasteurization ,Hose,two,sample-330,Medium,Medium,Fill,3.822168079
+sample-331,27,WS.27.3,Facility 1,2023,Winter,Post-Pasteurization ,Hose,two,sample-331,Medium,Medium,Fill,4.260071388
+sample-493,27,WS.27.1,Facility 1,2022,Summer,Post-Pasteurization ,Hose,two,sample-493,Medium,Medium,Fill,4.591064607
+sample-441,27A,B.27A.1,Facility 2,2022,Summer,Warehouse,Forklift/Pallet Jack,three,sample-441,Medium,Medium,Fill,3.146128036
+sample-49,28,B.28.2,Facility 2,2022,Fall,Warehouse,Floor Object,three,sample-49,Low,Low,Fill,2.860338007
+sample-50,28,B.28.4,Facility 2,2023,Spring,Warehouse,Floor Object,three,sample-50,Medium,Medium,Fill,3.985875357
+sample-51,28,B.28.3,Facility 2,2023,Winter,Warehouse,Floor Object,three,sample-51,Low,Low,Fill,2.832508913
+sample-192,28,NL.28.2,Facility 3,2022,Fall,Filling,Conveyor,three,sample-192,Medium,Medium,Fill,4.06069784
+sample-193,28,NL.28.3,Facility 3,2023,Winter,Filling,Conveyor,two,sample-193,Medium,Medium,Fill,3.783903579
+sample-332,28,WS.28.2,Facility 1,2022,Fall,Post-Pasteurization ,FPE Structure,two,sample-332,High,High,Fill,6.728353782
+sample-333,28,WS.28.4,Facility 1,2023,Spring,Post-Pasteurization ,FPE Structure,two,sample-333,Medium,Medium,Fill,4.564666064
+sample-334,28,WS.28.3,Facility 1,2023,Winter,Post-Pasteurization ,FPE Structure,two,sample-334,High,High,Fill,5.88536122
+sample-470,28,NL.28.1,Facility 3,2022,Summer,Filling,Conveyor,two,sample-470,High,High,Fill,5.414973348
+sample-494,28,WS.28.1,Facility 1,2022,Summer,Post-Pasteurization ,FPE Structure,two,sample-494,Medium,Medium,Fill,4.389166084
+sample-442,28A,B.28A.1,Facility 2,2022,Summer,Warehouse,Floor Object,three,sample-442,Medium,Medium,Fill,3.096910013
+sample-52,29,B.29.4,Facility 2,2023,Spring,Warehouse,Cleaning Tools,three,sample-52,Medium,Medium,Fill,3.57054294
+sample-53,29,B.29.3,Facility 2,2023,Winter,Warehouse,Cleaning Tools,three,sample-53,Low,Low,Fill,2.380211242
+sample-194,29,NL.29.2,Facility 3,2022,Fall,Filling,Wall/Ceiling,three,sample-194,Low,Low,Fill,0
+sample-335,29,WS.29.2,Facility 1,2022,Fall,Post-Pasteurization ,Floor Object,three,sample-335,Low,Low,Fill,0
+sample-336,29,WS.29.4,Facility 1,2023,Spring,Post-Pasteurization ,Floor Object,three,sample-336,Medium,Medium,Fill,4.170261715
+sample-337,29,WS.29.3,Facility 1,2023,Winter,Post-Pasteurization ,Floor Object,three,sample-337,Medium,Medium,Fill,3.428134794
+sample-495,29,WS.29.1,Facility 1,2022,Summer,Post-Pasteurization ,Floor Object,three,sample-495,High,High,Fill,5.58546073
+sample-443,29B,B.29B.1,Facility 2,2022,Summer,Warehouse,Cleaning Tools,three,sample-443,Medium,Medium,Fill,3.178976947
+sample-54,3,B.03.2,Facility 2,2022,Fall,Raw,Hose,two,sample-54,Medium,Medium,Fill,3.064457989
+sample-55,3,B.03.4,Facility 2,2023,Spring,Raw,Hose,two,sample-55,Low,Low,Fill,2.944482672
+sample-56,3,B.03.3,Facility 2,2023,Winter,Raw,Hose,two,sample-56,Medium,Medium,Fill,3.64738297
+sample-173,3,NL.02.2,Facility 3,2022,Fall,Raw,Non-FPE Structure,three,sample-173,Medium,Medium,Fill,4.97
+sample-195,3,NL.03.2,Facility 3,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-195,Low,Low,Fill,2.204119983
+sample-196,3,NL.03.4,Facility 3,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-196,High,High,Fill,5.477121255
+sample-197,3,NL.03.3,Facility 3,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-197,High,High,Fill,5.769377326
+sample-57,30,B.30.2,Facility 2,2022,Fall,Warehouse,Non-FPE Structure,three,sample-57,High,High,Fill,7.276461804
+sample-58,30,B.30.4,Facility 2,2023,Spring,Warehouse,Non-FPE Structure,three,sample-58,High,High,Fill,8.42975228
+sample-59,30,B.30.3,Facility 2,2023,Winter,Warehouse,Non-FPE Structure,three,sample-59,High,High,Fill,7.673941999
+sample-198,30,NL.30.4,Facility 3,2023,Spring,Filling,Hose,two,sample-198,Medium,Medium,Fill,3.049218023
+sample-199,30,NL.30.3,Facility 3,2023,Winter,Filling,Hose,two,sample-199,Low,Low,Fill,0
+sample-338,30,WS.30.4,Facility 1,2023,Spring,Post-Pasteurization ,Cart/Rolling Bins,three,sample-338,Low,Low,Fill,2.556302501
+sample-339,30,WS.30.3,Facility 1,2023,Winter,Post-Pasteurization ,Cart/Rolling Bins,three,sample-339,Medium,Medium,Fill,4.654176542
+sample-496,30,WS.30.1,Facility 1,2022,Summer,Post-Pasteurization ,Cart/Rolling Bins,three,sample-496,Low,Low,Fill,2.822821645
+sample-444,30A,B.30A.1,Facility 2,2022,Summer,Warehouse,Non-FPE Structure,three,sample-444,High,High,Fill,7.419955748
+sample-60,31,B.31.2,Facility 2,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-60,Medium,Medium,Fill,3.740362689
+sample-61,31,B.31.4,Facility 2,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-61,Medium,Medium,Fill,3.976808337
+sample-62,31,B.31.3,Facility 2,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-62,Medium,Medium,Fill,3.264817823
+sample-200,31,NL.31.2,Facility 3,2022,Fall,Filling,Door,three,sample-200,Low,Low,Fill,2.525044807
+sample-201,31,NL.31.3,Facility 3,2023,Winter,Filling,Door,three,sample-201,Low,Low,Fill,2.301029996
+sample-340,31,WS.31.2,Facility 1,2022,Fall,Post-Pasteurization ,FPE Structure,two,sample-340,High,High,Fill,5.201397124
+sample-341,31,WS.31.4,Facility 1,2023,Spring,Post-Pasteurization ,FPE Structure,two,sample-341,Medium,Medium,Fill,4.079181246
+sample-342,31,WS.31.3,Facility 1,2023,Winter,Post-Pasteurization ,FPE Structure,two,sample-342,High,High,Fill,5.235528447
+sample-471,31,NL.31.1,Facility 3,2022,Summer,Filling,Door,three,sample-471,Medium,Medium,Fill,4.903089987
+sample-497,31,WS.31.1,Facility 1,2022,Summer,Post-Pasteurization ,FPE Structure,two,sample-497,Medium,Medium,Fill,4.193124598
+sample-445,31A,B.31A.1,Facility 2,2022,Summer,Warehouse,Forklift/Pallet Jack,three,sample-445,Low,Low,Fill,2.829303773
+sample-63,32,B.32.2,Facility 2,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-63,Medium,Medium,Fill,3.903089987
+sample-64,32,B.32.4,Facility 2,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-64,Medium,Medium,Fill,3.662757832
+sample-65,32,B.32.3,Facility 2,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-65,Medium,Medium,Fill,3.387389826
+sample-202,32,NL.32.2,Facility 3,2022,Fall,Filling,FPE Structure,two,sample-202,Low,Low,Fill,2.991226076
+sample-203,32,NL.32.3,Facility 3,2023,Winter,Filling,FPE Structure,two,sample-203,Medium,Medium,Fill,4.324282455
+sample-446,32A,B.32A.1,Facility 2,2022,Summer,Warehouse,Forklift/Pallet Jack,three,sample-446,Low,Low,Fill,2.69019608
+sample-447,32B,B.32B.1,Facility 2,2022,Summer,Warehouse,Forklift/Pallet Jack,three,sample-447,Low,Low,Fill,2.949390007
+sample-66,33,B.33.2,Facility 2,2022,Fall,Warehouse,Door,three,sample-66,Low,Low,Fill,2.84509804
+sample-67,33,B.33.4,Facility 2,2023,Spring,Warehouse,Door,three,sample-67,Medium,Medium,Fill,3.093421685
+sample-68,33,B.33.3,Facility 2,2023,Winter,Warehouse,Door,three,sample-68,Medium,Medium,Fill,3.10720997
+sample-204,33,NL.33.2,Facility 3,2022,Fall,Filling,Door,three,sample-204,Medium,Medium,Fill,3.587710965
+sample-205,33,NL.33.4,Facility 3,2023,Spring,Filling,Door,three,sample-205,Low,Low,Fill,2.204119983
+sample-206,33,NL.33.3,Facility 3,2023,Winter,Filling,Door,three,sample-206,Low,Low,Fill,2.204119983
+sample-343,33,WS.33.2,Facility 1,2022,Fall,Post-Pasteurization ,Non-FPE Structure,two,sample-343,Low,Low,Fill,2.568201724
+sample-344,33,WS.33.4,Facility 1,2023,Spring,Post-Pasteurization ,Non-FPE Structure,two,sample-344,Low,Low,Fill,0
+sample-345,33,WS.33.3,Facility 1,2023,Winter,Post-Pasteurization ,Non-FPE Structure,two,sample-345,Low,Low,Fill,0
+sample-472,33,NL.33.1,Facility 3,2022,Summer,Filling,Door,three,sample-472,Medium,Medium,Fill,4.903089987
+sample-448,33B,B.33B.1,Facility 2,2022,Summer,Warehouse,Door,three,sample-448,Medium,Medium,Fill,3.396199347
+sample-207,34,NL.34.3,Facility 3,2023,Winter,Filling,FPE Structure,two,sample-207,High,High,Fill,5.079181246
+sample-208,35,NL.35.2,Facility 3,2022,Fall,Warehouse,Door,three,sample-208,Low,Low,Fill,1.812913357
+sample-346,35,WS.35.2,Facility 1,2022,Fall,Post-Pasteurization ,Drain,three,sample-346,High,High,Fill,7.176091259
+sample-347,35,WS.35.4,Facility 1,2023,Spring,Post-Pasteurization ,Drain,three,sample-347,High,High,Fill,8.991226076
+sample-348,35,WS.35.3,Facility 1,2023,Winter,Post-Pasteurization ,Drain,three,sample-348,High,High,Fill,9.133538908
+sample-473,35,NL.35.1,Facility 3,2022,Summer,Warehouse,Door,three,sample-473,Medium,Medium,Fill,3.698970004
+sample-498,35,WS.35.1,Facility 1,2022,Summer,Post-Pasteurization ,Drain,three,sample-498,High,High,Fill,7.526339277
+sample-209,36,NL.36.2,Facility 3,2022,Fall,Filling,FPE Structure,two,sample-209,Low,Low,Fill,2.802773725
+sample-210,36,NL.36.3,Facility 3,2023,Winter,Filling,FPE Structure,two,sample-210,Low,Low,Fill,2.880813592
+sample-349,36,WS.36.2,Facility 1,2022,Fall,Post-Pasteurization ,Wall/Ceiling,three,sample-349,Medium,Medium,Fill,4.431363764
+sample-350,36,WS.36.4,Facility 1,2023,Spring,Post-Pasteurization ,Wall/Ceiling,three,sample-350,High,High,Fill,5.264817823
+sample-351,36,WS.36.3,Facility 1,2023,Winter,Post-Pasteurization ,Wall/Ceiling,three,sample-351,Medium,Medium,Fill,4.127104798
+sample-474,36,NL.36.1,Facility 3,2022,Summer,Filling,FPE Structure,two,sample-474,Low,Low,Fill,2.857332496
+sample-499,36,WS.36.1,Facility 1,2022,Summer,Post-Pasteurization ,Wall/Ceiling,three,sample-499,High,High,Fill,5.301029996
+sample-211,37,NL.37.2,Facility 3,2022,Fall,Filling,Conveyor,two,sample-211,Low,Low,Fill,2.096910013
+sample-212,37,NL.37.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-212,Low,Low,Fill,2.380211242
+sample-213,37,NL.37.3,Facility 3,2023,Winter,Filling,Conveyor,two,sample-213,Medium,Medium,Fill,3.593286067
+sample-352,37,WS.37.2,Facility 1,2022,Fall,Post-Pasteurization ,Non-FPE Structure,two,sample-352,Low,Low,Fill,0
+sample-353,37,WS.37.3,Facility 1,2023,Winter,Post-Pasteurization ,Non-FPE Structure,three,sample-353,Low,Low,Fill,2.77815125
+sample-500,37,WS.37.1,Facility 1,2022,Summer,Post-Pasteurization ,Non-FPE Structure,three,sample-500,High,High,Fill,5.559906625
+sample-214,38,NL.38.4,Facility 3,2023,Spring,Filling,FPE Structure,two,sample-214,Low,Low,Fill,3
+sample-215,38,NL.38.3,Facility 3,2023,Winter,Filling,FPE Structure,two,sample-215,Medium,Medium,Fill,3.033423755
+sample-354,38,WS.38.2,Facility 1,2022,Fall,Filling,Door,three,sample-354,Low,Low,Fill,0
+sample-475,38,NL.38.1,Facility 3,2022,Summer,Filling,FPE Structure,two,sample-475,Medium,Medium,Fill,3.903089987
+sample-216,39,NL.39.2,Facility 3,2022,Fall,Filling,Conveyor,two,sample-216,Low,Low,Fill,1.544068044
+sample-217,39,NL.39.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-217,Low,Low,Fill,2.556302501
+sample-218,39,NL.39.3,Facility 3,2023,Winter,Filling,Conveyor,two,sample-218,Low,Low,Fill,2.77815125
+sample-355,39,WS.39.2,Facility 1,2022,Fall,Filling,Forklift/Pallet Jack,two,sample-355,High,High,Fill,6.763427994
+sample-356,39,WS.39.4,Facility 1,2023,Spring,Filling,Forklift/Pallet Jack,two,sample-356,Medium,Medium,Fill,3.531478917
+sample-357,39,WS.39.3,Facility 1,2023,Winter,Filling,Forklift/Pallet Jack,two,sample-357,High,High,Fill,7.301029996
+sample-449,3B,B.03B.1,Facility 2,2022,Summer,Raw,Hose,three,sample-449,High,High,Fill,5.11058971
+sample-69,4,B.04.2,Facility 2,2022,Fall,Raw,Cleaning Tools,two,sample-69,Low,Low,Fill,2.728353782
+sample-70,4,B.04.4,Facility 2,2023,Spring,Raw,Cleaning Tools,two,sample-70,Medium,Medium,Fill,3.738780558
+sample-71,4,B.04.3,Facility 2,2023,Winter,Raw,Cleaning Tools,two,sample-71,Medium,Medium,Fill,3.515873844
+sample-219,4,NL.04.2,Facility 3,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-219,Medium,Medium,Fill,4.021189299
+sample-220,4,NL.04.4,Facility 3,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-220,Medium,Medium,Fill,3.816903839
+sample-221,4,NL.04.3,Facility 3,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-221,High,High,Fill,5.551449998
+sample-358,4,WS.04.2,Facility 1,2022,Fall,Warehouse,Drain,three,sample-358,High,High,Fill,6.574031268
+sample-359,4,WS.04.4,Facility 1,2023,Spring,Warehouse,Drain,three,sample-359,High,High,Fill,8.113943352
+sample-360,4,WS.04.3,Facility 1,2023,Winter,Warehouse,Drain,three,sample-360,High,High,Fill,8.844477176
+sample-476,4,NL.04.1,Facility 3,2022,Summer,Warehouse,Forklift/Pallet Jack,three,sample-476,Medium,Medium,Fill,4.397940009
+sample-222,40,NL.40.2,Facility 3,2022,Fall,Filling,Drain,three,sample-222,Medium,Medium,Fill,4.176091259
+sample-223,40,NL.40.4,Facility 3,2023,Spring,Filling,Drain,three,sample-223,High,High,Fill,6.789580712
+sample-224,40,NL.40.3,Facility 3,2023,Winter,Filling,Drain,three,sample-224,Medium,Medium,Fill,4.152288344
+sample-361,40,WS.40.2,Facility 1,2022,Fall,Filling,Cart/Rolling Bins,three,sample-361,Medium,Medium,Fill,4.951823035
+sample-362,40,WS.40.4,Facility 1,2023,Spring,Filling,Cart/Rolling Bins,three,sample-362,High,High,Fill,6.324282455
+sample-363,40,WS.40.3,Facility 1,2023,Winter,Filling,Cart/Rolling Bins,three,sample-363,Low,Low,Fill,2.380211242
+sample-477,40,NL.40.1,Facility 3,2022,Summer,Filling,Drain,three,sample-477,High,High,Fill,5.079181246
+sample-501,40,WS.40.1,Facility 1,2022,Summer,Filling,Cart/Rolling Bins,three,sample-501,Medium,Medium,Fill,4.857332496
+sample-225,41,NL.41.2,Facility 3,2022,Fall,Filling,Conveyor,two,sample-225,Low,Low,Fill,1.477121255
+sample-226,41,NL.41.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-226,Low,Low,Fill,2.716003344
+sample-227,41,NL.41.3,Facility 3,2023,Winter,Filling,Conveyor,two,sample-227,Low,Low,Fill,2.681241237
+sample-364,41,WS.41.2,Facility 1,2022,Fall,Filling,Cart/Rolling Bins,three,sample-364,High,High,Fill,5.561101384
+sample-365,41,WS.41.4,Facility 1,2023,Spring,Filling,Cart/Rolling Bins,three,sample-365,Medium,Medium,Fill,4.77815125
+sample-366,41,WS.41.3,Facility 1,2023,Winter,Filling,Cart/Rolling Bins,three,sample-366,High,High,Fill,5.133538908
+sample-478,41,NL.41.1,Facility 3,2022,Summer,Filling,Conveyor,two,sample-478,Low,Low,Fill,3
+sample-502,41,WS.41.1,Facility 1,2022,Summer,Filling,Cart/Rolling Bins,three,sample-502,Medium,Medium,Fill,4.550228353
+sample-228,42,NL.42.2,Facility 3,2022,Fall,Filling,Hose,two,sample-228,Medium,Medium,Fill,3.307496038
+sample-229,42,NL.42.4,Facility 3,2023,Spring,Filling,Hose,two,sample-229,Low,Low,Fill,2.380211242
+sample-230,42,NL.42.3,Facility 3,2023,Winter,Filling,Hose,two,sample-230,Medium,Medium,Fill,4.686636269
+sample-367,42,WS.42.2,Facility 1,2022,Fall,Filling,Drain,three,sample-367,Medium,Medium,Fill,3.096910013
+sample-368,42,WS.42.4,Facility 1,2023,Spring,Filling,Drain,three,sample-368,Medium,Medium,Fill,4.206825876
+sample-369,42,WS.42.3,Facility 1,2023,Winter,Filling,Drain,three,sample-369,High,High,Fill,7.77524626
+sample-503,42,WS.42.1,Facility 1,2022,Summer,Filling,Drain,three,sample-503,Medium,Medium,Fill,4.62324929
+sample-231,43,NL.43.2,Facility 3,2022,Fall,Filling,Drain,three,sample-231,High,High,Fill,6.939519253
+sample-232,43,NL.43.4,Facility 3,2023,Spring,Filling,Drain,three,sample-232,Medium,Medium,Fill,4.222716471
+sample-233,43,NL.43.3,Facility 3,2023,Winter,Filling,Drain,three,sample-233,High,High,Fill,5.10720997
+sample-370,43,WS.43.2,Facility 1,2022,Fall,Filling,Forklift/Pallet Jack,two,sample-370,High,High,Fill,6.311753861
+sample-371,43,WS.43.4,Facility 1,2023,Spring,Filling,Forklift/Pallet Jack,two,sample-371,High,High,Fill,7.57054294
+sample-372,43,WS.43.3,Facility 1,2023,Winter,Filling,Forklift/Pallet Jack,two,sample-372,High,High,Fill,5
+sample-479,43,NL.43.1,Facility 3,2022,Summer,Filling,Drain,three,sample-479,Medium,Medium,Fill,4.33243846
+sample-504,43,WS.43.1,Facility 1,2022,Summer,Filling,Forklift/Pallet Jack,two,sample-504,High,High,Fill,6.33243846
+sample-234,44,NL.44.2,Facility 3,2022,Fall,Filling,Non-FPE Structure,three,sample-234,Low,Low,Fill,1.397940009
+sample-235,44,NL.44.4,Facility 3,2023,Spring,Filling,Non-FPE Structure,three,sample-235,Medium,Medium,Fill,3.120573931
+sample-236,44,NL.44.3,Facility 3,2023,Winter,Filling,Non-FPE Structure,three,sample-236,High,High,Fill,7.133538908
+sample-373,44,WS.44.2,Facility 1,2022,Fall,Filling,Floor Object,three,sample-373,Low,Low,Fill,2.45484486
+sample-374,44,WS.44.4,Facility 1,2023,Spring,Filling,Floor Object,three,sample-374,Medium,Medium,Fill,4.146128036
+sample-505,44,WS.44.1,Facility 1,2022,Summer,Filling,Floor Object,three,sample-505,Medium,Medium,Fill,3.176091259
+sample-237,45,NL.45.2,Facility 3,2022,Fall,Filling,Drain,three,sample-237,Medium,Medium,Fill,4.720159303
+sample-238,45,NL.45.3,Facility 3,2023,Winter,Filling,Drain,three,sample-238,Low,Low,Fill,2.857332496
+sample-375,45,WS.45.2,Facility 1,2022,Fall,Filling,Conveyor,two,sample-375,Low,Low,Fill,2.146128036
+sample-376,45,WS.45.4,Facility 1,2023,Spring,Filling,Conveyor,two,sample-376,Low,Low,Fill,2.079181246
+sample-377,45,WS.45.3,Facility 1,2023,Winter,Filling,Conveyor,two,sample-377,High,High,Fill,6.832508913
+sample-506,45,WS.45.1,Facility 1,2022,Summer,Filling,Conveyor,two,sample-506,High,High,Fill,5.303196057
+sample-239,46,NL.46.2,Facility 3,2022,Fall,Filling,Non-FPE Structure,three,sample-239,Medium,Medium,Fill,3.008600172
+sample-240,46,NL.46.4,Facility 3,2023,Spring,Filling,Non-FPE Structure,three,sample-240,Medium,Medium,Fill,3.120573931
+sample-241,46,NL.46.3,Facility 3,2023,Winter,Filling,Non-FPE Structure,three,sample-241,High,High,Fill,5.477121255
+sample-378,46,WS.46.2,Facility 1,2022,Fall,Warehouse,Drain,three,sample-378,High,High,Fill,7.195899652
+sample-379,46,WS.46.4,Facility 1,2023,Spring,Warehouse,Drain,three,sample-379,High,High,Fill,7.394451681
+sample-380,46,WS.46.3,Facility 1,2023,Winter,Warehouse,Drain,three,sample-380,High,High,Fill,7.255272505
+sample-480,46,NL.46.1,Facility 3,2022,Summer,Filling,Non-FPE Structure,three,sample-480,High,High,Fill,5.875061263
+sample-507,46,WS.46.1,Facility 1,2022,Summer,Warehouse,Drain,three,sample-507,Medium,Medium,Fill,4.633468456
+sample-242,47,NL.47.2,Facility 3,2022,Fall,Filling,FPE Structure,two,sample-242,Low,Low,Fill,2.130333768
+sample-243,47,NL.47.4,Facility 3,2023,Spring,Filling,FPE Structure,two,sample-243,High,High,Fill,5.643452676
+sample-244,47,NL.47.3,Facility 3,2023,Winter,Filling,FPE Structure,two,sample-244,Medium,Medium,Fill,3.434568904
+sample-381,47,WS.47.2,Facility 1,2022,Fall,Warehouse,Door,three,sample-381,Low,Low,Fill,2.204119983
+sample-382,47,WS.47.4,Facility 1,2023,Spring,Warehouse,Door,three,sample-382,Medium,Medium,Fill,3.235528447
+sample-383,47,WS.47.3,Facility 1,2023,Winter,Warehouse,Door,three,sample-383,Low,Low,Fill,2.982271233
+sample-508,47,WS.47.1,Facility 1,2022,Summer,Warehouse,Door,three,sample-508,Low,Low,Fill,2.602059991
+sample-245,48,NL.48.2,Facility 3,2022,Fall,Filling,Door,three,sample-245,Low,Low,Fill,1.602059991
+sample-246,48,NL.48.4,Facility 3,2023,Spring,Filling,Door,three,sample-246,Low,Low,Fill,2.079181246
+sample-247,48,NL.48.3,Facility 3,2023,Winter,Filling,Door,three,sample-247,Low,Low,Fill,2.643452676
+sample-384,48,WS.48.2,Facility 1,2022,Fall,Warehouse,Door,three,sample-384,Medium,Medium,Fill,3.740362689
+sample-385,48,WS.48.4,Facility 1,2023,Spring,Warehouse,Door,three,sample-385,Medium,Medium,Fill,3.10720997
+sample-386,48,WS.48.3,Facility 1,2023,Winter,Warehouse,Door,three,sample-386,Medium,Medium,Fill,3.309630167
+sample-509,48,WS.48.1,Facility 1,2022,Summer,Warehouse,Door,three,sample-509,Low,Low,Fill,2.954242509
+sample-387,49,WS.49.2,Facility 1,2022,Fall,Warehouse,Fan/Vent,three,sample-387,Low,Low,Fill,2.51851394
+sample-388,49,WS.49.4,Facility 1,2023,Spring,Warehouse,Fan/Vent,three,sample-388,Medium,Medium,Fill,3.45331834
+sample-389,49,WS.49.3,Facility 1,2023,Winter,Warehouse,Fan/Vent,three,sample-389,Medium,Medium,Fill,3.079181246
+sample-450,4A,B.04A.1,Facility 2,2022,Summer,Raw,Cleaning Tools,two,sample-450,Low,Low,Fill,1.698970004
+sample-451,4B,B.04B.1,Facility 2,2022,Summer,Raw,Cleaning Tools,two,sample-451,Low,Low,Fill,1.477121255
+sample-72,5,B.05.2,Facility 2,2022,Fall,Raw,Door,three,sample-72,Low,Low,Fill,2.531478917
+sample-73,5,B.05.4,Facility 2,2023,Spring,Raw,Door,three,sample-73,Low,Low,Fill,1.903089987
+sample-74,5,B.05.3,Facility 2,2023,Winter,Raw,Door,three,sample-74,Low,Low,Fill,2.556302501
+sample-248,5,NL.05.2,Facility 3,2022,Fall,Warehouse,Cleaning Tools,three,sample-248,Medium,Medium,Fill,3.056904851
+sample-249,5,NL.05.4,Facility 3,2023,Spring,Warehouse,Floor Object,three,sample-249,High,High,Fill,5.146128036
+sample-250,5,NL.05.3,Facility 3,2023,Winter,Warehouse,Cleaning Tools,three,sample-250,High,High,Fill,5.049218023
+sample-390,5,WS.05.2,Facility 1,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-390,High,High,Fill,5.397940009
+sample-391,5,WS.05.4,Facility 1,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-391,High,High,Fill,7.434568904
+sample-392,5,WS.05.3,Facility 1,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-392,High,High,Fill,7.992995098
+sample-481,5,NL.05.1,Facility 3,2022,Summer,Warehouse,Cleaning Tools,three,sample-481,Medium,Medium,Fill,3.447158031
+sample-510,5,WS.05.1,Facility 1,2022,Summer,Warehouse,Forklift/Pallet Jack,three,sample-510,High,High,Fill,5.397940009
+sample-251,50,NL.50.2,Facility 3,2022,Fall,Warehouse,Floor Object,three,sample-251,High,High,Fill,6.071882007
+sample-252,50,NL.50.4,Facility 3,2023,Spring,Warehouse,Floor Object,three,sample-252,Medium,Medium,Fill,4.167317335
+sample-253,50,NL.50.3,Facility 3,2023,Winter,Warehouse,Floor Object,three,sample-253,Medium,Medium,Fill,3.334453751
+sample-393,50,WS.50.2,Facility 1,2022,Fall,Warehouse,Fan/Vent,three,sample-393,Low,Low,Fill,0
+sample-394,50,WS.50.4,Facility 1,2023,Spring,Warehouse,Fan/Vent,three,sample-394,Low,Low,Fill,2.748188027
+sample-395,50,WS.50.3,Facility 1,2023,Winter,Warehouse,Fan/Vent,three,sample-395,Medium,Medium,Fill,3.193124598
+sample-482,50,NL.50.1,Facility 3,2022,Summer,Warehouse,Floor Object,three,sample-482,High,High,Fill,5.255272505
+sample-511,50,WS.50.1,Facility 1,2022,Summer,Warehouse,Fan/Vent,three,sample-511,Low,Low,Fill,2.802773725
+sample-254,51,NL.51.2,Facility 3,2022,Fall,Warehouse,Fan/Vent,three,sample-254,Low,Low,Fill,2.556302501
+sample-255,51,NL.51.4,Facility 3,2023,Spring,Warehouse,Fan/Vent,three,sample-255,Low,Low,Fill,2.447158031
+sample-256,51,NL.51.3,Facility 3,2023,Winter,Warehouse,Fan/Vent,three,sample-256,Medium,Medium,Fill,3.748188027
+sample-396,51,WS.51.2,Facility 1,2022,Fall,Post-Pasteurization ,FPE Structure,two,sample-396,Low,Low,Fill,1.977723605
+sample-397,51,WS.51.4,Facility 1,2023,Spring,Post-Pasteurization ,FPE Structure,two,sample-397,Medium,Medium,Fill,4.190331698
+sample-398,51,WS.51.3,Facility 1,2023,Winter,Post-Pasteurization ,FPE Structure,two,sample-398,Medium,Medium,Fill,3.079181246
+sample-512,51,WS.51.1,Facility 1,2022,Summer,Post-Pasteurization ,FPE Structure,two,sample-512,Medium,Medium,Fill,4.049218023
+sample-257,52,NL.52.2,Facility 3,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-257,Medium,Medium,Fill,4
+sample-258,52,NL.52.4,Facility 3,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-258,Medium,Medium,Fill,3.593286067
+sample-259,52,NL.52.3,Facility 3,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-259,Medium,Medium,Fill,4.120573931
+sample-483,52,NL.52.1,Facility 3,2022,Summer,Warehouse,Forklift/Pallet Jack,three,sample-483,Medium,Medium,Fill,3.041392685
+sample-452,5B,B.05B.1,Facility 2,2022,Summer,Raw,Door,three,sample-452,Low,Low,Fill,2.462397998
+sample-75,6,B.06.2,Facility 2,2022,Fall,Raw,Floor Object,three,sample-75,Low,Low,Fill,1.544068044
+sample-260,6,NL.06.2,Facility 3,2022,Fall,Warehouse,Non-FPE Structure,three,sample-260,Low,Low,Fill,2.380211242
+sample-261,6,NL.06.4,Facility 3,2023,Spring,Warehouse,Non-FPE Structure,three,sample-261,Medium,Medium,Fill,3.301029996
+sample-262,6,NL.06.3,Facility 3,2023,Winter,Warehouse,Non-FPE Structure,three,sample-262,Low,Low,Fill,2.643452676
+sample-399,6,WS.06.2,Facility 1,2022,Fall,Warehouse,Forklift/Pallet Jack,three,sample-399,Medium,Medium,Fill,3.875061263
+sample-400,6,WS.06.4,Facility 1,2023,Spring,Warehouse,Forklift/Pallet Jack,three,sample-400,High,High,Fill,6.673941999
+sample-401,6,WS.06.3,Facility 1,2023,Winter,Warehouse,Forklift/Pallet Jack,three,sample-401,High,High,Fill,6.987666265
+sample-513,6,WS.06.1,Facility 1,2022,Summer,Warehouse,Forklift/Pallet Jack,three,sample-513,High,High,Fill,5.123851641
+sample-453,6B,B.06B.1,Facility 2,2022,Summer,Raw,Floor Object,three,sample-453,Low,Low,Fill,0
+sample-76,7,B.07.2,Facility 2,2022,Fall,Raw,Drain,three,sample-76,Low,Low,Fill,1.544068044
+sample-77,7,B.07.4,Facility 2,2023,Spring,Raw,Drain,three,sample-77,Low,Low,Fill,2.681241237
+sample-78,7,B.07.3,Facility 2,2023,Winter,Raw,Drain,three,sample-78,Low,Low,Fill,1.602059991
+sample-263,7,NL.07.2,Facility 3,2022,Fall,Warehouse,Door,three,sample-263,High,High,Fill,6.643452676
+sample-264,7,NL.07.4,Facility 3,2023,Spring,Warehouse,Door,three,sample-264,High,High,Fill,5.883093359
+sample-265,7,NL.07.3,Facility 3,2023,Winter,Warehouse,Door,three,sample-265,High,High,Fill,7.264817823
+sample-402,7,WS.07.2,Facility 1,2022,Fall,Warehouse,Door,three,sample-402,Low,Low,Fill,0
+sample-403,7,WS.07.3,Facility 1,2023,Winter,Warehouse,Door,three,sample-403,Low,Low,Fill,2.556302501
+sample-484,7,NL.07.1,Facility 3,2022,Summer,Warehouse,Door,three,sample-484,Medium,Medium,Fill,4.176091259
+sample-514,7,WS.07.1,Facility 1,2022,Summer,Warehouse,Door,three,sample-514,Low,Low,Fill,0
+sample-454,7B,B.07B.1,Facility 2,2022,Summer,Raw,Drain,three,sample-454,Low,Low,Fill,0
+sample-79,8,B.08.2,Facility 2,2022,Fall,Raw,Floor Object,three,sample-79,Medium,Medium,Fill,4.06069784
+sample-80,8,B.08.4,Facility 2,2023,Spring,Raw,Floor Object,three,sample-80,Medium,Medium,Fill,3.499687083
+sample-81,8,B.08.3,Facility 2,2023,Winter,Raw,Floor Object,three,sample-81,Medium,Medium,Fill,4.359835482
+sample-266,8,NL.08.2,Facility 3,2022,Fall,Post-Pasteurization ,Floor Object,three,sample-266,High,High,Fill,6.342422681
+sample-267,8,NL.08.4,Facility 3,2023,Spring,Post-Pasteurization ,Floor Object,three,sample-267,High,High,Fill,7.940516485
+sample-268,8,NL.08.3,Facility 3,2023,Winter,Post-Pasteurization ,Floor Object,three,sample-268,High,High,Fill,7.930439595
+sample-404,8,WS.08.2,Facility 1,2022,Fall,Raw,Drain,three,sample-404,High,High,Fill,8.053078443
+sample-405,8,WS.08.4,Facility 1,2023,Spring,Raw,Drain,three,sample-405,High,High,Fill,8.890979597
+sample-406,8,WS.08.3,Facility 1,2023,Winter,Raw,Drain,three,sample-406,High,High,Fill,8.021189299
+sample-485,8,NL.08.1,Facility 3,2022,Summer,Post-Pasteurization ,Floor Object,three,sample-485,High,High,Fill,7.361727836
+sample-515,8,WS.08.1,Facility 1,2022,Summer,Raw,Drain,three,sample-515,High,High,Fill,8.056904851
+sample-82,9,B.09.2,Facility 2,2022,Fall,Raw,Cart/Rolling Bins,three,sample-82,Low,Low,Fill,2.130333768
+sample-269,9,NL.09.4,Facility 3,2023,Spring,Post-Pasteurization ,Non-FPE Structure,three,sample-269,Low,Low,Fill,0
+sample-270,9,NL.09.3,Facility 3,2023,Winter,Post-Pasteurization ,Non-FPE Structure,three,sample-270,High,High,Fill,5.619093331
+sample-284,9,WS.09.2,Facility 1,2022,Fall,Raw,Hose,two,sample-284,High,High,Fill,6.84509804
+sample-407,9,WS.09.4,Facility 1,2023,Spring,Raw,Hose,two,sample-407,High,High,Fill,7.365487985
+sample-408,9,WS.09.3,Facility 1,2023,Winter,Raw,Hose,two,sample-408,High,High,Fill,8.908485019
+sample-455,9B,B.09B.1,Facility 2,2022,Summer,Raw,Cart/Rolling Bins,three,sample-455,Low,Low,Fill,0.698970004
+sample-83,E1,B.E1.4,Facility 2,2023,Spring,Filling,Non-FPE Structure,three,sample-83,Medium,Medium,Fill,3.627365857
+sample-103,E1,B.E1.2,Facility 2,2022,Fall,Filling,Non-FPE Structure,three,sample-103,Low,Low,Fill,2.40654018
+sample-104,E1,B.E1.3,Facility 2,2023,Winter,Filling,Non-FPE Structure,three,sample-104,Medium,Medium,Fill,4.40654018
+sample-105,E1,NL.E1.2,Facility 3,2022,Fall,Office/Hallway,Non-FPE Structure,four,sample-105,Low,Low,Fill,0
+sample-106,E1,WS.E1.2,Facility 1,2022,Fall,Warehouse,Non-FPE Structure,three,sample-106,Low,Low,Fill,0
+sample-409,E1,WS.E1.4,Facility 1,2023,Spring,Warehouse,Non-FPE Structure,three,sample-409,Low,Low,Fill,2.556302501
+sample-84,E10,B.E10.4,Facility 2,2023,Spring,Post-Pasteurization ,Non-FPE Structure,three,sample-84,Low,Low,Fill,0
+sample-95,E10,B.E10.3,Facility 2,2023,Winter,Post-Pasteurization ,Non-FPE Structure,three,sample-95,Low,Low,Fill,1.602059991
+sample-96,E10,NL.E10.2,Facility 3,2022,Fall,Warehouse,Drain,three,sample-96,Low,Low,Fill,2.591064607
+sample-97,E10,NL.E10.3,Facility 3,2023,Winter,Warehouse,Drain,three,sample-97,Medium,Medium,Fill,3.930439595
+sample-271,E10,NL.E10.4,Facility 3,2023,Spring,Warehouse,Drain,three,sample-271,Medium,Medium,Fill,4.049218023
+sample-410,E10,WS.E10.4,Facility 1,2023,Spring,Filling,Conveyor,three,sample-410,Low,Low,Fill,2.505149978
+sample-98,E11,NL.E11.2,Facility 3,2022,Fall,Filling,FPE Structure,two,sample-98,Medium,Medium,Fill,3.158362492
+sample-99,E11,NL.E11.3,Facility 3,2023,Winter,Filling,FPE Structure,two,sample-99,Medium,Medium,Fill,4.260071388
+sample-272,E11,NL.E11.4,Facility 3,2023,Spring,Filling,FPE Structure,two,sample-272,Medium,Medium,Fill,3.989449818
+sample-411,E11,WS.E11.4,Facility 1,2023,Spring,Filling,Conveyor,three,sample-411,Low,Low,Fill,3
+sample-100,E12,NL.E12.2,Facility 3,2022,Fall,Filling,FPE Structure,two,sample-100,High,High,Fill,8.004321374
+sample-101,E12,NL.E12.3,Facility 3,2023,Winter,Filling,FPE Structure,two,sample-101,Low,Low,Fill,2.880813592
+sample-273,E12,NL.E12.4,Facility 3,2023,Spring,Filling,FPE Structure,two,sample-273,Medium,Medium,Fill,3.120573931
+sample-102,E13,NL.E13.3,Facility 3,2023,Winter,Filling,Floor Object,three,sample-102,High,High,Fill,6.482873584
+sample-274,E13,NL.E13.4,Facility 3,2023,Spring,Filling,Floor Object,three,sample-274,High,High,Fill,5.976808337
+sample-275,E14,NL.E14.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-275,Medium,Medium,Fill,3.973127854
+sample-85,E2,B.E2.4,Facility 2,2023,Spring,Filling,Forklift/Pallet Jack,two,sample-85,Medium,Medium,Fill,4.857332496
+sample-107,E2,B.E2.2,Facility 2,2022,Fall,Filling,Forklift/Pallet Jack,three,sample-107,Medium,Medium,Fill,3.875061263
+sample-108,E2,B.E2.3,Facility 2,2023,Winter,Filling,Forklift/Pallet Jack,three,sample-108,Medium,Medium,Fill,3.365487985
+sample-109,E2,NL.E2.2,Facility 3,2022,Fall,Office/Hallway,Non-FPE Structure,four,sample-109,Medium,Medium,Fill,4.544068044
+sample-110,E2,NL.E2.3,Facility 3,2023,Winter,Office/Hallway,Non-FPE Structure,four,sample-110,Medium,Medium,Fill,3.64738297
+sample-111,E2,WS.E2.2,Facility 1,2022,Fall,Warehouse,Drain,three,sample-111,High,High,Fill,7.745855195
+sample-112,E2,WS.E2.3,Facility 1,2023,Winter,Warehouse,Drain,three,sample-112,High,High,Fill,8.462397998
+sample-276,E2,NL.E2.4,Facility 3,2023,Spring,Office/Hallway,Non-FPE Structure,four,sample-276,Low,Low,Fill,2.556302501
+sample-412,E2,WS.E2.4,Facility 1,2023,Spring,Warehouse,Drain,three,sample-412,High,High,Fill,9.079181246
+sample-277,E20,NL.E20.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-277,Low,Low,Fill,2.880813592
+sample-278,E21,NL.E21.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-278,Low,Low,Fill,0
+sample-279,E23,NL.E23.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-279,Low,Low,Fill,2.716003344
+sample-280,E27,NL.E27.4,Facility 3,2023,Spring,Filling,Conveyor,two,sample-280,Medium,Medium,Fill,3.829946696
+sample-86,E3,B.E3.4,Facility 2,2023,Spring,Filling,Non-FPE Structure,three,sample-86,High,High,Fill,5.170261715
+sample-113,E3,B.E3.2,Facility 2,2022,Fall,Filling,Non-FPE Structure,three,sample-113,Medium,Medium,Fill,3.290034611
+sample-114,E3,B.E3.3,Facility 2,2023,Winter,Filling,Non-FPE Structure,three,sample-114,Low,Low,Fill,1.903089987
+sample-115,E3,NL.E3.2,Facility 3,2022,Fall,Office/Hallway,Hose,four,sample-115,High,High,Fill,6.352182518
+sample-116,E3,WS.E3.2,Facility 1,2022,Fall,Warehouse,Drain,three,sample-116,High,High,Fill,7.681241237
+sample-413,E3,WS.E3.4,Facility 1,2023,Spring,Warehouse,Drain,three,sample-413,High,High,Fill,8.781755375
+sample-87,E4,B.E4.4,Facility 2,2023,Spring,Warehouse,Conveyor,three,sample-87,Medium,Medium,Fill,3.741939078
+sample-117,E4,B.E4.2,Facility 2,2022,Fall,Warehouse,Conveyor,three,sample-117,Medium,Medium,Fill,3.181843588
+sample-118,E4,B.E4.3,Facility 2,2023,Winter,Warehouse,Conveyor,three,sample-118,Medium,Medium,Fill,3.447158031
+sample-119,E4,NL.E4.2,Facility 3,2022,Fall,Filling,Non-FPE Structure,three,sample-119,Low,Low,Fill,0
+sample-120,E4,NL.E4.3,Facility 3,2023,Winter,Filling,Non-FPE Structure,three,sample-120,Low,Low,Fill,2.204119983
+sample-121,E4,WS.E4.2,Facility 1,2022,Fall,Warehouse,Conveyor,three,sample-121,Low,Low,Fill,2.973127854
+sample-122,E4,WS.E4.3,Facility 1,2023,Winter,Warehouse,Conveyor,three,sample-122,High,High,Fill,5.465382851
+sample-414,E4,WS.E4.4,Facility 1,2023,Spring,Warehouse,Conveyor,three,sample-414,High,High,Fill,5.889861721
+sample-88,E5,B.E5.4,Facility 2,2023,Spring,Warehouse,Door,three,sample-88,Medium,Medium,Fill,3.928395852
+sample-123,E5,B.E5.2,Facility 2,2022,Fall,Warehouse,Door,three,sample-123,Low,Low,Fill,2.759667845
+sample-124,E5,B.E5.3,Facility 2,2023,Winter,Warehouse,Door,three,sample-124,Medium,Medium,Fill,3.614897216
+sample-125,E5,NL.E5.2,Facility 3,2022,Fall,Filling,Non-FPE Structure,three,sample-125,Medium,Medium,Fill,4.954242509
+sample-126,E5,WS.E5.2,Facility 1,2022,Fall,Warehouse,Conveyor,three,sample-126,High,High,Fill,5.812913357
+sample-127,E5,WS.E5.3,Facility 1,2023,Winter,Warehouse,Conveyor,three,sample-127,High,High,Fill,5.064457989
+sample-281,E5,NL.E5.4,Facility 3,2023,Spring,Filling,Non-FPE Structure,three,sample-281,Low,Low,Fill,2.380211242
+sample-415,E5,WS.E5.4,Facility 1,2023,Spring,Warehouse,Conveyor,three,sample-415,Medium,Medium,Fill,4.903089987
+sample-89,E6,B.E6.4,Facility 2,2023,Spring,Warehouse,Non-FPE Structure,three,sample-89,Medium,Medium,Fill,3.847572659
+sample-128,E6,B.E6.2,Facility 2,2022,Fall,Warehouse,Non-FPE Structure,three,sample-128,Medium,Medium,Fill,3.602059991
+sample-129,E6,B.E6.3,Facility 2,2023,Winter,Warehouse,Non-FPE Structure,three,sample-129,Low,Low,Fill,2.079181246
+sample-130,E6,NL.E6.2,Facility 3,2022,Fall,Filling,NA,two,sample-130,NA,NA,Fill,NA
+sample-131,E6,WS.E6.2,Facility 1,2022,Fall,Office/Hallway,Floor Object,four,sample-131,High,High,Fill,5.602059991
+sample-132,E6,WS.E6.3,Facility 1,2023,Winter,Office/Hallway,Floor Object,four,sample-132,High,High,Fill,5.146128036
+sample-416,E6,WS.E6.4,Facility 1,2023,Spring,Office/Hallway,Floor Object,four,sample-416,Medium,Medium,Fill,4.540329475
+sample-90,E7,B.E7.4,Facility 2,2023,Spring,Warehouse,Non-FPE Structure,three,sample-90,Low,Low,Fill,2.204119983
+sample-133,E7,B.E7.2,Facility 2,2022,Fall,Warehouse,Floor Object,three,sample-133,Low,Low,Fill,2.854306042
+sample-134,E7,B.E7.3,Facility 2,2023,Winter,Warehouse,Non-FPE Structure,three,sample-134,Medium,Medium,Fill,3.255272505
+sample-135,E7,NL.E7.2,Facility 3,2022,Fall,Filling,FPE Structure,two,sample-135,NA,NA,Fill,NA
+sample-136,E7,WS.E7.2,Facility 1,2022,Fall,Raw,Floor Object,three,sample-136,Medium,Medium,Fill,4.041392685
+sample-137,E7,WS.E7.3,Facility 1,2023,Winter,Raw,Floor Object,three,sample-137,High,High,Fill,7.551449998
+sample-417,E7,WS.E7.4,Facility 1,2023,Spring,Raw,Floor Object,three,sample-417,High,High,Fill,7.283301229
+sample-91,E8,B.E8.4,Facility 2,2023,Spring,Office/Hallway,Floor Object,four,sample-91,Medium,Medium,Fill,3.871572936
+sample-138,E8,B.E8.2,Facility 2,2022,Fall,Office/Hallway,Floor Object,four,sample-138,Medium,Medium,Fill,3.653212514
+sample-139,E8,B.E8.3,Facility 2,2023,Winter,Office/Hallway,Floor Object,four,sample-139,Medium,Medium,Fill,3.792391689
+sample-140,E8,NL.E8.2,Facility 3,2022,Fall,Warehouse,Wall/Ceiling,three,sample-140,Medium,Medium,Fill,3.201397124
+sample-141,E8,NL.E8.3,Facility 3,2023,Winter,Warehouse,Wall/Ceiling,three,sample-141,High,High,Fill,5.705863712
+sample-142,E8,WS.E8.3,Facility 1,2023,Winter,Post-Pasteurization ,Door,three,sample-142,Low,Low,Fill,2.77815125
+sample-282,E8,NL.E8.4,Facility 3,2023,Spring,Warehouse,Wall/Ceiling,three,sample-282,Medium,Medium,Fill,4.359835482
+sample-92,E9,B.E9.4,Facility 2,2023,Spring,Post-Pasteurization ,FPE Structure,two,sample-92,Low,Low,Fill,2.301029996
+sample-143,E9,B.E9.3,Facility 2,2023,Winter,Post-Pasteurization ,FPE Structure,two,sample-143,High,High,Fill,6.359835482
+sample-144,E9,NL.E9.2,Facility 3,2022,Fall,Warehouse,Floor Object,three,sample-144,High,High,Fill,6.380211242
+sample-145,E9,NL.E9.3,Facility 3,2023,Winter,Warehouse,Floor Object,three,sample-145,High,High,Fill,5.10720997
+sample-283,E9,NL.E9.4,Facility 3,2023,Spring,Warehouse,Floor Object,three,sample-283,High,High,Fill,6.064457989
+sample-418,E9,WS.E9.4,Facility 1,2023,Spring,Filling,Conveyor,two,sample-418,Low,Low,Fill,2.447158031

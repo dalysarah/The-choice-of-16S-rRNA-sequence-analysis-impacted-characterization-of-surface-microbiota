@@ -1,0 +1,36 @@
+"","Object","Fill_bins","n"
+"1","Cart/Rolling Bins","High",4
+"2","Cart/Rolling Bins","Low",2
+"3","Cart/Rolling Bins","Medium",4
+"4","Cleaning Tools","Low",5
+"5","Cleaning Tools","Medium",3
+"6","Conveyor","High",10
+"7","Conveyor","Low",17
+"8","Conveyor","Medium",6
+"9","Door","High",1
+"10","Door","Low",13
+"11","Door","Medium",12
+"12","Drain","High",27
+"13","Drain","Low",3
+"14","Drain","Medium",14
+"15","FPE Structure","High",6
+"16","FPE Structure","Low",9
+"17","FPE Structure","Medium",7
+"18","Fan/Vent","High",1
+"19","Fan/Vent","Low",8
+"20","Fan/Vent","Medium",3
+"21","Floor Object","High",21
+"22","Floor Object","Low",11
+"23","Floor Object","Medium",15
+"24","Forklift/Pallet Jack","High",9
+"25","Forklift/Pallet Jack","Low",4
+"26","Forklift/Pallet Jack","Medium",14
+"27","Hose","High",4
+"28","Hose","Low",8
+"29","Hose","Medium",10
+"30","Non-FPE Structure","High",10
+"31","Non-FPE Structure","Low",17
+"32","Non-FPE Structure","Medium",8
+"33","Wall/Ceiling","High",7
+"34","Wall/Ceiling","Low",3
+"35","Wall/Ceiling","Medium",4

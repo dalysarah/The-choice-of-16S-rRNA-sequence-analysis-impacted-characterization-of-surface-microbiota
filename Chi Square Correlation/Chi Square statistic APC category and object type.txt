@@ -1,0 +1,6 @@
+
+	Pearson's Chi-squared test
+
+data:  mf
+X-squared = 65.256, df = 22, p-value = 3.609e-06
+
