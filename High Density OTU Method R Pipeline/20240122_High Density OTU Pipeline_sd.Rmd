@@ -1,0 +1,971 @@
+---
+title: "Pipeline -Phyloseq Processing"
+author: "Sarah Daly"
+date: '2023-08-25'
+output:
+  html_document: default
+  word_document: default
+editor_options:
+  chunk_output_type: console
+---
+Purpose:  Process High Density samples, OTU-based Pipeline 
+Input files: OTU or ASV table (.qza), unfiltered taxonomy table (.qza), rooted photogenic tree (.qza), metadata file (.txt)
+
+#Set Working Directory
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review Paper/Manuscript/Code/Pipeline Processing R/High/OTU")
+```
+
+#Load Packages
+```{r}
+library(scales)
+
+library(DECIPHER) # This package will help in importing, maintaining, analyzing, manipulating, and exporting a massive amount of sequences.
+
+library(ape) # Analyses of Phylogenetics and Evolution package. Required for tree calculations to be used with phyloseq
+
+library(DESeq2) # This package will help analyze "differential expression" in the microbiota alongside phyloseq
+
+library(ggplot2) # Graphing package used in phyloseq. To edit the default setting of a plot, you need to use functions in this package.
+
+library(phyloseq) # The phyloseq package seeks to address issues with multiple microbiome analysis packages by providing a set of functions that internally manage the organizing, linking, storing, and analyzing of phylogenetic sequencing data. In general, this package is used for UniFrac analyses.
+
+library(plotly) # A package to create interactive web graphics of use in 3D plots
+
+library(vegan) # The vegan package provides tools for descriptive community ecology. It has most basic functions of diversity analysis, community ordination and dissimilarity analysis. In general, this package is used for Bray-Curtis and Jaccard analyses.
+
+library(tidyverse) # This package is designed to make it easy to install and load multiple 'tidyverse' packages in a single step
+
+library(adespatial) # Tools for the multiscale spatial analysis of multivariate data
+
+library(devtools) # Make package development easier by providing R functions that simplify and expedite common tasks
+
+library(qiime2R) # A package for importing qiime artifacts into an R session
+
+library(microbiome) # Data analysis and visualization
+
+library(microbiomeSeq) # Data analysis and visualization
+
+library("pander") # provide a minimal and easy tool for rendering R objects into Pandoc's markdown
+
+library(ranacapa) # Data analysis 
+
+library(grid) # support data visualization
+
+library(gridExtra)  # support data visualization
+
+library(knitr) # Provides a general-purpose tool for dynamic report generation in R using Literate Programming techniques.
+
+library(png) # Figure download
+
+library("ggdendro") #set of tools for dendrograms and tree plots using 'ggplot2'
+
+library(ggpubr) # publication quality figures, based on ggplot2
+
+library(RColorBrewer) # nice color options
+
+library(microbiomeutilities) # some utility tools 
+
+library(broom) #tidy anova tables 
+library(hrbrthemes)
+library(gcookbook)
+```
+
+#Create a vector of colors for plotting
+```{r}
+nice_colors = c("#999999", "#E69F00", "#56B4E9","#e98756","#c08160","#5800e6", "#CDDC49", "#C475D3", 
+                "#E94B30", "#233F57", "#FEE659", "#A1CFDD", "#F4755E", "#D6F6F7","#EB6D58", "#6898BF")
+```
+
+#Data type
+```{r}
+Density_var = "High"
+cluster_var = "OTU"
+```
+
+#Load Data and Convert to Phyloseq Object
+```{r}
+#Convert qiime artifacts directly to phyloseq
+#phyloseq provides a set of classes and tools to facilitate the import, storage, analysis, and graphical display of microbiome census data.
+
+#Importing OTU/ASV table
+ASVS <- read_qza("filtered-table-SFWS-otu.qza")   #Qiime output ASV file after filtering
+dim(ASVS$data)
+
+# Importing phylogenic tree
+tree <- read_qza("rooted_tree.qza")  #Qiime output file
+tree$data
+
+# Importing taxonomy assignment 
+taxonomy <- read_qza("taxonomy-otu-99-SFWS.qza")  #Qiime output file
+
+#Process taxonomy file more 
+#get taxonomy names
+tax_strings<- strsplit(as.character(taxonomy$data$Taxon), ";")
+head(tax_strings)
+
+#some strings are missing levels (blanks) and the dataframe will not bind
+x = 1
+y = 1
+
+blanks <- c("k__","p__", "c__", "o__","f__", "g__", "s__")
+
+num_taxa = length(tax_strings)  #number of taxa
+num_taxa  #shoudl match dim OTUs$data
+
+for (item in tax_strings){
+  
+  t = length(tax_strings[[x]]) #get list item length
+  
+if (t < 7)  {  #if less than 7 elements in each list item
+  #print(t)
+  y=1
+  #print(taxa)
+  while (y <= 7){  #loop through each item in item 
+    if (is.na(tax_strings[[x]][y])){
+      print('needs')
+      tax_strings[[x]][y] = blanks[y]  #replace blank space with corr level character
+      y=y+1
+      }
+      else(y=y+1)
+    }
+x = x+1
+}
+  else (x = x+ 1)
+}
+
+#convert to dataframe
+tax_table<-as.data.frame(tax_strings)
+dim(tax_table)
+#Trasnpose table
+tax_table<-t(tax_table)
+head(tax_table)
+
+#Add level labels
+#Add oto/asv info to tax table
+rownames(tax_table) <- taxonomy$data$Feature.ID
+colnames(tax_table) <- c("Kingdom","Phylum","Class","Order","Family","Genus","Species")
+head(tax_table)
+#Inspect table 
+write.csv(tax_table, "merged_tax_table.csv")
+
+
+#################Creating phyloseq object#######################################
+
+#Note, phyloseq uses the term "OTU" loosely and since we fed it an ASV table, it is an ASV table
+OTU = otu_table(as.matrix(ASVS$data), taxa_are_rows = T)
+#Transpose OtU table
+otu_table(OTU)<-t(otu_table(OTU))  #may need to do this again
+
+TAX = tax_table(as.matrix(tax_table))
+dim(TAX)
+dim(taxa_names(OTU))
+head(TAX)
+
+# Importing metadata
+metadata <- read.table("Metadata.txt", sep='\t', header=T, row.names=1, comment="")
+head(metadata)
+dim(metadata)
+length(sample_names(OTU))
+SAMPLE = sample_data(metadata)
+
+#phylogentic tree
+TREE = tree$data
+
+#Inspect files for troubleshooting 
+write.csv(SAMPLE, "phyloseq SAMPLE input.csv")
+write.csv(TAX, "phyloseq TAX input.csv")
+write.csv(OTU, "phyloseq OTU input.csv")
+
+# merge the data
+ps <- phyloseq(OTU, TAX, SAMPLE,TREE)
+#contains OTU table, taxonomy table, sample data, and phy tree
+#check that dimensions are consistent (same number taxa between OTU, tax_table)
+ps
+```
+
+#Filter samples "High" Density only
+```{r}
+#Add column called "sample" to metadatasheet
+ps <- subset_samples(ps, sample %in%  c("sample-153", "sample-251","sample-126", "sample-58" , "sample-159", "sample-267" ,"sample-37" , "sample-364","sample-366" ,"sample-270" ,"sample-390", "sample-431" ,"sample-432", "sample-458", "sample-154" ,"sample-380","sample-161", "sample-174", "sample-485", "sample-207", "sample-162", "sample-186", "sample-405", "sample-20" ,"sample-287" ,"sample-359", "sample-459", "sample-13" , "sample-34" , "sample-357", "sample-35" , "sample-332", "sample-461", "sample-428" ,"sample-299", "sample-23" , "sample-477", "sample-372", "sample-21",  "sample-16" ,"sample-132" ,"sample-469", "sample-131" ,"sample-59" , "sample-180", "sample-137", "sample-221" ,"sample-379","sample-150", "sample-340", "sample-312" ,"sample-284", "sample-160", "sample-111", "sample-197" ,"sample-435", "sample-378" ,"sample-41",  "sample-268", "sample-266" ,"sample-413", "sample-362" ,"sample-144", "sample-470", "sample-406" ,"sample-369", "sample-14" , "sample-166" ,"sample-346", "sample-274", "sample-392", "sample-404","sample-145", "sample-482", "sample-370", "sample-286", "sample-243", "sample-355" ,"sample-86"  ,"sample-167","sample-122", "sample-295", "sample-38"  ,"sample-249" ,"sample-360", "sample-26" , "sample-377" ,"sample-263", "sample-164" ,"sample-350" ,"sample-11" , "sample-223", "sample-283", "sample-290" ,"sample-241", "sample-401","sample-116", "sample-444" ,"sample-143", "sample-408"))
+
+ps
+head(sample_data(ps))
+```
+
+#Distribution of Reads Stats
+```{r}
+setwd(("./read_distribution"))
+prd<-plot_read_distribution(ps, groups = "Season", plot.type = "density") + theme_biome_utils()
+prd
+write.csv(prd$data, "Sequencing Depth.csv")
+
+#Export plot to .tif file 
+tiff(paste("Read distribition.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print (prd)
+dev.off()
+
+#ASVS/OTUs per sample
+df = data.frame(ASVs=rowSums(otu_table(ps)>0), reads=sample_sums(ps), sample_data(ps))
+
+write.csv(df, "ASVs and Reads Data.csv")
+
+#Distribution of Reads Boxplot
+read_dist <- ggplot(df, aes(x = Season, y = reads, color = ASVs)) +
+  geom_boxplot(color="black") + theme_bw() +
+  geom_jitter(width=.2, height=0)  + 
+  theme(axis.text.x = element_text(angle = 90)) +
+  geom_hline(yintercept=10000, color= "purple", linetype='dashed') +
+  geom_hline(yintercept=1000, color= "red", linetype='dashed') +
+  ggtitle(paste("median= ", median(df$reads), "mean = ", round(mean(df$reads),0),"Reads sequenced by SampleGroup"))
+
+read_dist
+
+#Export plot to .tif file 
+tiff(paste("Read distribution Boxplot.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print (read_dist)
+dev.off()
+
+#Histogram of Reads
+hist_reads<-ggplot(df, aes(x=reads)) + geom_histogram(bins=50, color='black', fill='grey') + 
+  theme_bw() +  geom_vline(xintercept=10000, color= "red", linetype='dashed') +
+  labs(title="Histogram: Reads per Sample") + xlab("Read Count") + ylab("Sample Count")
+
+hist_reads
+
+#Export plot to .tif file 
+tiff(paste("Number of samples per reads Histogram.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print (hist_reads)
+dev.off()
+
+setwd("..")
+getwd()
+```
+
+#Rarefy Data
+```{r}
+
+set.seed(111) # keep result reproductive
+
+ps.rarefied.50 = rarefy_even_depth(ps, rngseed=1, sample.size=50000, replace=F)
+ps.rarefied.50
+ps.rarefied.30 = rarefy_even_depth(ps, rngseed=1, sample.size=30000, replace=F)
+ps.rarefied.30
+ps.rarefied.10 = rarefy_even_depth(ps, rngseed=1, sample.size=10000, replace=F)
+ps.rarefied.10
+
+#Change WD and output ps object
+setwd(("./ps_object"))
+capture.output((ps), file = "ps.txt")
+capture.output((ps.rarefied.10), file = "ps.rarefied.10.txt")
+capture.output((ps.rarefied.30), file = "ps.rarefied.30.txt")
+capture.output((ps.rarefied.50), file = "ps.rarefied.50.txt")
+
+setwd("..")
+getwd()
+```
+
+#CLR normalization 
+```{r}
+# Note that small pseudocount is added if data contains zeroes
+ps.clr = transform(ps, "clr")
+ps.clr
+
+#######################Summary stats from phyloseq object########################
+#Summarizing the phyloseq object to check for feature of data
+# check for features of data  
+summarize_phyloseq(ps.clr)
+print_ps(ps.clr)
+summary(sample_sums(ps.clr))
+
+#Change WD and output ps object 
+setwd(("./ps_object"))
+capture.output((ps.clr), file = "ps.clr.txt")
+setwd("..")
+getwd()
+```
+
+#Zeros/Sparsity Calculations 
+```{r}
+#########################################################
+#Function
+#ps_object - ps object name
+#name = string
+
+count_genus_zero <- function(ps_object, name){
+setwd("./Sparsity ")
+# Create a factor corresponding to the Genera
+genfac = factor(tax_table(ps_object)[, "Genus"])
+genfac
+# Tabulate the counts for each genera in each sample
+gentab = apply(t(otu_table(ps_object)), MARGIN = 2, function(x) {
+    tapply(x, INDEX = genfac, FUN = sum, na.rm = TRUE, simplify = TRUE)
+})
+head(gentab)[, 1:10]
+gen_zero = round((sum(colSums(gentab == 0))) / (nrow(gentab) * ncol(gentab)),4)
+gen_zero
+
+write.csv(gentab, "Genus Counts.csv")
+dfgen = as.data.frame(gentab)
+zero_genus<- dfgen %>%
+  mutate_all(function(x) ifelse(x == 0, 1, 0)) %>%
+  summarise_all(function(x) mean(x)) %>%
+  t(.) %>%
+  data.frame(.) %>%
+  dplyr::rename("prop_zeros" = ".") %>%
+    ggplot(data = ., aes(x = prop_zeros, fill="indianred")) + geom_histogram(bins = 50) +
+  scale_x_reverse() +   theme_classic() +   theme(plot.title = element_text(hjust = 0.5),legend.position="none",text = element_text(size=24,colour="black",face="bold"))+ # Change method 
+  labs(x = "\nProportion of Zeros for Each Genius", y = "Count\n")+ scale_x_continuous(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+xlim(0.7,1)
+
+tiff(paste(gen_zero,name, "Zero count Genus.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(zero_genus)
+dev.off()
+
+setwd("..")
+getwd()
+
+}
+###########################################################
+count_genus_zero(ps.rarefied.10, "Rare10")
+count_genus_zero(ps.rarefied.30, "Rare30")
+count_genus_zero(ps.rarefied.50, "Rare50")
+count_genus_zero(ps.clr, "CLR")
+count_genus_zero(ps, "PS-High")
+```
+
+#Alpha Diversity 
+```{r}
+####################FUNCTION####################################
+alpha_diversity_rare <- function(ps_object, name, name2, alpha_vars, plot_vars){
+#ps_object = phyloseq object
+#name = string
+#name 2 = string
+#alpha_vars = alpha diversity variables
+#Plot_vars_alpha diversity plot variables 
+
+set.seed(99)
+print(ps_object)
+#Alpha diversity plot
+alpha.div2 <- plot_richness(ps_object, x="Facility", measures=alpha_vars) +
+  geom_boxplot() +
+  theme_classic() +
+  theme(text = element_text(size=24,colour="black",face="bold"),strip.background = element_blank(), axis.text.x.bottom = element_text(angle = -90))
+
+print(alpha.div2)
+
+div_df = as.data.frame(alpha.div2$data)
+div_df$Density = Density_var
+div_df$ASVOTU = cluster_var
+div_df$Norm = "Rarefaction"
+div_df$Depth = name2
+
+df_clean = div_df[,c("Original.ID","samples","Density","ASVOTU", "Norm", "Depth", "Facility", "Season", "variable", "value")]
+
+setwd(("./div"))
+write.csv(df_clean, paste(name,"RARE ALPHA DIVERSITY.csv"))
+setwd("..")
+getwd()
+
+
+# If more than two variables
+comps <- make_pairs(sample_data(ps_object)$Season)
+print(comps)
+
+# adding statistical data (Wilcox test)
+alpha_season <- alpha.div2 + geom_boxplot(aes(fill=Season))+
+stat_compare_means(
+ comparisons = comps,
+  label = "p.signif",
+  aes(label = paste0("p = ", ..p.format..)),
+  tip.length = 0.05,
+  symnum.args = list(
+   cutpoints = c(0, 0.0001, 0.001, 0.01, 0.05, 1), 
+  symbols = c("xxxx", "***", "**", "*", "ns")
+  ),
+  method = "wilcox.test")+  #or kruskal.test 
+  theme(text = element_text(size=24,colour="black",face="bold"),strip.background = element_blank(), axis.text.x.bottom = element_text(angle = -90))
+
+print(alpha_season)
+
+#Export plot to .tif file 
+setwd(("./Alpha_box"))
+tiff(paste(name, "Diversity_color_season wilcox.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(alpha_season)
+dev.off()
+
+# If more than two variables
+comps2 <- make_pairs(sample_data(ps_object)$Facility)
+print(comps2)
+
+# adding statistical data (Wilcox test)
+
+alpha.div.loc <- plot_richness(ps_object, x="Facility", measures=alpha_vars) +
+  geom_boxplot() +
+  theme_classic() +
+  theme(text = element_text(size=24,colour="black",face="bold"),strip.background = element_blank(), axis.text.x.bottom = element_text(angle = -90))
+
+alpha_loc <- alpha.div.loc + geom_boxplot(aes(fill=Facility))+
+stat_compare_means(
+ comparisons = comps2,
+  label = "p.signif",
+  aes(label = paste0("p = ", ..p.format..)),
+  tip.length = 0.05,
+  symnum.args = list(
+   cutpoints = c(0, 0.0001, 0.001, 0.01, 0.05, 1), 
+  symbols = c("xxxx", "***", "**", "*", "ns")
+  ),
+  method = "wilcox.test")+  #or kruskal.test 
+  theme(text = element_text(size=24,colour="black",face="bold"),strip.background = element_blank(), axis.text.x.bottom = element_text(angle = -90))
+
+print(alpha_loc)
+
+tiff(paste(name, "Facility differences.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(alpha_loc)
+dev.off()
+setwd("..")
+getwd()
+
+#generate a csv file of the richness estimates for each facility
+#Create empty dataframe
+fill_df <-c(alpha_vars, "Facility")
+
+group = c("North Lawrence", "West Senecca" ,  "Batavia ")
+
+for (item in group) {
+  #Subset DAta
+  print(item)
+  #physeq.subb <- subset_samples(ps_object, Facility == item)
+  #Crate dataframe of richness data
+  richness <- estimate_richness(ps_object, measures=alpha_vars)
+  #Add label for facility
+  richness$Facility = item
+  #Bind to dataframe
+  fill_df<- rbind(fill_df, richness)
+}
+
+#Remove extra labe rolw
+fill_df <-fill_df[-1, ]
+fill_df
+head(fill_df)
+
+for (item3 in plot_vars){
+print(item3)
+#Creating a PLot with one index or stats
+alpha_div_stats <- plot_diversity_stats(ps_object, group = "Fill", 
+                     index = item3, 
+                     #group.order = c("gut","tongue","right palm", "left palm"),                      
+                     group.colors = nice_colors,
+                     label.format="p.format",
+                     stats = TRUE) + ylab(item3) + xlab("")
+
+print(alpha_div_stats)
+
+dv_Df = as.data.frame(alpha_div_stats$data)
+dv_Df$Density = Density_var
+dv_Df$ASVOTU = cluster_var
+dv_Df$Norm = "Rarefaction"
+dv_Df$Depth = name2
+dv_Df <- tibble::rownames_to_column(dv_Df, "samples")  #Convert to column
+print(head(dv_Df))
+
+df_clean_clr = dv_Df[,c("Original.ID","samples","Density","ASVOTU", "Norm", "Depth", "Fill", "Season", item3)]
+#df_clean_clr = dv_Df[,c("Original.ID","samples","Density","ASVOTU", "Norm", "Depth", item3)]
+
+setwd(("./div"))
+write.csv (df_clean_clr, paste(name, item3,"ALPHA DIVERSITY STATS.csv"))
+
+setwd("..")
+getwd()
+#write.csv (alpha_div_stats$data, "Shannon diversitsy_stats.csv")
+
+#Export plot to .tif file 
+setwd(("./Alpha_box"))
+tiff(paste(name, item3, "Alpha Diversity ttest.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(alpha_div_stats)
+dev.off()
+setwd("..")
+getwd()
+}
+
+}
+###############################################################
+#CALL Function 
+alpha_=c("Observed", "Chao1", "ACE", "Shannon", "Simpson", "InvSimpson")
+
+plot_ = c("diversity_inverse_simpson", "chao1", "observed","diversity_shannon","evenness_pielou", "evenness_simpson", "dominance_gini", "dominance_simpson", "diversity_gini_simpson")
+
+alpha_diversity_rare(ps.rarefied.10, "Rare_10000", "ten", alpha_, plot_) 
+alpha_diversity_rare(ps.rarefied.30, "Rare_30000", "thirty",alpha_, plot_) 
+alpha_diversity_rare(ps.rarefied.50, "Rare_50000", "fifty",alpha_, plot_) 
+ 
+################################################################
+##############################################################
+#Function - CLR data
+alpha_diversity_norm <- function(ps_object, alpha_vars, name, name2){
+  
+#ps_object = phyloseq object
+#name = string
+#name 2 = string
+#alpha_vars = alpha diversity variables
+
+print(ps_object)
+set.seed(99)
+#Alpha diversity
+
+for (item in alpha_vars){
+  print(item)
+#Creating a PLot with one index or stats
+alpha_div_stats <- plot_diversity_stats(ps_object, group = "Fill", 
+                     index = item,
+                     #group.order = c("gut","tongue","right palm", "left palm"),                      
+                     group.colors = nice_colors,
+                     label.format="p.format",
+                     stats = TRUE) + ylab(item) + xlab("")
+
+print(alpha_div_stats)
+
+dv_Df = as.data.frame(alpha_div_stats$data)
+dv_Df$Density = Density_var
+dv_Df$ASVOTU = cluster_var
+dv_Df$Norm = "CLR"
+dv_Df$Depth = name2
+dv_Df <- tibble::rownames_to_column(dv_Df, "samples")  #Convert to column
+print(head(dv_Df))
+
+setwd(("./Alpha_box"))
+tiff(paste(name,item, "ALPHA Diversity.jpeg", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(alpha_div_stats)
+dev.off()
+setwd("..")
+getwd()
+
+df_clean_clr = dv_Df[,c("Original.ID","samples","Density","ASVOTU", "Norm", "Depth", "Fill", "Season", item)]
+
+setwd(("./div"))
+write.csv (df_clean_clr, paste(name, item,"ALPHA DIVERSITY STATS.csv"))
+
+setwd("..")
+getwd()
+}
+}
+#############################################
+#call function
+alpha_vars = c("diversity_inverse_simpson", "chao1", "observed","diversity_shannon","evenness_pielou", "evenness_simpson", "dominance_gini", "dominance_simpson", "diversity_gini_simpson")
+
+alpha_diversity_norm(ps.clr, alpha_vars,"CLR", "none") 
+```
+
+#Beta Diversity
+```{r}
+####################################################################################
+#FUNCTION 
+########################################################################
+#ps_object = phyloseq object
+#name = identifier
+#meth2 = clustering method
+#name_depth = sequencing depth
+#meth_distance = distance metric
+beta_diversity_values<- function(ps_object, name, meth2, name_depth, meth_dist){
+setwd(("./div"))
+otu <- abundances(ps_object) 
+meta <- meta(ps_object)
+
+r = 1 #rows
+c= 1 #cols
+#Add pseudocounts
+#print(dim(otu))
+row_n = dim(otu)[1]
+col_n = dim(otu)[2]
+while (r <= row_n){
+  c=1
+  while (c<=col_n){
+  if(otu[r,c]==0){
+    #print('yes')
+    otu[r,c]=1}
+    c=c+1
+  }
+  r=r+1
+}
+
+dist <- vegdist(t(otu), meth_dist)
+#print(dist)
+a<- anova(betadisper(dist, meta$Facility))
+write.csv(tidy(a), paste(name, meth_dist,"ANOVA Composition Method by Facility.csv",sep=" "))
+
+#Remove "inf from distnce
+len = length(dist)
+#Add pseudocounts
+j = 1
+while (j <= len){
+    if(dist[j]==Inf || dist[j] ==-Inf){
+    print('yes')
+    dist[j]=0}
+    j=j+1
+}
+
+#Create boxplot beta diversity 
+bd = betadisper(dist, group = meta$Season)
+plot(bd)
+
+#convert to data
+new_beta_df = cbind(bd$distances)
+new_beta_df<-as.data.frame(new_beta_df)
+
+#print(meth2)
+if (meth2=="CLR"){
+  print("Add psueodocount")
+  new_beta_df<- new_beta_df + 2.40359071112327
+}
+
+#Reshape data so using tidyr to stack data
+new_beta_df<-  new_beta_df %>% 
+    rownames_to_column('Sample')
+head(new_beta_df)
+#write.csv(new_beta_df, "new_beta.csv")
+new_beta_df <- cbind(new_beta_df, bd$group)
+names(new_beta_df) = c("Sample", "Distance", "Facility")
+print(head(new_beta_df))
+
+new_beta_df$Density = Density_var
+new_beta_df$ASVOTU = cluster_var
+new_beta_df$Normal = meth2
+new_beta_df$Depth = name_depth
+new_beta_df$Season = meta$Season
+new_beta_df$Facility = meta$Facility 
+new_beta_df$dummy_fill = "dummy_fill"
+
+print(new_beta_df)
+
+new_beta_df_clean<- new_beta_df[,c("Sample", "Density", "ASVOTU", "Normal","Depth", "Facility", "Season", "Distance", "dummy_fill")]
+
+write.csv(new_beta_df_clean, paste(name,meth_dist, "BETA.csv",sep=" "))
+setwd("..")
+getwd()
+}
+
+################################################################################
+#Call Function 
+beta_diversity_values(ps.rarefied.10, "Rare10__", "Rarefaction", "ten", "bray")
+beta_diversity_values(ps.rarefied.50, "Rare50__", "Rarefaction", "fifty", "bray")
+beta_diversity_values(ps.rarefied.30, "Rare30__", "Rarefaction", "thirty", "bray")
+
+beta_diversity_values(ps.rarefied.10, "Rare10__", "Rarefaction", "ten", "euclidean")
+beta_diversity_values(ps.rarefied.50, "Rare50__", "Rarefaction", "fifty", "euclidean")
+beta_diversity_values(ps.rarefied.30, "Rare30__", "Rarefaction", "thirty", "euclidean")
+
+beta_diversity_values(ps.rarefied.10, "Rare10__", "Rarefaction", "ten", "aitchison")
+beta_diversity_values(ps.rarefied.50, "Rare50__", "Rarefaction", "fifty", "aitchison")
+beta_diversity_values(ps.rarefied.30, "Rare30__", "Rarefaction", "thirty", "aitchison")
+```
+
+#Taxa Calcluations -Finding Missing Genera
+```{r}
+#FUNCTION###########################################################################
+List_taxa <- function(ps_object, name){
+#ps_object = phyloseq object
+#name = string 
+  
+grp_abund <- get_group_abundances(ps_object, 
+                                  level = "Genus", 
+                                  group=NULL,
+                                  transform = "compositional")
+
+grp_abund$OTUID <- gsub("p__", "",grp_abund$OTUID)
+grp_abund$OTUID <- ifelse(grp_abund$OTUID == "", 
+                          "Unclassified", grp_abund$OTUID)
+
+setwd(("./tornado_plot"))
+write.csv(grp_abund, paste(name, "Mean Abundance Genus.csv", sep=" "))
+  
+#filter out unidentified genus
+abund_df = grp_abund
+dim(abund_df)
+
+#sort abund_df by mean
+abund_df = as.data.frame(abund_df)
+newdata <- abund_df[order(abund_df$mean_abundance, decreasing = TRUE),]
+newdata[1:10,]
+
+write.csv (newdata[1:10,],paste(name,"Top Ten Genus .csv", sep = " "))
+
+ten_df <- as.data.frame(newdata[1:10,])  # input data
+
+#clean strings
+i=1
+while (i <= dim(ten_df)[1]){
+#If string starts with "k"
+if (substr(ten_df[i,1],1,1)=="k") {
+  ten_df[i,1] =sapply(str_split(ten_df[i,1],"f__",),'[',2)  #split at order 
+}
+else  
+ten_df[i,1]=sapply(str_split(ten_df[i,1],"g__",),'[',2)  #Remove g from genus 
+i=i+1
+}
+
+print(ten_df)
+bar <-ggplot(ten_df, aes(x=reorder(OTUID,-mean_abundance), y=mean_abundance)) + 
+geom_bar(stat = "identity", color= "cadetblue1", fill = "cadetblue1")+
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+theme(text = element_text(size=40,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+
+  scale_x_discrete(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+ #Force axis to start at 0 
+  #ggtitle((name))+
+   ylab(expression(bold("Mean Abundance")))+ #change y label
+  xlab(expression(bold("Genus")))+
+  theme(axis.ticks.x = element_blank())+ # Remove x axis tick marks
+  coord_flip() # rotate plot 
+
+print(bar)
+
+#Export plot to .tif file 
+tiff(paste(name, "Mean Compositional Abundance Genus single bar.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(bar)
+dev.off()
+
+setwd("..")
+getwd()
+}
+####################################################################################
+#CALL FUNCTion
+List_taxa(ps.rarefied.10 , "Rare_10_")
+List_taxa(ps.rarefied.30 , "Rare_30_")
+List_taxa(ps.rarefied.50 , "Rare_50_")
+List_taxa(ps, "Raw_")
+List_taxa(ps.clr , "clr")
+```
+
+#Rare Taxa Tornado Plots
+```{r}
+#FUNCTION###########################################################################
+List_rare_taxa <- function(ps_object, name){
+#Get group abundances 
+print(ps_object)
+grp_abund <- get_group_abundances(ps_object, 
+                                  level = "Genus", 
+                                  group=NULL,
+                                  transform = "compositional")
+
+grp_abund$OTUID <- gsub("p__", "",grp_abund$OTUID)
+grp_abund$OTUID <- ifelse(grp_abund$OTUID == "", 
+                          "Unclassified", grp_abund$OTUID)
+
+setwd(("./rare_tax plots"))
+write.csv(grp_abund, paste(name, "Mean Abundance Genus.csv", sep=" "))
+setwd("..")
+getwd()
+
+#filter out unidentified genus
+abund_df = grp_abund
+dim(abund_df)
+
+#sort abund_df by mean
+abund_df = as.data.frame(abund_df)
+newdata <- abund_df[order(abund_df$mean_abundance, decreasing = TRUE),]
+#Filter data for > 0.1 
+
+newdata_0.1 <- newdata %>% filter(mean_abundance >= 0.1)
+print ('> 0.1%')
+print(newdata_0.1)
+
+newdata_0.01 <- newdata %>% filter(mean_abundance >= 0.01) %>% filter(mean_abundance < 0.1)
+print ('> 0.01%')
+print(newdata_0.01)
+
+#filter out unassigned
+newdata_0.001 <- newdata %>% filter(mean_abundance >= 0.001) %>% filter(mean_abundance < 0.01)
+target <- c("k__Bacteria_p___c___o___f___g_", "Unassigned_p___c___o___f___g__")
+newdata_0.001=filter(newdata_0.001, !(newdata_0.001$OTUID %in% target))
+
+print ('> 0.010%')
+print(newdata_0.001)
+newdata_0.001<- as.data.frame(newdata_0.001)
+#CLEAN STRINGS FUNCTION 
+clean_strings <- function (df_object){
+#clean strings
+i=1
+while (i <= dim(df_object)[1]){
+#If string starts with "k"
+if (substr(df_object[i,1],1,1)=="k") {
+  df_object[i,1] =sapply(str_split(df_object[i,1],"o__",),'[',2)  #split at order
+  print('cut')
+}
+else  
+(df_object[i,1]=sapply(str_split(df_object[i,1],"g__",),'[',2))  #Remove g from genus 
+i=i+1
+}
+return(df_object)
+}
+
+taxa_0.001 = clean_strings(newdata_0.001)
+taxa_0.01 = clean_strings(newdata_0.01)
+taxa_0.1 = clean_strings(newdata_0.1)
+
+setwd(("./rare_tax plots"))
+write.csv(newdata_0.01, paste(name, "taxa_0.01-0.1.csv"))
+write.csv(taxa_0.001, paste(name,"taxa_0.001-0.01.csv"))
+write.csv(taxa_0.1, paste(name,"taxa above 0.1.csv"))
+
+#PLOT 1
+bar1 <-ggplot(taxa_0.001, aes(x=reorder(OTUID,-mean_abundance), y=mean_abundance)) + 
+geom_bar(stat = "identity", color= "cadetblue1", fill = "cadetblue1")+
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+theme(text = element_text(size=25,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+
+  scale_x_discrete(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+ #Force axis to start at 0 
+   ylab(expression(bold("Mean Abundance")))+ #change y label
+  xlab(expression(bold("Genus")))+
+  theme(axis.ticks.x = element_blank())+ # Remove x axis tick marks
+  coord_flip() # rotate plot 
+
+print(bar1)
+
+#Export plot to .tif file 
+tiff(paste(name, "0.001-0.01 Bin Mean Compositional Abundance Genus single bar.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(bar1)
+dev.off()
+
+#PLOT 2
+bar2 <-ggplot(taxa_0.01, aes(x=reorder(OTUID,-mean_abundance), y=mean_abundance)) + 
+geom_bar(stat = "identity", color= "cadetblue1", fill = "cadetblue1")+
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+theme(text = element_text(size=30,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+
+  scale_x_discrete(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+ #Force axis to start at 0 
+   ylab(expression(bold("Mean Abundance")))+ #change y label
+  xlab(expression(bold("Genus")))+
+  theme(axis.ticks.x = element_blank())+ # Remove x axis tick marks
+  coord_flip() # rotate plot 
+
+print(bar2)
+
+#Export plot to .tif file 
+tiff(paste(name, "0.01-0.1 Bin Mean Compositional Abundance Genus single bar.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(bar2)
+dev.off()
+
+#PLOT 3
+bar3 <-ggplot(taxa_0.1, aes(x=reorder(OTUID,-mean_abundance), y=mean_abundance)) + 
+geom_bar(stat = "identity", color= "cadetblue1", fill = "cadetblue1")+
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+theme(text = element_text(size=25,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+
+  scale_x_discrete(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+ #Force axis to start at 0 
+  #ggtitle((name))+
+   ylab(expression(bold("Mean Abundance")))+ #change y label
+  xlab(expression(bold("Genus")))+
+  theme(axis.ticks.x = element_blank())+ # Remove x axis tick marks
+  coord_flip() # rotate plot 
+
+print(bar3)
+
+#Export plot to .tif file 
+tiff(paste(name, "above 0.1 Bin Mean Compositional Abundance Genus single bar.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(bar3)
+dev.off()
+
+setwd("..")
+getwd()
+}
+####################################################################################
+#CALL FUNCTion
+List_rare_taxa(ps, "ps_")
+List_rare_taxa(ps.rarefied.10 , "Rare_10_")
+List_rare_taxa(ps.rarefied.50 , "Rare_50_")
+List_rare_taxa(ps.rarefied.30 , "Rare_30_")
+```
+
+#Core Microbiota
+```{r}
+#Function##########################################################################
+#ps_object - phyloseq object
+#name = string 
+
+core_taxa <- function(ps_object, name){
+
+setwd(("./core"))
+
+pseq.rel <- microbiome::transform(ps_object, "compositional")
+#Relative population frequencies; at 1% compositional abundance threshold:
+head(prevalence(pseq.rel, detection = 1/100, sort = TRUE))
+# With compositional (relative) abundances
+det <- c(0, 0.1, 0.5, 2, 5, 20)/100
+prevalences <- seq(.05, 1, .05)
+
+core_line<- plot_core(pseq.rel, 
+          prevalences = prevalences, 
+          detections = det, 
+          plot.type = "lineplot") + 
+  xlab("Relative Abundance (%)")+
+  theme(text = element_text(size = 20),panel.background = element_blank(),axis.line = element_line(colour = "black"))
+
+print(core_line)
+
+write.csv(core_line$data, paste(name,"Core Abudnance Size.csv"))
+
+tiff(paste(name, "Core line.tif", sep=" "), res=300, compression = "lzw", height=9, width=15, units="in")
+print(core_line)
+dev.off()
+
+# convert to relative abundance  
+physeq.rel <- microbiome::transform(ps_object, "compositional")
+
+physeq.rel <- aggregate_taxa(physeq.rel,"Genus")
+
+physeq.rel2 <- prune_taxa(taxa_sums(physeq.rel) > 0, physeq.rel)
+
+core.taxa.standard <- core_members(physeq.rel2, detection = 0.001, prevalence = 50/100)
+print(core.taxa.standard)
+write.csv(core.taxa.standard, paste(name, "core standard.csv"))
+
+#Get classification
+# Extract the taxonomy table
+taxonomy_core <- as.data.frame(tax_table(physeq.rel2))
+
+# Subset this taxonomy table to include only core OTUs
+core_taxa_id <- subset(taxonomy_core, rownames(taxonomy_core) %in% core.taxa.standard)
+core_taxa_id
+write.csv(core_taxa_id, "Core taxa id.csv")
+
+DT::datatable(core_taxa_id)
+
+#Sum of core abundances
+core.abundance <- sample_sums(core(physeq.rel2, detection = 0.001, prevalence = 50/100))
+core.abundance
+
+rare_tax <- rare_members(physeq.rel2, detection = 1/100, prevalence = 50/100, include.lowest = FALSE)
+rare_tax
+write.csv(core.abundance, "Core abundance Sample Sums.csv")
+
+DT::datatable(as.data.frame(core.abundance))
+
+setwd("..")
+getwd()
+}
+################################################################
+core_taxa(ps.rarefied.10, "Rare 10__")
+core_taxa(ps.rarefied.30, "Rare 30__")
+core_taxa(ps.rarefied.50, "Rare 50__")
+core_taxa(ps, "PS__")
+core_taxa(ps.clr, "CLR__")
+```
