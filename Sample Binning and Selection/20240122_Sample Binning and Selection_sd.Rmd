@@ -1,0 +1,164 @@
+---
+title: "Sample Assignment and Selection"
+author: "Sarah Daly"
+date: "2023-08-14"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+Purpose:  Assign Density Bins to APC values and select 100 random samples per density category 
+Input:  .csv
+
+#Set working directory and load packages 
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review Paper/Manuscript/Code/Sample Binning and Selection")
+list.files()
+```
+
+#Load pacakges 
+```{r}
+library(dplyr) #filtering
+library(tidyr) #https://uc-r.github.io/tidyr
+library(ggplot2)
+library(hrbrthemes) #plotting
+```
+
+#Load Data Files 
+```{r}
+#Read major metadata file
+df_meta<- read.csv("All Samples Metadata.csv", na.strings="NA")
+head(df_meta)
+```
+
+#Convert data to log
+```{r}
+df_merged= df_meta
+#Convert APC to log
+df_merged$APC_log <- log10(as.numeric(df_merged$APC))
+#Replace inf values to zero 
+df_merged$APC_log <-replace(df_merged$APC_log, df_merged$APC_log ==-Inf, 0)
+df_merged$APC_log
+
+head(df_merged)
+```
+
+#Add "Keep" column
+```{r}
+#Upload metadata file
+df_keep <-read.csv("Aug25_SamplesPass50.csv", na.strings = "NA")
+
+#Convert to vector
+keeps<- as.vector(df_keep$ID)
+
+#Test if dataframe contains any element in "keeps" 
+df_merged$keep<- df_merged$sample.id  %in% keeps
+head(df_merged)
+
+```
+
+#Creating bins
+```{r}
+#Omit NA
+dim(df_merged)
+df_merged<-df_merged[!is.na(df_merged$APC_log), ]
+dim(df_merged)
+
+#APC high, medium low bins
+i = 1
+no_samples = dim(df_merged)[1]
+
+while (i <= no_samples ) {
+print(df_merged$APC_log[i])
+
+#Low Bin <=3
+if (df_merged$APC_log[i] <= 3) {
+df_merged$APC_bin[i] =  "Low"
+}
+
+if (df_merged$APC_log[i] >= 5) {
+df_merged$APC_bin[i] =  "High"
+}
+
+if (df_merged$APC_log[i] > 3 && df_merged$APC_log[i] < 5 ) {
+df_merged$APC_bin[i] =  "Medium"
+}
+i = i+1
+}
+
+head(df_merged)
+
+#Put in ascending order 
+d= arrange(df_merged,desc(APC_bin))
+head(d)
+write.csv(d, "Metadata_Binned.csv")
+```
+
+#Create graphs of bins
+```{r}
+#APC
+apc_bins <- ggplot(df_merged, aes(x = APC_bin, y = APC_log, )) +    # Create boxplot chart in ggplot2
+  geom_boxplot()+
+  geom_jitter(color="red", size=2, alpha=0.9) +
+    theme_ipsum() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)
+    ) +
+    ggtitle(paste0("mean = ", round(mean(df_merged$APC_log),2), "  stdev= ", round(sd(df_merged$APC_log),2) )) +
+    xlab("") +
+  theme(text = element_text(size=14,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 0.75, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+ylab(expression(bold(paste("APC (CFU/mL) "))))+ #change y label
+  scale_x_discrete(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+ #Force axis to start at 0 
+  theme(axis.ticks.x = element_blank()) # Remove x axis tick marks
+
+apc_bins
+
+tiff(paste("APC Box and whiskers.tif", sep=" "), res=300, compression = "lzw", height=9, width=5, units="in")
+print(apc_bins)
+dev.off()
+```
+
+#Select 100 samples 
+```{r}
+#Filter samples 
+df_high <- df_merged %>% filter(keep == TRUE) %>% filter(APC_bin == "High")
+df_medium <- df_merged %>% filter(keep == TRUE) %>% filter(APC_bin == "Medium")
+df_low <- df_merged %>% filter(keep == TRUE) %>% filter(APC_bin == "Low")
+
+#Subset 100 random rows
+set.seed(11)
+dim(df_high)
+df_high_subset<- df_high[sample(nrow(df_high), 100), ]
+#Compare Standard deviations-should be similiar 
+sd(df_high_subset$APC_log)
+mean(df_high_subset$APC_log)
+sd(df_high$APC_log)
+mean(df_high$APC_log)
+write.csv(df_high_subset, "High_100_samples.csv")
+
+#Subset 100 random rows
+set.seed(51)
+dim(df_medium)
+df_med_subset<- df_medium[sample(nrow(df_medium), 100), ]
+#Compare Standard deviations-should be similiar 
+sd(df_med_subset$APC_log)
+mean(df_med_subset$APC_log)
+sd(df_medium$APC_log)
+mean(df_medium$APC_log)
+write.csv(df_med_subset, "Medium_100_samples.csv")
+
+#Subset 100 random rows
+set.seed(212)
+dim(df_low)
+df_low_subset<- df_low[sample(nrow(df_low), 100), ]
+#Compare Standard deviations-should be similiar 
+sd(df_low_subset$APC_log)
+sd(df_low$APC_log)
+write.csv(df_low_subset, "Low_100_samples.csv")
+
+```

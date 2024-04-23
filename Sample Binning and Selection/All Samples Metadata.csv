@@ -1,0 +1,505 @@
+,sample.id,Original.id,Location.Sample.date,Facility,Year,Season,Production,Room,Object,APC
+1,sample-1,1,B.01.2,Facility 2,2022,Fall,During,Raw,Drain,67000
+2,sample-2,1,B.01.4,Facility 2,2023,Spring,During,Raw,Drain,16200
+3,sample-3,1,B.01.3,Facility 2,2023,Winter,During,Raw,Drain,47800
+4,sample-4,10,B.10.2,Facility 2,2022,Fall,During,Raw,Cleaning Tools,1150
+5,sample-5,10,B.10.3,Facility 2,2023,Winter,During,Raw,Cleaning Tools,0
+6,sample-6,11,B.11.2,Facility 2,2022,Fall,During,Raw,Cleaning Tools,20
+7,sample-7,11,B.11.4,Facility 2,2023,Spring,During,Raw,Cleaning Tools,960
+8,sample-8,11,B.11.3,Facility 2,2023,Winter,During,Raw,Cleaning Tools,200
+9,sample-9,12,B.12.3,Facility 2,2023,Winter,During,Raw,Door,2120
+10,sample-10,13,B.13.2,Facility 2,2022,Fall,During,Post-Pasteurization ,Floor Object,819000
+11,sample-11,13,B.13.4,Facility 2,2023,Spring,During,Post-Pasteurization ,Floor Object,4640000
+12,sample-12,13,B.13.3,Facility 2,2023,Winter,During,Post-Pasteurization ,Floor Object,10400
+13,sample-13,15,B.15.2,Facility 2,2022,Fall,During,Filling,Conveyor,3200000
+14,sample-14,15,B.15.4,Facility 2,2023,Spring,During,Filling,Conveyor,2.35E+08
+15,sample-15,15,B.15.3,Facility 2,2023,Winter,During,Filling,Conveyor,1000
+16,sample-16,16,B.16.2,Facility 2,2022,Fall,During,Filling,Wall/Ceiling,231000
+17,sample-17,16,B.16.4,Facility 2,2023,Spring,During,Filling,Wall/Ceiling,4.00E+06
+18,sample-18,16,B.16.3,Facility 2,2023,Winter,During,Filling,Wall/Ceiling,4600
+19,sample-19,17,B.17.2,Facility 2,2022,Fall,During,Filling,Conveyor,76500
+20,sample-20,17,B.17.4,Facility 2,2023,Spring,During,Filling,Conveyor,52800000
+21,sample-21,17,B.17.3,Facility 2,2023,Winter,During,Filling,Conveyor,9.00E+05
+22,sample-22,18,B.18.2,Facility 2,2022,Fall,During,Filling,Wall/Ceiling,95
+23,sample-23,18,B.18.4,Facility 2,2023,Spring,During,Filling,Wall/Ceiling,148000
+24,sample-24,18,B.18.3,Facility 2,2023,Winter,During,Filling,Wall/Ceiling,3160
+25,sample-25,19,B.19.2,Facility 2,2022,Fall,During,Filling,Cart/Rolling Bins,0
+26,sample-26,19,B.19.4,Facility 2,2023,Spring,During,Filling,Cart/Rolling Bins,63600000
+27,sample-27,19,B.19.3,Facility 2,2023,Winter,During,Filling,Cart/Rolling Bins,42200
+28,sample-28,2,B.02.2,Facility 2,2022,Fall,During,Raw,Hose,20
+29,sample-29,2,B.02.4,Facility 2,2023,Spring,During,Raw,Hose,160
+30,sample-30,2,B.02.3,Facility 2,2023,Winter,During,Raw,Hose,760
+31,sample-31,20,B.20.2,Facility 2,2022,Fall,During,Filling,Non-FPE Structure,130
+32,sample-32,20,B.20.4,Facility 2,2023,Spring,During,Filling,Non-FPE Structure,10800
+33,sample-33,20,B.20.3,Facility 2,2023,Winter,During,Filling,Non-FPE Structure,400
+34,sample-34,21,B.21.2,Facility 2,2022,Fall,During,Filling,Drain,1600000
+35,sample-35,21,B.21.3,Facility 2,2023,Winter,During,Filling,Drain,108000
+36,sample-36,22,B.22.2,Facility 2,2022,Fall,During,Filling,Non-FPE Structure,96000
+37,sample-37,22,B.22.4,Facility 2,2023,Spring,During,Filling,Non-FPE Structure,1.74E+08
+38,sample-38,22,B.22.3,Facility 2,2023,Winter,During,Filling,Non-FPE Structure,23200000
+39,sample-39,23,B.23.4,Facility 2,2023,Spring,During,Filling,FPE Structure,3760
+40,sample-40,25,B.25.2,Facility 2,2022,Fall,During,Warehouse,Fan/Vent,85
+41,sample-41,25,B.25.4,Facility 2,2023,Spring,During,Warehouse,Fan/Vent,160000
+42,sample-42,25,B.25.3,Facility 2,2023,Winter,During,Warehouse,Fan/Vent,1520
+43,sample-43,26,B.26.2,Facility 2,2022,Fall,During,Warehouse,Door,19500
+44,sample-44,26,B.26.4,Facility 2,2023,Spring,During,Warehouse,Door,1360
+45,sample-45,26,B.26.3,Facility 2,2023,Winter,During,Warehouse,Door,160
+46,sample-46,27,B.27.2,Facility 2,2022,Fall,During,Warehouse,Forklift/Pallet Jack,1080
+47,sample-47,27,B.27.4,Facility 2,2023,Spring,During,Warehouse,Forklift/Pallet Jack,2000
+48,sample-48,27,B.27.3,Facility 2,2023,Winter,During,Warehouse,Forklift/Pallet Jack,0
+49,sample-49,28,B.28.2,Facility 2,2022,Fall,During,Warehouse,Floor Object,725
+50,sample-50,28,B.28.4,Facility 2,2023,Spring,During,Warehouse,Floor Object,9680
+51,sample-51,28,B.28.3,Facility 2,2023,Winter,During,Warehouse,Floor Object,680
+52,sample-52,29,B.29.4,Facility 2,2023,Spring,During,Warehouse,Cleaning Tools,3720
+53,sample-53,29,B.29.3,Facility 2,2023,Winter,During,Warehouse,Cleaning Tools,240
+54,sample-54,3,B.03.2,Facility 2,2022,Fall,During,Raw,Hose,1160
+55,sample-55,3,B.03.4,Facility 2,2023,Spring,During,Raw,Hose,880
+56,sample-56,3,B.03.3,Facility 2,2023,Winter,During,Raw,Hose,4440
+57,sample-57,30,B.30.2,Facility 2,2022,Fall,During,Warehouse,Non-FPE Structure,18900000
+58,sample-58,30,B.30.4,Facility 2,2023,Spring,During,Warehouse,Non-FPE Structure,2.69E+08
+59,sample-59,30,B.30.3,Facility 2,2023,Winter,During,Warehouse,Non-FPE Structure,47200000
+60,sample-60,31,B.31.2,Facility 2,2022,Fall,During,Warehouse,Forklift/Pallet Jack,5500
+61,sample-61,31,B.31.4,Facility 2,2023,Spring,During,Warehouse,Forklift/Pallet Jack,9480
+62,sample-62,31,B.31.3,Facility 2,2023,Winter,During,Warehouse,Forklift/Pallet Jack,1840
+63,sample-63,32,B.32.2,Facility 2,2022,Fall,During,Warehouse,Forklift/Pallet Jack,8000
+64,sample-64,32,B.32.4,Facility 2,2023,Spring,During,Warehouse,Forklift/Pallet Jack,4600
+65,sample-65,32,B.32.3,Facility 2,2023,Winter,During,Warehouse,Forklift/Pallet Jack,2440
+66,sample-66,33,B.33.2,Facility 2,2022,Fall,During,Warehouse,Door,700
+67,sample-67,33,B.33.4,Facility 2,2023,Spring,During,Warehouse,Door,1240
+68,sample-68,33,B.33.3,Facility 2,2023,Winter,During,Warehouse,Door,1280
+69,sample-69,4,B.04.2,Facility 2,2022,Fall,During,Raw,Cleaning Tools,535
+70,sample-70,4,B.04.4,Facility 2,2023,Spring,During,Raw,Cleaning Tools,5480
+71,sample-71,4,B.04.3,Facility 2,2023,Winter,During,Raw,Cleaning Tools,3280
+72,sample-72,5,B.05.2,Facility 2,2022,Fall,During,Raw,Door,340
+73,sample-73,5,B.05.4,Facility 2,2023,Spring,During,Raw,Door,80
+74,sample-74,5,B.05.3,Facility 2,2023,Winter,During,Raw,Door,360
+75,sample-75,6,B.06.2,Facility 2,2022,Fall,During,Raw,Floor Object,35
+76,sample-76,7,B.07.2,Facility 2,2022,Fall,During,Raw,Drain,35
+77,sample-77,7,B.07.4,Facility 2,2023,Spring,During,Raw,Drain,480
+78,sample-78,7,B.07.3,Facility 2,2023,Winter,During,Raw,Drain,40
+79,sample-79,8,B.08.2,Facility 2,2022,Fall,During,Raw,Floor Object,11500
+80,sample-80,8,B.08.4,Facility 2,2023,Spring,During,Raw,Floor Object,3160
+81,sample-81,8,B.08.3,Facility 2,2023,Winter,During,Raw,Floor Object,22900
+82,sample-82,9,B.09.2,Facility 2,2022,Fall,During,Raw,Cart/Rolling Bins,135
+83,sample-83,E1,B.E1.4,Facility 2,2023,Spring,During,Filling,Non-FPE Structure,4240
+84,sample-84,E10,B.E10.4,Facility 2,2023,Spring,During,Post-Pasteurization ,Non-FPE Structure,0
+85,sample-85,E2,B.E2.4,Facility 2,2023,Spring,During,Filling,Forklift/Pallet Jack,72000
+86,sample-86,E3,B.E3.4,Facility 2,2023,Spring,During,Filling,Non-FPE Structure,148000
+87,sample-87,E4,B.E4.4,Facility 2,2023,Spring,During,Warehouse,Conveyor,5520
+88,sample-88,E5,B.E5.4,Facility 2,2023,Spring,During,Warehouse,Door,8480
+89,sample-89,E6,B.E6.4,Facility 2,2023,Spring,During,Warehouse,Non-FPE Structure,7040
+90,sample-90,E7,B.E7.4,Facility 2,2023,Spring,During,Warehouse,Non-FPE Structure,160
+91,sample-91,E8,B.E8.4,Facility 2,2023,Spring,During,Office/Hallway,Floor Object,7440
+92,sample-92,E9,B.E9.4,Facility 2,2023,Spring,During,Post-Pasteurization ,FPE Structure,200
+93,sample-95,E10,B.E10.3,Facility 2,2023,Winter,During,Post-Pasteurization ,Non-FPE Structure,40
+94,sample-96,E10,NL.E10.2,Facility 3,2022,Fall,During,Warehouse,Drain,390
+95,sample-97,E10,NL.E10.3,Facility 3,2023,Winter,During,Warehouse,Drain,8520
+96,sample-98,E11,NL.E11.2,Facility 3,2022,Fall,During,Filling,FPE Structure,1440
+97,sample-99,E11,NL.E11.3,Facility 3,2023,Winter,During,Filling,FPE Structure,18200
+98,sample-100,E12,NL.E12.2,Facility 3,2022,Fall,During,Filling,FPE Structure,1.01E+08
+99,sample-101,E12,NL.E12.3,Facility 3,2023,Winter,During,Filling,FPE Structure,760
+100,sample-102,E13,NL.E13.3,Facility 3,2023,Winter,During,Filling,Floor Object,3040000
+101,sample-103,E1,B.E1.2,Facility 2,2022,Fall,During,Filling,Non-FPE Structure,255
+102,sample-104,E1,B.E1.3,Facility 2,2023,Winter,During,Filling,Non-FPE Structure,25500
+103,sample-105,E1,NL.E1.2,Facility 3,2022,Fall,During,Office/Hallway,Non-FPE Structure,0
+104,sample-106,E1,WS.E1.2,Facility 1,2022,Fall,During,Warehouse,Non-FPE Structure,0
+105,sample-107,E2,B.E2.2,Facility 2,2022,Fall,During,Filling,Forklift/Pallet Jack,7500
+106,sample-108,E2,B.E2.3,Facility 2,2023,Winter,During,Filling,Forklift/Pallet Jack,2320
+107,sample-109,E2,NL.E2.2,Facility 3,2022,Fall,During,Office/Hallway,Non-FPE Structure,35000
+108,sample-110,E2,NL.E2.3,Facility 3,2023,Winter,During,Office/Hallway,Non-FPE Structure,4440
+109,sample-111,E2,WS.E2.2,Facility 1,2022,Fall,During,Warehouse,Drain,55700000
+110,sample-112,E2,WS.E2.3,Facility 1,2023,Winter,During,Warehouse,Drain,2.90E+08
+111,sample-113,E3,B.E3.2,Facility 2,2022,Fall,During,Filling,Non-FPE Structure,1950
+112,sample-114,E3,B.E3.3,Facility 2,2023,Winter,During,Filling,Non-FPE Structure,80
+113,sample-115,E3,NL.E3.2,Facility 3,2022,Fall,During,Office/Hallway,Hose,2250000
+114,sample-116,E3,WS.E3.2,Facility 1,2022,Fall,During,Warehouse,Drain,4.80E+07
+115,sample-117,E4,B.E4.2,Facility 2,2022,Fall,During,Warehouse,Conveyor,1520
+116,sample-118,E4,B.E4.3,Facility 2,2023,Winter,During,Warehouse,Conveyor,2800
+117,sample-119,E4,NL.E4.2,Facility 3,2022,Fall,During,Filling,Non-FPE Structure,0
+118,sample-120,E4,NL.E4.3,Facility 3,2023,Winter,During,Filling,Non-FPE Structure,160
+119,sample-121,E4,WS.E4.2,Facility 1,2022,Fall,During,Warehouse,Conveyor,940
+120,sample-122,E4,WS.E4.3,Facility 1,2023,Winter,During,Warehouse,Conveyor,292000
+121,sample-123,E5,B.E5.2,Facility 2,2022,Fall,During,Warehouse,Door,575
+122,sample-124,E5,B.E5.3,Facility 2,2023,Winter,During,Warehouse,Door,4120
+123,sample-125,E5,NL.E5.2,Facility 3,2022,Fall,During,Filling,Non-FPE Structure,90000
+124,sample-126,E5,WS.E5.2,Facility 1,2022,Fall,During,Warehouse,Conveyor,650000
+125,sample-127,E5,WS.E5.3,Facility 1,2023,Winter,During,Warehouse,Conveyor,116000
+126,sample-128,E6,B.E6.2,Facility 2,2022,Fall,During,Warehouse,Non-FPE Structure,4000
+127,sample-129,E6,B.E6.3,Facility 2,2023,Winter,During,Warehouse,Non-FPE Structure,120
+128,sample-130,E6,NL.E6.2,Facility 3,2022,Fall,During,Filling,NA,NA
+129,sample-131,E6,WS.E6.2,Facility 1,2022,Fall,During,Office/Hallway,Floor Object,4.00E+05
+130,sample-132,E6,WS.E6.3,Facility 1,2023,Winter,During,Office/Hallway,Floor Object,140000
+131,sample-133,E7,B.E7.2,Facility 2,2022,Fall,During,Warehouse,Floor Object,715
+132,sample-134,E7,B.E7.3,Facility 2,2023,Winter,During,Warehouse,Non-FPE Structure,1800
+133,sample-135,E7,NL.E7.2,Facility 3,2022,Fall,During,Filling,FPE Structure,NA
+134,sample-136,E7,WS.E7.2,Facility 1,2022,Fall,During,Raw,Floor Object,11000
+135,sample-137,E7,WS.E7.3,Facility 1,2023,Winter,During,Raw,Floor Object,35600000
+136,sample-138,E8,B.E8.2,Facility 2,2022,Fall,During,Office/Hallway,Floor Object,4500
+137,sample-139,E8,B.E8.3,Facility 2,2023,Winter,During,Office/Hallway,Floor Object,6200
+138,sample-140,E8,NL.E8.2,Facility 3,2022,Fall,During,Warehouse,Wall/Ceiling,1590
+139,sample-141,E8,NL.E8.3,Facility 3,2023,Winter,During,Warehouse,Wall/Ceiling,508000
+140,sample-142,E8,WS.E8.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Door,600
+141,sample-143,E9,B.E9.3,Facility 2,2023,Winter,During,Post-Pasteurization ,FPE Structure,2290000
+142,sample-144,E9,NL.E9.2,Facility 3,2022,Fall,During,Warehouse,Floor Object,2400000
+143,sample-145,E9,NL.E9.3,Facility 3,2023,Winter,During,Warehouse,Floor Object,128000
+144,sample-150,1,NL.01.2,Facility 3,2022,Fall,During,Raw,Floor Object,140000
+145,sample-151,1,NL.01.4,Facility 3,2023,Spring,During,Raw,Floor Object,480
+146,sample-152,1,NL.01.3,Facility 3,2023,Winter,During,Raw,Floor Object,5000
+147,sample-153,10,NL.10.2,Facility 3,2022,Fall,During,Post-Pasteurization ,Wall/Ceiling,950000
+148,sample-154,10,NL.10.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Wall/Ceiling,240000
+149,sample-155,10,NL.10.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Wall/Ceiling,308000
+150,sample-156,11,NL.11.2,Facility 3,2022,Fall,During,Post-Pasteurization ,Cart/Rolling Bins,10500
+151,sample-157,11,NL.11.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Cart/Rolling Bins,2.00E+05
+152,sample-158,11,NL.11.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Cart/Rolling Bins,2.26E+08
+153,sample-159,12,NL.12.2,Facility 3,2022,Fall,During,Post-Pasteurization ,Drain,380000
+154,sample-160,12,NL.12.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Drain,4100000
+155,sample-161,12,NL.12.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Drain,8.74E+08
+156,sample-162,13,NL.13.2,Facility 3,2022,Fall,During,Post-Pasteurization ,Drain,119000
+157,sample-163,13,NL.13.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Drain,29600000
+158,sample-164,13,NL.13.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Drain,1660000
+159,sample-165,14,NL.14.2,Facility 3,2022,Fall,During,Post-Pasteurization ,Floor Object,8500000
+160,sample-166,14,NL.14.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Floor Object,4.97E+08
+161,sample-167,14,NL.14.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Floor Object,1.00E+06
+162,sample-168,15,NL.15.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Floor Object,21200
+163,sample-169,15,NL.15.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Floor Object,11500
+164,sample-170,17,NL.17.2,Facility 3,2022,Fall,During,Post-Pasteurization ,Hose,2940
+165,sample-171,17,NL.17.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Hose,7600
+166,sample-172,17,NL.17.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Hose,6800
+167,sample-173,3,NL.02.2,Facility 3,2022,Fall,During,Raw,Non-FPE Structure,93000
+168,sample-174,2,NL.02.4,Facility 3,2023,Spring,During,Raw,Non-FPE Structure,98400000
+169,sample-175,2,NL.02.3,Facility 3,2023,Winter,During,Raw,Non-FPE Structure,1560000
+170,sample-176,20,NL.20.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Wall/Ceiling,120
+171,sample-177,21,NL.21.2,Facility 3,2022,Fall,During,Warehouse,Forklift/Pallet Jack,2050
+172,sample-178,21,NL.21.4,Facility 3,2023,Spring,During,Warehouse,Forklift/Pallet Jack,840
+173,sample-179,21,NL.21.3,Facility 3,2023,Winter,During,Warehouse,Forklift/Pallet Jack,9880
+174,sample-180,22,NL.22.4,Facility 3,2023,Spring,During,Filling,Drain,592000
+175,sample-181,22,NL.22.3,Facility 3,2023,Winter,During,Filling,Drain,13600
+176,sample-182,23,NL.23.2,Facility 3,2022,Fall,During,Filling,Drain,1840
+177,sample-183,23,NL.23.4,Facility 3,2023,Spring,During,Filling,Drain,0
+178,sample-184,23,NL.23.3,Facility 3,2023,Winter,During,Filling,Drain,5120
+179,sample-185,24,NL.24.4,Facility 3,2023,Spring,During,Filling,Conveyor,3480
+180,sample-186,24,NL.24.3,Facility 3,2023,Winter,During,Filling,Conveyor,152000
+181,sample-187,25,NL.25.2,Facility 3,2022,Fall,During,Filling,Non-FPE Structure,0
+182,sample-188,26,NL.26.2,Facility 3,2022,Fall,During,Filling,Drain,11500
+183,sample-189,26,NL.26.4,Facility 3,2023,Spring,During,Filling,Drain,66200
+184,sample-190,26,NL.26.3,Facility 3,2023,Winter,During,Filling,Drain,40
+185,sample-191,27,NL.27.2,Facility 3,2022,Fall,During,Filling,Cleaning Tools,15
+186,sample-192,28,NL.28.2,Facility 3,2022,Fall,During,Filling,Conveyor,11500
+187,sample-193,28,NL.28.3,Facility 3,2023,Winter,During,Filling,Conveyor,6080
+188,sample-194,29,NL.29.2,Facility 3,2022,Fall,During,Filling,Wall/Ceiling,0
+189,sample-195,3,NL.03.2,Facility 3,2022,Fall,During,Warehouse,Forklift/Pallet Jack,160
+190,sample-196,3,NL.03.4,Facility 3,2023,Spring,During,Warehouse,Forklift/Pallet Jack,3.00E+05
+191,sample-197,3,NL.03.3,Facility 3,2023,Winter,During,Warehouse,Forklift/Pallet Jack,588000
+192,sample-198,30,NL.30.4,Facility 3,2023,Spring,During,Filling,Hose,1120
+193,sample-199,30,NL.30.3,Facility 3,2023,Winter,During,Filling,Hose,0
+194,sample-200,31,NL.31.2,Facility 3,2022,Fall,During,Filling,Door,335
+195,sample-201,31,NL.31.3,Facility 3,2023,Winter,During,Filling,Door,200
+196,sample-202,32,NL.32.2,Facility 3,2022,Fall,During,Filling,FPE Structure,980
+197,sample-203,32,NL.32.3,Facility 3,2023,Winter,During,Filling,FPE Structure,21100
+198,sample-204,33,NL.33.2,Facility 3,2022,Fall,During,Filling,Door,3870
+199,sample-205,33,NL.33.4,Facility 3,2023,Spring,During,Filling,Door,160
+200,sample-206,33,NL.33.3,Facility 3,2023,Winter,During,Filling,Door,160
+201,sample-207,34,NL.34.3,Facility 3,2023,Winter,During,Filling,FPE Structure,120000
+202,sample-208,35,NL.35.2,Facility 3,2022,Fall,During,Warehouse,Door,65
+203,sample-209,36,NL.36.2,Facility 3,2022,Fall,During,Filling,FPE Structure,635
+204,sample-210,36,NL.36.3,Facility 3,2023,Winter,During,Filling,FPE Structure,760
+205,sample-211,37,NL.37.2,Facility 3,2022,Fall,During,Filling,Conveyor,125
+206,sample-212,37,NL.37.4,Facility 3,2023,Spring,During,Filling,Conveyor,240
+207,sample-213,37,NL.37.3,Facility 3,2023,Winter,During,Filling,Conveyor,3920
+208,sample-214,38,NL.38.4,Facility 3,2023,Spring,During,Filling,FPE Structure,1000
+209,sample-215,38,NL.38.3,Facility 3,2023,Winter,During,Filling,FPE Structure,1080
+210,sample-216,39,NL.39.2,Facility 3,2022,Fall,During,Filling,Conveyor,35
+211,sample-217,39,NL.39.4,Facility 3,2023,Spring,During,Filling,Conveyor,360
+212,sample-218,39,NL.39.3,Facility 3,2023,Winter,During,Filling,Conveyor,600
+213,sample-219,4,NL.04.2,Facility 3,2022,Fall,During,Warehouse,Forklift/Pallet Jack,10500
+214,sample-220,4,NL.04.4,Facility 3,2023,Spring,During,Warehouse,Forklift/Pallet Jack,6560
+215,sample-221,4,NL.04.3,Facility 3,2023,Winter,During,Warehouse,Forklift/Pallet Jack,356000
+216,sample-222,40,NL.40.2,Facility 3,2022,Fall,During,Filling,Drain,15000
+217,sample-223,40,NL.40.4,Facility 3,2023,Spring,During,Filling,Drain,6160000
+218,sample-224,40,NL.40.3,Facility 3,2023,Winter,During,Filling,Drain,14200
+219,sample-225,41,NL.41.2,Facility 3,2022,Fall,During,Filling,Conveyor,30
+220,sample-226,41,NL.41.4,Facility 3,2023,Spring,During,Filling,Conveyor,520
+221,sample-227,41,NL.41.3,Facility 3,2023,Winter,During,Filling,Conveyor,480
+222,sample-228,42,NL.42.2,Facility 3,2022,Fall,During,Filling,Hose,2030
+223,sample-229,42,NL.42.4,Facility 3,2023,Spring,During,Filling,Hose,240
+224,sample-230,42,NL.42.3,Facility 3,2023,Winter,During,Filling,Hose,48600
+225,sample-231,43,NL.43.2,Facility 3,2022,Fall,During,Filling,Drain,8700000
+226,sample-232,43,NL.43.4,Facility 3,2023,Spring,During,Filling,Drain,16700
+227,sample-233,43,NL.43.3,Facility 3,2023,Winter,During,Filling,Drain,128000
+228,sample-234,44,NL.44.2,Facility 3,2022,Fall,During,Filling,Non-FPE Structure,25
+229,sample-235,44,NL.44.4,Facility 3,2023,Spring,During,Filling,Non-FPE Structure,1320
+230,sample-236,44,NL.44.3,Facility 3,2023,Winter,During,Filling,Non-FPE Structure,13600000
+231,sample-237,45,NL.45.2,Facility 3,2022,Fall,During,Filling,Drain,52500
+232,sample-238,45,NL.45.3,Facility 3,2023,Winter,During,Filling,Drain,720
+233,sample-239,46,NL.46.2,Facility 3,2022,Fall,During,Filling,Non-FPE Structure,1020
+234,sample-240,46,NL.46.4,Facility 3,2023,Spring,During,Filling,Non-FPE Structure,1320
+235,sample-241,46,NL.46.3,Facility 3,2023,Winter,During,Filling,Non-FPE Structure,3.00E+05
+236,sample-242,47,NL.47.2,Facility 3,2022,Fall,During,Filling,FPE Structure,135
+237,sample-243,47,NL.47.4,Facility 3,2023,Spring,During,Filling,FPE Structure,440000
+238,sample-244,47,NL.47.3,Facility 3,2023,Winter,During,Filling,FPE Structure,2720
+239,sample-245,48,NL.48.2,Facility 3,2022,Fall,During,Filling,Door,40
+240,sample-246,48,NL.48.4,Facility 3,2023,Spring,During,Filling,Door,120
+241,sample-247,48,NL.48.3,Facility 3,2023,Winter,During,Filling,Door,440
+242,sample-248,5,NL.05.2,Facility 3,2022,Fall,During,Warehouse,Cleaning Tools,1140
+243,sample-249,5,NL.05.4,Facility 3,2023,Spring,During,Warehouse,Floor Object,140000
+244,sample-250,5,NL.05.3,Facility 3,2023,Winter,During,Warehouse,Cleaning Tools,112000
+245,sample-251,50,NL.50.2,Facility 3,2022,Fall,During,Warehouse,Floor Object,1180000
+246,sample-252,50,NL.50.4,Facility 3,2023,Spring,During,Warehouse,Floor Object,14700
+247,sample-253,50,NL.50.3,Facility 3,2023,Winter,During,Warehouse,Floor Object,2160
+248,sample-254,51,NL.51.2,Facility 3,2022,Fall,During,Warehouse,Fan/Vent,360
+249,sample-255,51,NL.51.4,Facility 3,2023,Spring,During,Warehouse,Fan/Vent,280
+250,sample-256,51,NL.51.3,Facility 3,2023,Winter,During,Warehouse,Fan/Vent,5600
+251,sample-257,52,NL.52.2,Facility 3,2022,Fall,During,Warehouse,Forklift/Pallet Jack,10000
+252,sample-258,52,NL.52.4,Facility 3,2023,Spring,During,Warehouse,Forklift/Pallet Jack,3920
+253,sample-259,52,NL.52.3,Facility 3,2023,Winter,During,Warehouse,Forklift/Pallet Jack,13200
+254,sample-260,6,NL.06.2,Facility 3,2022,Fall,During,Warehouse,Non-FPE Structure,240
+255,sample-261,6,NL.06.4,Facility 3,2023,Spring,During,Warehouse,Non-FPE Structure,2000
+256,sample-262,6,NL.06.3,Facility 3,2023,Winter,During,Warehouse,Non-FPE Structure,440
+257,sample-263,7,NL.07.2,Facility 3,2022,Fall,During,Warehouse,Door,4400000
+258,sample-264,7,NL.07.4,Facility 3,2023,Spring,During,Warehouse,Door,764000
+259,sample-265,7,NL.07.3,Facility 3,2023,Winter,During,Warehouse,Door,18400000
+260,sample-266,8,NL.08.2,Facility 3,2022,Fall,During,Post-Pasteurization ,Floor Object,2200000
+261,sample-267,8,NL.08.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Floor Object,87200000
+262,sample-268,8,NL.08.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Floor Object,85200000
+263,sample-269,9,NL.09.4,Facility 3,2023,Spring,During,Post-Pasteurization ,Non-FPE Structure,0
+264,sample-270,9,NL.09.3,Facility 3,2023,Winter,During,Post-Pasteurization ,Non-FPE Structure,416000
+265,sample-271,E10,NL.E10.4,Facility 3,2023,Spring,During,Warehouse,Drain,11200
+266,sample-272,E11,NL.E11.4,Facility 3,2023,Spring,During,Filling,FPE Structure,9760
+267,sample-273,E12,NL.E12.4,Facility 3,2023,Spring,During,Filling,FPE Structure,1320
+268,sample-274,E13,NL.E13.4,Facility 3,2023,Spring,During,Filling,Floor Object,948000
+269,sample-275,E14,NL.E14.4,Facility 3,2023,Spring,During,Filling,Conveyor,9400
+270,sample-276,E2,NL.E2.4,Facility 3,2023,Spring,During,Office/Hallway,Non-FPE Structure,360
+271,sample-277,E20,NL.E20.4,Facility 3,2023,Spring,During,Filling,Conveyor,760
+272,sample-278,E21,NL.E21.4,Facility 3,2023,Spring,During,Filling,Conveyor,0
+273,sample-279,E23,NL.E23.4,Facility 3,2023,Spring,During,Filling,Conveyor,520
+274,sample-280,E27,NL.E27.4,Facility 3,2023,Spring,During,Filling,Conveyor,6760
+275,sample-281,E5,NL.E5.4,Facility 3,2023,Spring,During,Filling,Non-FPE Structure,240
+276,sample-282,E8,NL.E8.4,Facility 3,2023,Spring,During,Warehouse,Wall/Ceiling,22900
+277,sample-283,E9,NL.E9.4,Facility 3,2023,Spring,During,Warehouse,Floor Object,1160000
+278,sample-284,9,WS.09.2,Facility 1,2022,Fall,During,Raw,Hose,7.00E+06
+279,sample-285,10,WS.10.2,Facility 1,2022,Fall,During,Raw,Hose,13500
+280,sample-286,10,WS.10.4,Facility 1,2023,Spring,During,Raw,Hose,1.24E+09
+281,sample-287,10,WS.10.3,Facility 1,2023,Winter,During,Raw,Hose,212000
+282,sample-288,11,WS.11.2,Facility 1,2022,Fall,During,Raw,Non-FPE Structure,28800000
+283,sample-289,11,WS.11.4,Facility 1,2023,Spring,During,Raw,Non-FPE Structure,2800000
+284,sample-290,11,WS.11.3,Facility 1,2023,Winter,During,Raw,Non-FPE Structure,80400000
+285,sample-291,12,WS.12.2,Facility 1,2022,Fall,During,Raw,Fan/Vent,21500
+286,sample-292,12,WS.12.4,Facility 1,2023,Spring,During,Raw,Fan/Vent,6040
+287,sample-293,12,WS.12.3,Facility 1,2023,Winter,During,Raw,Fan/Vent,880
+288,sample-294,13,WS.13.2,Facility 1,2022,Fall,During,Raw,FPE Structure,51000
+289,sample-295,13,WS.13.4,Facility 1,2023,Spring,During,Raw,FPE Structure,172000
+290,sample-296,13,WS.13.3,Facility 1,2023,Winter,During,Raw,FPE Structure,840
+291,sample-297,14,WS.14.2,Facility 1,2022,Fall,During,Warehouse,Floor Object,3360
+292,sample-298,14,WS.14.4,Facility 1,2023,Spring,During,Warehouse,Floor Object,80
+293,sample-299,14,WS.14.3,Facility 1,2023,Winter,During,Warehouse,Floor Object,308000
+294,sample-300,15,WS.15.2,Facility 1,2022,Fall,During,Warehouse,Non-FPE Structure,710
+295,sample-301,15,WS.15.4,Facility 1,2023,Spring,During,Warehouse,Non-FPE Structure,80
+296,sample-302,16,WS.16.2,Facility 1,2022,Fall,During,Warehouse,Floor Object,365
+297,sample-303,16,WS.16.4,Facility 1,2023,Spring,During,Warehouse,Floor Object,3920
+298,sample-304,17,WS.17.2,Facility 1,2022,Fall,During,Warehouse,Cleaning Tools,630
+299,sample-305,17,WS.17.4,Facility 1,2023,Spring,During,Warehouse,Cleaning Tools,3480
+300,sample-306,17,WS.17.3,Facility 1,2023,Winter,During,Warehouse,Cleaning Tools,5040
+301,sample-307,18,WS.18.2,Facility 1,2022,Fall,During,Warehouse,Wall/Ceiling,15
+302,sample-308,18,WS.18.4,Facility 1,2023,Spring,During,Warehouse,Wall/Ceiling,0
+303,sample-309,18,WS.18.3,Facility 1,2023,Winter,During,Warehouse,Wall/Ceiling,0
+304,sample-310,19,WS.19.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Fan/Vent,0
+305,sample-311,20,WS.20.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Drain,6500
+306,sample-312,20,WS.20.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Drain,108000
+307,sample-313,20,WS.20.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Drain,892000
+308,sample-314,21,WS.21.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Door,1800
+309,sample-315,21,WS.21.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Door,720
+310,sample-316,21,WS.21.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Door,1840
+311,sample-317,22,WS.22.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Cart/Rolling Bins,0
+312,sample-318,23,WS.23.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Hose,8500
+313,sample-319,23,WS.23.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Hose,5320
+314,sample-320,24,WS.24.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Floor Object,275
+315,sample-321,24,WS.24.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Floor Object,8120
+316,sample-322,24,WS.24.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Floor Object,480
+317,sample-323,25,WS.25.2,Facility 1,2022,Fall,During,Post-Pasteurization ,FPE Structure,90
+318,sample-324,25,WS.25.4,Facility 1,2023,Spring,During,Post-Pasteurization ,FPE Structure,27000
+319,sample-325,25,WS.25.3,Facility 1,2023,Winter,During,Post-Pasteurization ,FPE Structure,632000
+320,sample-326,26,WS.26.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Hose,5
+321,sample-327,26,WS.26.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Hose,80
+322,sample-328,26,WS.26.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Hose,46400
+323,sample-329,27,WS.27.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Hose,38500
+324,sample-330,27,WS.27.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Hose,6640
+325,sample-331,27,WS.27.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Hose,18200
+326,sample-332,28,WS.28.2,Facility 1,2022,Fall,During,Post-Pasteurization ,FPE Structure,5350000
+327,sample-333,28,WS.28.4,Facility 1,2023,Spring,During,Post-Pasteurization ,FPE Structure,36700
+328,sample-334,28,WS.28.3,Facility 1,2023,Winter,During,Post-Pasteurization ,FPE Structure,768000
+329,sample-335,29,WS.29.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Floor Object,0
+330,sample-336,29,WS.29.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Floor Object,14800
+331,sample-337,29,WS.29.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Floor Object,2680
+332,sample-338,30,WS.30.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Cart/Rolling Bins,360
+333,sample-339,30,WS.30.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Cart/Rolling Bins,45100
+334,sample-340,31,WS.31.2,Facility 1,2022,Fall,During,Post-Pasteurization ,FPE Structure,159000
+335,sample-341,31,WS.31.4,Facility 1,2023,Spring,During,Post-Pasteurization ,FPE Structure,12000
+336,sample-342,31,WS.31.3,Facility 1,2023,Winter,During,Post-Pasteurization ,FPE Structure,172000
+337,sample-343,33,WS.33.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Non-FPE Structure,370
+338,sample-344,33,WS.33.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Non-FPE Structure,1
+339,sample-345,33,WS.33.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Non-FPE Structure,1
+340,sample-346,35,WS.35.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Drain,1.50E+07
+341,sample-347,35,WS.35.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Drain,9.80E+08
+342,sample-348,35,WS.35.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Drain,1.36E+09
+343,sample-349,36,WS.36.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Wall/Ceiling,27000
+344,sample-350,36,WS.36.4,Facility 1,2023,Spring,During,Post-Pasteurization ,Wall/Ceiling,184000
+345,sample-351,36,WS.36.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Wall/Ceiling,13400
+346,sample-352,37,WS.37.2,Facility 1,2022,Fall,During,Post-Pasteurization ,Non-FPE Structure,0
+347,sample-353,37,WS.37.3,Facility 1,2023,Winter,During,Post-Pasteurization ,Non-FPE Structure,600
+348,sample-354,38,WS.38.2,Facility 1,2022,Fall,During,Filling,Door,0
+349,sample-355,39,WS.39.2,Facility 1,2022,Fall,During,Filling,Forklift/Pallet Jack,5800000
+350,sample-356,39,WS.39.4,Facility 1,2023,Spring,During,Filling,Forklift/Pallet Jack,3400
+351,sample-357,39,WS.39.3,Facility 1,2023,Winter,During,Filling,Forklift/Pallet Jack,2.00E+07
+352,sample-358,4,WS.04.2,Facility 1,2022,Fall,During,Warehouse,Drain,3750000
+353,sample-359,4,WS.04.4,Facility 1,2023,Spring,During,Warehouse,Drain,1.30E+08
+354,sample-360,4,WS.04.3,Facility 1,2023,Winter,During,Warehouse,Drain,6.99E+08
+355,sample-361,40,WS.40.2,Facility 1,2022,Fall,During,Filling,Cart/Rolling Bins,89500
+356,sample-362,40,WS.40.4,Facility 1,2023,Spring,During,Filling,Cart/Rolling Bins,2110000
+357,sample-363,40,WS.40.3,Facility 1,2023,Winter,During,Filling,Cart/Rolling Bins,240
+358,sample-364,41,WS.41.2,Facility 1,2022,Fall,During,Filling,Cart/Rolling Bins,364000
+359,sample-365,41,WS.41.4,Facility 1,2023,Spring,During,Filling,Cart/Rolling Bins,60000
+360,sample-366,41,WS.41.3,Facility 1,2023,Winter,During,Filling,Cart/Rolling Bins,136000
+361,sample-367,42,WS.42.2,Facility 1,2022,Fall,During,Filling,Drain,1250
+362,sample-368,42,WS.42.4,Facility 1,2023,Spring,During,Filling,Drain,16100
+363,sample-369,42,WS.42.3,Facility 1,2023,Winter,During,Filling,Drain,59600000
+364,sample-370,43,WS.43.2,Facility 1,2022,Fall,During,Filling,Forklift/Pallet Jack,2050000
+365,sample-371,43,WS.43.4,Facility 1,2023,Spring,During,Filling,Forklift/Pallet Jack,37200000
+366,sample-372,43,WS.43.3,Facility 1,2023,Winter,During,Filling,Forklift/Pallet Jack,1.00E+05
+367,sample-373,44,WS.44.2,Facility 1,2022,Fall,During,Filling,Floor Object,285
+368,sample-374,44,WS.44.4,Facility 1,2023,Spring,During,Filling,Floor Object,14000
+369,sample-375,45,WS.45.2,Facility 1,2022,Fall,During,Filling,Conveyor,140
+370,sample-376,45,WS.45.4,Facility 1,2023,Spring,During,Filling,Conveyor,120
+371,sample-377,45,WS.45.3,Facility 1,2023,Winter,During,Filling,Conveyor,6800000
+372,sample-378,46,WS.46.2,Facility 1,2022,Fall,During,Warehouse,Drain,15700000
+373,sample-379,46,WS.46.4,Facility 1,2023,Spring,During,Warehouse,Drain,24800000
+374,sample-380,46,WS.46.3,Facility 1,2023,Winter,During,Warehouse,Drain,1.80E+07
+375,sample-381,47,WS.47.2,Facility 1,2022,Fall,During,Warehouse,Door,160
+376,sample-382,47,WS.47.4,Facility 1,2023,Spring,During,Warehouse,Door,1720
+377,sample-383,47,WS.47.3,Facility 1,2023,Winter,During,Warehouse,Door,960
+378,sample-384,48,WS.48.2,Facility 1,2022,Fall,During,Warehouse,Door,5500
+379,sample-385,48,WS.48.4,Facility 1,2023,Spring,During,Warehouse,Door,1280
+380,sample-386,48,WS.48.3,Facility 1,2023,Winter,During,Warehouse,Door,2040
+381,sample-387,49,WS.49.2,Facility 1,2022,Fall,During,Warehouse,Fan/Vent,330
+382,sample-388,49,WS.49.4,Facility 1,2023,Spring,During,Warehouse,Fan/Vent,2840
+383,sample-389,49,WS.49.3,Facility 1,2023,Winter,During,Warehouse,Fan/Vent,1200
+384,sample-390,5,WS.05.2,Facility 1,2022,Fall,During,Warehouse,Forklift/Pallet Jack,250000
+385,sample-391,5,WS.05.4,Facility 1,2023,Spring,During,Warehouse,Forklift/Pallet Jack,27200000
+386,sample-392,5,WS.05.3,Facility 1,2023,Winter,During,Warehouse,Forklift/Pallet Jack,98400000
+387,sample-393,50,WS.50.2,Facility 1,2022,Fall,During,Warehouse,Fan/Vent,0
+388,sample-394,50,WS.50.4,Facility 1,2023,Spring,During,Warehouse,Fan/Vent,560
+389,sample-395,50,WS.50.3,Facility 1,2023,Winter,During,Warehouse,Fan/Vent,1560
+390,sample-396,51,WS.51.2,Facility 1,2022,Fall,During,Post-Pasteurization ,FPE Structure,95
+391,sample-397,51,WS.51.4,Facility 1,2023,Spring,During,Post-Pasteurization ,FPE Structure,15500
+392,sample-398,51,WS.51.3,Facility 1,2023,Winter,During,Post-Pasteurization ,FPE Structure,1200
+393,sample-399,6,WS.06.2,Facility 1,2022,Fall,During,Warehouse,Forklift/Pallet Jack,7500
+394,sample-400,6,WS.06.4,Facility 1,2023,Spring,During,Warehouse,Forklift/Pallet Jack,4720000
+395,sample-401,6,WS.06.3,Facility 1,2023,Winter,During,Warehouse,Forklift/Pallet Jack,9720000
+396,sample-402,7,WS.07.2,Facility 1,2022,Fall,During,Warehouse,Door,0
+397,sample-403,7,WS.07.3,Facility 1,2023,Winter,During,Warehouse,Door,360
+398,sample-404,8,WS.08.2,Facility 1,2022,Fall,During,Raw,Drain,1.13E+08
+399,sample-405,8,WS.08.4,Facility 1,2023,Spring,During,Raw,Drain,7.78E+08
+400,sample-406,8,WS.08.3,Facility 1,2023,Winter,During,Raw,Drain,1.05E+08
+401,sample-407,9,WS.09.4,Facility 1,2023,Spring,During,Raw,Hose,23200000
+402,sample-408,9,WS.09.3,Facility 1,2023,Winter,During,Raw,Hose,8.10E+08
+403,sample-409,E1,WS.E1.4,Facility 1,2023,Spring,During,Warehouse,Non-FPE Structure,360
+404,sample-410,E10,WS.E10.4,Facility 1,2023,Spring,During,Filling,Conveyor,320
+405,sample-411,E11,WS.E11.4,Facility 1,2023,Spring,During,Filling,Conveyor,1000
+406,sample-412,E2,WS.E2.4,Facility 1,2023,Spring,During,Warehouse,Drain,1.20E+09
+407,sample-413,E3,WS.E3.4,Facility 1,2023,Spring,During,Warehouse,Drain,6.05E+08
+408,sample-414,E4,WS.E4.4,Facility 1,2023,Spring,During,Warehouse,Conveyor,776000
+409,sample-415,E5,WS.E5.4,Facility 1,2023,Spring,During,Warehouse,Conveyor,80000
+410,sample-416,E6,WS.E6.4,Facility 1,2023,Spring,During,Office/Hallway,Floor Object,34700
+411,sample-417,E7,WS.E7.4,Facility 1,2023,Spring,During,Raw,Floor Object,19200000
+412,sample-418,E9,WS.E9.4,Facility 1,2023,Spring,During,Filling,Conveyor,280
+413,sample-423,10A,B.10A.1,Facility 2,2022,Summer,Before,Raw,Cleaning Tools,0
+414,sample-424,10B,B.10B.1,Facility 2,2022,Summer,During,Raw,Cleaning Tools,0
+415,sample-425,11A,B.11A.1,Facility 2,2022,Summer,Before,Raw,Cleaning Tools,0
+416,sample-426,12B,B.12B.1,Facility 2,2022,Summer,During,Raw,Door,20
+417,sample-427,13A,B.13A.1,Facility 2,2022,Summer,Before,Post-Pasteurization ,Floor Object,4630
+418,sample-428,13B,B.13B.1,Facility 2,2022,Summer,During,Post-Pasteurization ,Floor Object,1800000
+419,sample-429,14A,B.14A.1,Facility 2,2022,Summer,Before,Post-Pasteurization ,FPE Structure,0
+420,sample-430,14B,B.14B.1,Facility 2,2022,Summer,During,Post-Pasteurization ,FPE Structure,40
+421,sample-431,15A,B.15A.1,Facility 2,2022,Summer,Before,Filling,Conveyor,2.00E+06
+422,sample-432,18A,B.18A.1,Facility 2,2022,Summer,Before,Filling,Wall/Ceiling,2.02E+08
+423,sample-433,1B,B.01B.1,Facility 2,2022,Summer,During,Raw,Drain,3500
+424,sample-434,20A,B.20A.1,Facility 2,2022,Summer,Before,Filling,Non-FPE Structure,22600
+425,sample-435,21A,B.21A.1,Facility 2,2022,Summer,Before,Filling,Drain,52900000
+426,sample-436,23B,B.23B.1,Facility 2,2022,Summer,During,Filling,FPE Structure,15000
+427,sample-437,24B,B.24B.1,Facility 2,2022,Summer,During,Filling,Non-FPE Structure,5
+428,sample-438,25B,B.25B.1,Facility 2,2022,Summer,During,Warehouse,Fan/Vent,720
+429,sample-439,26A,B.26A.1,Facility 2,2022,Summer,Before,Warehouse,Door,1090
+430,sample-440,26B,B.26B.1,Facility 2,2022,Summer,During,Warehouse,Door,600
+431,sample-441,27A,B.27A.1,Facility 2,2022,Summer,Before,Warehouse,Forklift/Pallet Jack,1400
+432,sample-442,28A,B.28A.1,Facility 2,2022,Summer,Before,Warehouse,Floor Object,1250
+433,sample-443,29B,B.29B.1,Facility 2,2022,Summer,During,Warehouse,Cleaning Tools,1510
+434,sample-444,30A,B.30A.1,Facility 2,2022,Summer,Before,Warehouse,Non-FPE Structure,26300000
+435,sample-445,31A,B.31A.1,Facility 2,2022,Summer,Before,Warehouse,Forklift/Pallet Jack,675
+436,sample-446,32A,B.32A.1,Facility 2,2022,Summer,Before,Warehouse,Forklift/Pallet Jack,490
+437,sample-447,32B,B.32B.1,Facility 2,2022,Summer,During,Warehouse,Forklift/Pallet Jack,890
+438,sample-448,33B,B.33B.1,Facility 2,2022,Summer,During,Warehouse,Door,2490
+439,sample-449,3B,B.03B.1,Facility 2,2022,Summer,During,Raw,Hose,129000
+440,sample-450,4A,B.04A.1,Facility 2,2022,Summer,Before,Raw,Cleaning Tools,50
+441,sample-451,4B,B.04B.1,Facility 2,2022,Summer,During,Raw,Cleaning Tools,30
+442,sample-452,5B,B.05B.1,Facility 2,2022,Summer,During,Raw,Door,290
+443,sample-453,6B,B.06B.1,Facility 2,2022,Summer,During,Raw,Floor Object,0
+444,sample-454,7B,B.07B.1,Facility 2,2022,Summer,During,Raw,Drain,0
+445,sample-455,9B,B.09B.1,Facility 2,2022,Summer,During,Raw,Cart/Rolling Bins,5
+446,sample-457,1,NL.01.1,Facility 3,2022,Summer,During,Raw,Floor Object,600
+447,sample-458,10,NL.10.1,Facility 3,2022,Summer,During,Post-Pasteurization ,Wall/Ceiling,1.40E+07
+448,sample-459,12,NL.12.1,Facility 3,2022,Summer,During,Post-Pasteurization ,Drain,5400000
+449,sample-460,13,NL.13.1,Facility 3,2022,Summer,During,Post-Pasteurization ,Drain,16000
+450,sample-461,14,NL.14.1,Facility 3,2022,Summer,During,Post-Pasteurization ,Floor Object,12400000
+451,sample-462,15,NL.15.1,Facility 3,2022,Summer,During,Post-Pasteurization ,Floor Object,1500
+452,sample-463,17,NL.17.1,Facility 3,2022,Summer,During,Post-Pasteurization ,Hose,3.95E+02
+453,sample-464,2,NL.02.1,Facility 3,2022,Summer,During,Raw,Non-FPE Structure,1120
+454,sample-465,20,NL.20.1,Facility 3,2022,Summer,During,Post-Pasteurization ,Wall/Ceiling,4700000
+455,sample-466,23,NL.23.1,Facility 3,2022,Summer,During,Filling,Drain,1600
+456,sample-467,24,NL.24.1,Facility 3,2022,Summer,During,Filling,Conveyor,2260
+457,sample-468,25,NL.25.1,Facility 3,2022,Summer,During,Filling,Non-FPE Structure,80
+458,sample-469,26,NL.26.1,Facility 3,2022,Summer,During,Filling,Drain,2650000
+459,sample-470,28,NL.28.1,Facility 3,2022,Summer,During,Filling,Conveyor,260000
+460,sample-471,31,NL.31.1,Facility 3,2022,Summer,During,Filling,Door,80000
+461,sample-472,33,NL.33.1,Facility 3,2022,Summer,During,Filling,Door,80000
+462,sample-473,35,NL.35.1,Facility 3,2022,Summer,During,Warehouse,Door,5000
+463,sample-474,36,NL.36.1,Facility 3,2022,Summer,During,Filling,FPE Structure,720
+464,sample-475,38,NL.38.1,Facility 3,2022,Summer,During,Filling,FPE Structure,8000
+465,sample-476,4,NL.04.1,Facility 3,2022,Summer,During,Warehouse,Forklift/Pallet Jack,25000
+466,sample-477,40,NL.40.1,Facility 3,2022,Summer,During,Filling,Drain,120000
+467,sample-478,41,NL.41.1,Facility 3,2022,Summer,During,Filling,Conveyor,1000
+468,sample-479,43,NL.43.1,Facility 3,2022,Summer,During,Filling,Drain,21500
+469,sample-480,46,NL.46.1,Facility 3,2022,Summer,During,Filling,Non-FPE Structure,750000
+470,sample-481,5,NL.05.1,Facility 3,2022,Summer,During,Warehouse,Cleaning Tools,2800
+471,sample-482,50,NL.50.1,Facility 3,2022,Summer,During,Warehouse,Floor Object,180000
+472,sample-483,52,NL.52.1,Facility 3,2022,Summer,During,Warehouse,Forklift/Pallet Jack,1100
+473,sample-484,7,NL.07.1,Facility 3,2022,Summer,During,Warehouse,Door,15000
+474,sample-485,8,NL.08.1,Facility 3,2022,Summer,During,Post-Pasteurization ,Floor Object,2.30E+07
+475,sample-486,11,WS.11.1,Facility 1,2022,Summer,During,Raw,Non-FPE Structure,12300000
+476,sample-487,12,WS.12.1,Facility 1,2022,Summer,During,Raw,Fan/Vent,3710
+477,sample-488,13,WS.13.1,Facility 1,2022,Summer,During,Raw,FPE Structure,6.10E+07
+478,sample-489,16,WS.16.1,Facility 1,2022,Summer,During,Warehouse,Floor Object,1800
+479,sample-490,24,WS.24.1,Facility 1,2022,Summer,During,Post-Pasteurization ,Floor Object,885
+480,sample-491,25,WS.25.1,Facility 1,2022,Summer,During,Post-Pasteurization ,FPE Structure,1780
+481,sample-492,26,WS.26.1,Facility 1,2022,Summer,During,Post-Pasteurization ,Hose,8000
+482,sample-493,27,WS.27.1,Facility 1,2022,Summer,During,Post-Pasteurization ,Hose,39000
+483,sample-494,28,WS.28.1,Facility 1,2022,Summer,During,Post-Pasteurization ,FPE Structure,24500
+484,sample-495,29,WS.29.1,Facility 1,2022,Summer,During,Post-Pasteurization ,Floor Object,385000
+485,sample-496,30,WS.30.1,Facility 1,2022,Summer,During,Post-Pasteurization ,Cart/Rolling Bins,665
+486,sample-497,31,WS.31.1,Facility 1,2022,Summer,During,Post-Pasteurization ,FPE Structure,15600
+487,sample-498,35,WS.35.1,Facility 1,2022,Summer,During,Post-Pasteurization ,Drain,33600000
+488,sample-499,36,WS.36.1,Facility 1,2022,Summer,During,Post-Pasteurization ,Wall/Ceiling,2.00E+05
+489,sample-500,37,WS.37.1,Facility 1,2022,Summer,During,Post-Pasteurization ,Non-FPE Structure,363000
+490,sample-501,40,WS.40.1,Facility 1,2022,Summer,During,Filling,Cart/Rolling Bins,72000
+491,sample-502,41,WS.41.1,Facility 1,2022,Summer,During,Filling,Cart/Rolling Bins,35500
+492,sample-503,42,WS.42.1,Facility 1,2022,Summer,During,Filling,Drain,42000
+493,sample-504,43,WS.43.1,Facility 1,2022,Summer,During,Filling,Forklift/Pallet Jack,2150000
+494,sample-505,44,WS.44.1,Facility 1,2022,Summer,During,Filling,Floor Object,1500
+495,sample-506,45,WS.45.1,Facility 1,2022,Summer,During,Filling,Conveyor,201000
+496,sample-507,46,WS.46.1,Facility 1,2022,Summer,During,Warehouse,Drain,43000
+497,sample-508,47,WS.47.1,Facility 1,2022,Summer,During,Warehouse,Door,400
+498,sample-509,48,WS.48.1,Facility 1,2022,Summer,During,Warehouse,Door,900
+499,sample-510,5,WS.05.1,Facility 1,2022,Summer,During,Warehouse,Forklift/Pallet Jack,250000
+500,sample-511,50,WS.50.1,Facility 1,2022,Summer,During,Warehouse,Fan/Vent,635
+501,sample-512,51,WS.51.1,Facility 1,2022,Summer,During,Post-Pasteurization ,FPE Structure,11200
+502,sample-513,6,WS.06.1,Facility 1,2022,Summer,During,Warehouse,Forklift/Pallet Jack,133000
+503,sample-514,7,WS.07.1,Facility 1,2022,Summer,During,Warehouse,Door,0
+504,sample-515,8,WS.08.1,Facility 1,2022,Summer,During,Raw,Drain,1.14E+08
