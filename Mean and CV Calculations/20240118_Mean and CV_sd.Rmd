@@ -1,0 +1,176 @@
+---
+title: "Multivariate Data Analysis"
+author: "Sarah Daly"
+date: "September 15 2023"
+output:
+  word_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+Purpose:  Generate Diversity Boxplots ASV v. OTU v Sequencing Depth 
+
+Input:  csv
+Output: csv, tif 
+
+#Set working directory
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review paper/Manuscript/Code/Mean and CV Calculations")
+
+```
+
+#Load Data
+```{r}
+df_filtered<- read.csv("Diversity_data.csv" , na.strings="NA")
+head(df_filtered)
+```
+
+#Merge String names and categories for plotting 
+```{r}
+#Get rarefied data 
+target <- c("Rarefaction")
+dat_rare=filter(df_filtered, df_filtered$Norm %in% target) 
+dat_rare$Beta_compare = dat_rare$Aitchinson #Create joint column
+head(dat_rare)
+
+#Get CLR data
+target <- c("CLR")
+dat_clr=filter(df_filtered, df_filtered$Norm %in% target) 
+dat_clr$Beta_compare = dat_clr$Euclidean
+head(dat_clr)
+
+df_new_beta = rbind(dat_rare, dat_clr)
+head(df_new_beta)
+tail(df_new_beta)
+df_new_beta$Beta_compare
+
+library(stringr)
+#concatenation depth and nomr in new category
+df_new_beta$NormDepth = paste(df_new_beta$Norm, df_new_beta$Depth,sep="-")
+head(df_new_beta)
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "Rarefaction", "Rare")
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "-none", " ")
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "fifty", "50")
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "thirty", "30")
+df_new_beta$NormDepth <- str_replace(df_new_beta$NormDepth, "ten", "10")
+head(df_new_beta)
+tail(df_new_beta)
+```
+
+
+#Coefficient Variation 
+```{r}
+#Calculate mean,std, and CV for each sample
+#Create a Function
+#norm_var = Normalization variable (string)
+#dense_var = Density Category (string)
+#Cluster_var = ASV or OTU (string)
+
+stats_calc <- function(norm_var, dense_var, cluster_var){
+#Create blink list
+#Filter Normality
+stat_list <- list()
+target <- norm_var
+df_norm=filter(df_new_beta, df_new_beta$Norm %in% target)
+#Filter Density category
+target <- dense_var
+df_norm_dense=filter(df_norm, df_norm$Density %in% target)
+#Filter cluster
+target <- cluster_var
+df_norm_dense_clust=filter(df_norm_dense, df_norm_dense$ASVOTU %in% target)
+
+y_vars = c("Shannon", "Chao1", "Pielou", "Beta_compare")
+
+for (item in y_vars){
+#Calculate stats, save as vector in list
+mean_val = round(mean(df_norm_dense_clust[,item]),4)
+sd_val = round(sd(df_norm_dense_clust[,item]),4)
+cv_val =round(sd_val/mean_val,2) *100
+stat_vector = c(mean_val, sd_val, cv_val)
+#print(stat_vector)
+stat_list[[item]]= stat_vector
+}
+# unlist() usage
+stat_df<- as.data.frame(do.call(rbind, stat_list))
+names(stat_df) = c("mean", "sd", "CV")
+stat_df$Density = dense_var
+stat_df$Norm = norm_var
+stat_df$ASVOTU = cluster_var
+return(stat_df)
+print(stat_df)
+}
+
+###############################################################################
+#Run Function 
+clr_High = stats_calc("CLR", "High", "ASV")
+clr_Medium = stats_calc("CLR", "Medium", "ASV")
+clr_Low= stats_calc("CLR", "Low", "ASV")
+R_Low= stats_calc("Rarefaction", "Low", "ASV")
+R_Medium= stats_calc("Rarefaction", "Medium", "ASV")
+R_High= stats_calc("Rarefaction", "High", "ASV")
+
+
+clr_HighO = stats_calc("CLR", "High", "OTU")
+clr_MediumO = stats_calc("CLR", "Medium", "OTU")
+clr_LowO= stats_calc("CLR", "Low", "OTU")
+R_LowO= stats_calc("Rarefaction", "Low", "OTU")
+R_MediumO= stats_calc("Rarefaction", "Medium", "OTU")
+R_HighO= stats_calc("Rarefaction", "High", "OTU")
+
+#Combine outputs in 1 df
+new_df = rbind(R_High, R_Medium, R_Low, clr_High, clr_Medium, clr_Low, R_HighO, R_MediumO, R_LowO, clr_HighO, clr_MediumO, clr_LowO)
+head(new_df)
+write.csv(new_df, "Mean, Sd, CV of Groups Density.csv")
+
+
+
+#Create another function for Sequencing Depth
+#norm_var = Normalization variable (string)
+#dense_var = Density Category (string)
+#Cluster_var = ASV or OTU (string)
+
+stats_calc <- function(depth_var, cluster_var){
+#Create blink list
+#Filter Normality
+stat_list <- list()
+target <- depth_var
+df_norm=filter(df_new_beta, df_new_beta$NormDepth %in% target)
+#Filter Density category
+target <- cluster_var
+df_norm_cl=filter(df_norm, df_norm$ASVOTU %in% target)
+
+y_vars = c("Shannon", "Chao1", "Pielou", "Beta_compare")
+
+for (item in y_vars){
+#Calculate stats, save as vector in list
+mean_val = round(mean(df_norm_cl[,item]),4)
+sd_val = round(sd(df_norm_cl[,item]),4)
+cv_val =round(sd_val/mean_val,2) *100
+stat_vector = c(mean_val, sd_val, cv_val)
+#print(stat_vector)
+stat_list[[item]]= stat_vector
+}
+# unlist() usage
+stat_df<- as.data.frame(do.call(rbind, stat_list))
+names(stat_df) = c("mean", "sd", "CV")
+stat_df$ASVOTU = cluster_var
+stat_df$Depth = depth_var
+return(stat_df)
+print(stat_df)
+}
+
+###############################################################
+#Run Function
+r1 = stats_calc("Rare-10", "ASV")
+r2 = stats_calc("Rare-30", "ASV")
+r3 = stats_calc("Rare-50", "ASV")
+
+r4 = stats_calc("Rare-10", "OTU")
+r5 = stats_calc("Rare-30", "OTU")
+r6 = stats_calc("Rare-50", "OTU")
+
+#combine all outputs into a new df
+new_df = rbind(r1, r2, r3, r4, r5, r6)
+head(new_df)
+write.csv(new_df, "Mean, Sd, CV of Groups Depth.csv")
+```
