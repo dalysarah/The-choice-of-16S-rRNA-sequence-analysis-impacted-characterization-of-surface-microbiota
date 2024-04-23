@@ -1,0 +1,228 @@
+---
+title: "Rarefaction Curves Environmental Sampling-ASV Approach"
+author: "Sarah Daly"
+date: '2023-08-25'
+output:
+  html_document: default
+  word_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+Purpose:  Generate Rarefaction Curves across all surface swab samples
+Input files: OTU or ASV table (.qza), unfiltered taxonomy table (.qza), rooted photogenic tree (.qza), metadata file (.txt)
+
+#Set Working Directory
+```{r}
+setwd("C:/Users/dalys/OneDrive/Documents/My Documents/Cornell Postdoc Papers/Review Paper/Manuscript/Code/Rarefaction Curves/ASV")
+```
+
+#Load Packages
+```{r}
+library(scales)
+
+library(DECIPHER) # This package will help in importing, maintaining, analyzing, manipulating, and exporting a massive amount of sequences.
+
+library(ape) # Analyses of Phylogenetics and Evolution package. Required for tree calculations to be used with phyloseq
+
+library(DESeq2) # This package will help analyze "differential expression" in the microbiota alongside phyloseq
+
+library(ggplot2) # Graphing package used in phyloseq. To edit the default setting of a plot, you need to use functions in this package.
+
+library(phyloseq) # The phyloseq package seeks to address issues with multiple microbiome analysis packages by providing a set of functions that internally manage the organizing, linking, storing, and analyzing of phylogenetic sequencing data. In general, this package is used for UniFrac analyses.
+
+library(vegan) # The vegan package provides tools for descriptive community ecology. It has most basic functions of diversity analysis, community ordination and dissimilarity analysis. In general, this package is used for Bray-Curtis and Jaccard analyses.
+
+library(tidyverse) # This package is designed to make it easy to install and load multiple 'tidyverse' packages in a single step
+
+library(adespatial) # Tools for the multiscale spatial analysis of multivariate data
+
+library(devtools) # Make package development easier by providing R functions that simplify and expedite common tasks
+
+library(qiime2R) # A package for importing qiime artifacts into an R session
+
+library(microbiome) # Data analysis and visualization
+
+library(grid) # support data visualization
+
+library(gridExtra)  # support data visualization
+
+library(knitr) # Provides a general-purpose tool for dynamic report generation in R using Literate Programming techniques.
+
+library(microbiomeutilities) # some utility tools 
+```
+
+
+#Load Data and Convert to Phyloseq Object
+```{r}
+#Convert qiime artifacts directly to phyloseq
+#phyloseq provides a set of classes and tools to facilitate the import, storage, analysis, and graphical display of microbiome census data.
+
+#Importing OTU/ASV table
+ASVS <- read_qza("filtered-table-SFWS-asv.qza")   #Qiime output ASV file after filtering
+dim(ASVS$data)
+
+# Importing phylogenic tree
+tree <- read_qza("rooted_tree.qza")  #Qiime output file
+tree$data
+
+# Importing taxonomy assignment 
+taxonomy <- read_qza("taxonomy-asv-SFWS.qza")  #Qiime output file
+
+#Process taxonomy file more 
+#get taxonomy names
+tax_strings<- strsplit(as.character(taxonomy$data$Taxon), ";")
+head(tax_strings)
+
+#some strings are missing levels (blanks) and the dataframe will not bind
+x = 1
+y = 1
+
+blanks <- c("k__","p__", "c__", "o__","f__", "g__", "s__")
+
+num_taxa = length(tax_strings)  #number of taxa
+num_taxa  #shoudl match dim OTUs$data
+
+for (item in tax_strings){
+  
+  t = length(tax_strings[[x]]) #get list item length
+  
+if (t < 7)  {  #if less than 7 elements in each list item
+  #print(t)
+  y=1
+  #print(taxa)
+  while (y <= 7){  #loop through each item in item 
+    if (is.na(tax_strings[[x]][y])){
+      print('needs')
+      tax_strings[[x]][y] = blanks[y]  #replace blank space with corr level character
+      y=y+1
+      }
+      else(y=y+1)
+    }
+x = x+1
+}
+  else (x = x+ 1)
+}
+
+#convert to dataframe
+tax_table<-as.data.frame(tax_strings)
+dim(tax_table)
+#Trasnpose table
+tax_table<-t(tax_table)
+head(tax_table)
+
+#Add level labels
+#Add oto/asv info to tax table
+rownames(tax_table) <- taxonomy$data$Feature.ID
+colnames(tax_table) <- c("Kingdom","Phylum","Class","Order","Family","Genus","Species")
+head(tax_table)
+#Inspect table 
+write.csv(tax_table, "merged_tax_table.csv")
+
+
+#################Creating phyloseq object#######################################
+
+#Note, phyloseq uses the term "OTU" loosely and since we fed it an ASV table, it is an ASV table
+OTU = otu_table(as.matrix(ASVS$data), taxa_are_rows = T)
+#Transpose OtU table
+otu_table(OTU)<-t(otu_table(OTU))  #may need to do this again
+
+TAX = tax_table(as.matrix(tax_table))
+dim(TAX)
+dim(taxa_names(OTU))
+head(TAX)
+
+# Importing metadata
+metadata <- read.table("Metadata.txt", sep='\t', header=T, row.names=1, comment="")
+head(metadata)
+dim(metadata)
+length(sample_names(OTU))
+SAMPLE = sample_data(metadata)
+
+#phylogentic tree
+TREE = tree$data
+
+#Inspect files for troubleshooting 
+write.csv(SAMPLE, "phyloseq SAMPLE input.csv")
+write.csv(TAX, "phyloseq TAX input.csv")
+write.csv(OTU, "phyloseq ASV input.csv")
+
+# merge the data
+ps <- phyloseq(OTU, TAX, SAMPLE,TREE)
+#contains OTU table, taxonomy table, sample data, and phy tree
+#check that dimensions are consistent (same number taxa between OTU, tax_table)
+ps
+```
+
+#Generate Rarefaction Curve Data 
+```{r}
+#make rarefaction curve to check sequencing depth 
+#What sequencing depth will capture the most taxonomic tags?  
+rare_dat = rarecurve(t(ASVS$data), step = 550, cex = 0.5, tidy=TRUE)
+write.csv(rare_dat, "Rarecurve info asv.csv")
+
+keeps<- read.csv("keep_samples.csv")
+
+#Filter Rare_data 
+keep<- keeps$ID
+
+rare_dat_new<- filter(rare_dat, rare_dat$Site %in% keep)
+dim(rare_dat_new)
+
+#Add new column to rare_dat called "Density 
+rare_dat_new$Density<- metadata$Density[match(rare_dat_new$Site, metadata$sample)]
+
+head(rare_dat_new)
+#Individual Graph 
+
+#Graph with Averages
+#Group data with mean and Confidence interval 
+library(dplyr)
+df_av<- rare_dat_new %>%
+  group_by(Density, Sample) %>%
+  summarise(mean.species = mean(Species, na.rm = TRUE),
+            sd.species = sd(Species, na.rm = TRUE),
+            sum.species = sum(Species, na.rm = TRUE),
+            n.species = n()) %>%
+    mutate(se.species = sd.species / sqrt(n.species),
+         lower.ci.species = mean.species - qt(1 - (0.05 / 2), n.species - 1) * se.species,
+         upper.ci.species = mean.species + qt(1 - (0.05 / 2), n.species - 1) * se.species)
+
+head(df_av)
+
+#order factors
+df_av$Density  <- factor(df_av$Density, levels = c("High", "Medium", "Low"), ordered = TRUE) 
+
+#Plot smooth line 
+p<-ggplot(data=df_av, aes(x=Sample, y=mean.species, colour=Density)) +  geom_smooth()
+p<-p+geom_ribbon(aes(ymin=df_av$lower.ci.species, ymax=df_av$upper.ci.species), linetype=2, alpha=0.1)+
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+theme(text = element_text(size=20,colour="black",face="bold"), 
+       axis.text.x = element_text(hjust = 0.5, vjust=1,colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 125000),breaks = seq(0, 125000, by=10000))+
+  scale_y_continuous(expand = c(0, 0),limits = c(0, 50))+ #Force axis to start at 0 
+  #ggtitle=(paste(target, "count", sep=" "))+
+  xlab("Sequences per Sample")+
+  theme(legend.background = element_blank())+
+  guides(color=guide_legend(override.aes=list(fill=NA)))+
+  ylab(expression(bold("Species")))+ #change y label
+   scale_color_manual(values=c(High="indianred",Medium="lightsalmon", Low = "skyblue"))+
+   geom_vline(xintercept=c(10000, 30000,50000),linetype = "solid", colour = c("black"), size=1.1)
+  #theme(axis.ticks.x = element_text(hjust = 1, vjust = 0.5)) # Remove x axis tick marks
+
+p
+
+tiff(paste("Rare_Smooth_Density asv.tiff"), res=300, compression = "lzw", height=9, width=15, units="in")
+print(p)
+dev.off()
+
+pdf("Rare_Smooth_Density asv.pdf",height=9, width=15)
+print(p)
+dev.off()
+
+```
+
