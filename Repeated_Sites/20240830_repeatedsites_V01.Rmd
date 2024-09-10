@@ -1,0 +1,84 @@
+---
+title: "Chi"
+author: "Sarah Daly"
+date: "2023-10-26"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Purpose:  Generate figure of Chi Square Correlation test of Environmental Sampling Data; Generate p-value; Find percent agreement of samples
+
+Input Files:  
+Final_Combined_Metadata.csv
+melt.txt
+
+#Set WD and load data
+```{r}
+setwd("C:/Users/dalys/Box/Microbial Food Safety & Spoilage Lab/Lab Members/Sarah Daly/16S Methods Paper/M-Systems Manuscript/Code/Repeated_Sites")
+```
+
+#load libraries 
+```{r}
+library(dplyr)
+library(tidyr) 
+
+#remove.packages("dplyr")
+#install.packages("dplyr",dependencies=TRUE)
+```
+
+#Load and Filter data
+```{r}
+list.files()
+df<- read.csv("sites.csv" , na.strings="NA")
+
+```
+
+#Find % Agreement between objects per density categroy classification 
+```{r}
+df$Site<- as.character(df$Site)
+
+ID<- unique(df$Site)
+
+List_site<- list()
+
+df_site<- list()
+count = 0
+
+for (item in ID){
+#Sort by ID
+df_filtered= df[df$Site== item, ]
+
+#Only if metadata has more than one point 
+if(dim(df_filtered)[1]!=1) {
+count = count+1
+cons = unique(df_filtered$Density)
+print(cons)
+List_site[[item]]= as.character(length(cons))
+#if(length(cons)>1){
+df_site[[item]]= df_filtered}
+#}
+#Are all the bins the same?
+#consis = (length(df_filtered_loc$Fill_bins) ==1)
+#List[[length(List)+1]] = consis
+}
+
+df_site
+
+capture.output(df_site , file=paste("Inconsistant sites.txt"))
+
+count
+per_repea= round(count / 150, 4) *100
+per_repea
+capture.output(count , file=paste("%repeated.txt"))
+
+
+hat_check <-unlist(List_site)
+hat_check
+
+
+per= round(length(grep("1", hat_check)) / length(hat_check), 4) *100
+per
+
+capture.output(per , file=paste("%consistant swabbing.txt"))
+```

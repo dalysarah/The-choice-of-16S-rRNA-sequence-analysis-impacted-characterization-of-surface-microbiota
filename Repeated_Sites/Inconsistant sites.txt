@@ -1,0 +1,542 @@
+$`1`
+        ID Site Object Density
+1 sample-1    1  Drain  Medium
+2 sample-2    1  Drain  Medium
+
+$`2`
+         ID Site Object Density
+3 sample-28    2   Hose     Low
+4 sample-30    2   Hose     Low
+5 sample-29    2   Hose     Low
+
+$`3`
+         ID Site Object Density
+6 sample-56    3   Hose  Medium
+7 sample-55    3   Hose     Low
+
+$`4`
+          ID Site         Object Density
+8  sample-69    4 Cleaning Tools     Low
+9 sample-450    4 Cleaning Tools     Low
+
+$`8`
+          ID Site       Object Density
+13 sample-79    8 Floor Object  Medium
+14 sample-81    8 Floor Object  Medium
+
+$`9`
+         ID Site         Object Density
+15 sample-4    9 Cleaning Tools  Medium
+16 sample-5    9 Cleaning Tools     Low
+
+$`11`
+           ID Site       Object Density
+18  sample-11   11 Floor Object    High
+19 sample-428   11 Floor Object    High
+
+$`12`
+           ID Site   Object Density
+20  sample-13   12 Conveyor    High
+21  sample-15   12 Conveyor     Low
+23  sample-14   12 Conveyor    High
+24 sample-431   12 Conveyor    High
+
+$`146`
+            ID Site       Object Density
+22  sample-132  146 Floor Object    High
+296 sample-131  146 Floor Object    High
+297 sample-416  146 Floor Object  Medium
+
+$`14`
+          ID Site   Object Density
+26 sample-21   14 Conveyor    High
+27 sample-20   14 Conveyor    High
+
+$`15`
+           ID Site       Object Density
+28  sample-22   15 Wall/Ceiling     Low
+29  sample-24   15 Wall/Ceiling  Medium
+30  sample-23   15 Wall/Ceiling    High
+31 sample-432   15 Wall/Ceiling    High
+
+$`16`
+          ID Site            Object Density
+32 sample-27   16 Cart/Rolling Bins  Medium
+33 sample-26   16 Cart/Rolling Bins    High
+
+$`17`
+          ID Site            Object Density
+34 sample-31   17 Non-FPE Structure     Low
+35 sample-33   17 Non-FPE Structure     Low
+36 sample-32   17 Non-FPE Structure  Medium
+
+$`18`
+           ID Site Object Density
+37  sample-34   18  Drain    High
+38  sample-35   18  Drain    High
+39 sample-435   18  Drain    High
+
+$`19`
+          ID Site            Object Density
+40 sample-36   19 Non-FPE Structure  Medium
+41 sample-38   19 Non-FPE Structure    High
+42 sample-37   19 Non-FPE Structure    High
+
+$`24`
+           ID Site       Object Density
+47  sample-49   24 Floor Object     Low
+48  sample-51   24 Floor Object     Low
+49 sample-442   24 Floor Object  Medium
+
+$`25`
+          ID Site         Object Density
+50 sample-53   25 Cleaning Tools     Low
+51 sample-52   25 Cleaning Tools  Medium
+
+$`26`
+           ID Site            Object Density
+52  sample-59   26 Non-FPE Structure    High
+53  sample-58   26 Non-FPE Structure    High
+54 sample-444   26 Non-FPE Structure    High
+
+$`27`
+           ID Site               Object Density
+55  sample-60   27 Forklift/Pallet Jack  Medium
+56  sample-62   27 Forklift/Pallet Jack  Medium
+57  sample-61   27 Forklift/Pallet Jack  Medium
+58 sample-445   27 Forklift/Pallet Jack     Low
+
+$`28`
+           ID Site               Object Density
+59  sample-64   28 Forklift/Pallet Jack  Medium
+60 sample-446   28 Forklift/Pallet Jack     Low
+
+$`29`
+          ID Site Object Density
+61 sample-66   29   Door     Low
+62 sample-68   29   Door  Medium
+63 sample-67   29   Door  Medium
+
+$`30`
+           ID Site            Object Density
+64 sample-103   30 Non-FPE Structure     Low
+65  sample-83   30 Non-FPE Structure  Medium
+
+$`31`
+          ID Site            Object Density
+66 sample-95   31 Non-FPE Structure     Low
+67 sample-84   31 Non-FPE Structure     Low
+
+$`32`
+           ID Site               Object Density
+68 sample-108   32 Forklift/Pallet Jack  Medium
+69  sample-85   32 Forklift/Pallet Jack  Medium
+
+$`34`
+           ID Site   Object Density
+71 sample-117   34 Conveyor  Medium
+72 sample-118   34 Conveyor  Medium
+
+$`35`
+           ID Site Object Density
+73 sample-123   35   Door     Low
+74  sample-88   35   Door  Medium
+
+$`37`
+           ID Site            Object Density
+77 sample-134   37 Non-FPE Structure  Medium
+78  sample-90   37 Non-FPE Structure     Low
+
+$`39`
+           ID Site        Object Density
+80 sample-143   39 FPE Structure    High
+81  sample-92   39 FPE Structure     Low
+
+$`40`
+           ID Site       Object Density
+82 sample-457   40 Floor Object     Low
+83 sample-150   40 Floor Object    High
+84 sample-152   40 Floor Object  Medium
+85 sample-151   40 Floor Object     Low
+
+$`41`
+           ID Site            Object Density
+86 sample-464   41 Non-FPE Structure  Medium
+87 sample-174   41 Non-FPE Structure    High
+
+$`43`
+           ID Site               Object Density
+89 sample-219   43 Forklift/Pallet Jack  Medium
+90 sample-221   43 Forklift/Pallet Jack    High
+91 sample-220   43 Forklift/Pallet Jack  Medium
+
+$`45`
+           ID Site            Object Density
+94 sample-260   45 Non-FPE Structure     Low
+95 sample-262   45 Non-FPE Structure     Low
+96 sample-261   45 Non-FPE Structure  Medium
+
+$`46`
+           ID Site Object Density
+97 sample-484   46   Door  Medium
+98 sample-263   46   Door    High
+
+$`47`
+            ID Site       Object Density
+99  sample-485   47 Floor Object    High
+100 sample-266   47 Floor Object    High
+101 sample-268   47 Floor Object    High
+102 sample-267   47 Floor Object    High
+
+$`49`
+            ID Site       Object Density
+104 sample-458   49 Wall/Ceiling    High
+105 sample-153   49 Wall/Ceiling    High
+106 sample-154   49 Wall/Ceiling    High
+
+$`50`
+            ID Site Object Density
+107 sample-459   50  Drain    High
+108 sample-159   50  Drain    High
+109 sample-161   50  Drain    High
+110 sample-160   50  Drain    High
+
+$`51`
+            ID Site Object Density
+111 sample-460   51  Drain  Medium
+112 sample-162   51  Drain    High
+113 sample-164   51  Drain    High
+
+$`52`
+            ID Site       Object Density
+114 sample-461   52 Floor Object    High
+115 sample-167   52 Floor Object    High
+116 sample-166   52 Floor Object    High
+
+$`53`
+            ID Site       Object Density
+117 sample-462   53 Floor Object  Medium
+118 sample-169   53 Floor Object  Medium
+
+$`54`
+            ID Site Object Density
+119 sample-170   54   Hose  Medium
+120 sample-172   54   Hose  Medium
+121 sample-171   54   Hose  Medium
+
+$`56`
+            ID Site               Object Density
+123 sample-177   56 Forklift/Pallet Jack  Medium
+124 sample-178   56 Forklift/Pallet Jack     Low
+
+$`57`
+            ID Site Object Density
+125 sample-181   57  Drain  Medium
+126 sample-180   57  Drain    High
+
+$`58`
+            ID Site Object Density
+127 sample-184   58  Drain  Medium
+128 sample-183   58  Drain     Low
+
+$`59`
+            ID Site   Object Density
+129 sample-467   59 Conveyor  Medium
+130 sample-186   59 Conveyor    High
+131 sample-185   59 Conveyor  Medium
+
+$`61`
+            ID Site Object Density
+133 sample-469   61  Drain    High
+134 sample-188   61  Drain  Medium
+
+$`63`
+            ID Site   Object Density
+136 sample-470   63 Conveyor    High
+137 sample-193   63 Conveyor  Medium
+
+$`65`
+            ID Site Object Density
+139 sample-200   65   Door     Low
+140 sample-201   65   Door     Low
+
+$`66`
+            ID Site        Object Density
+141 sample-202   66 FPE Structure     Low
+142 sample-203   66 FPE Structure  Medium
+
+$`67`
+            ID Site Object Density
+143 sample-472   67   Door  Medium
+144 sample-204   67   Door  Medium
+145 sample-206   67   Door     Low
+
+$`69`
+            ID Site Object Density
+147 sample-473   69   Door  Medium
+148 sample-208   69   Door     Low
+
+$`70`
+            ID Site        Object Density
+149 sample-209   70 FPE Structure     Low
+150 sample-210   70 FPE Structure     Low
+
+$`72`
+            ID Site        Object Density
+152 sample-215   72 FPE Structure  Medium
+153 sample-214   72 FPE Structure     Low
+
+$`73`
+            ID Site   Object Density
+154 sample-216   73 Conveyor     Low
+155 sample-218   73 Conveyor     Low
+156 sample-217   73 Conveyor     Low
+
+$`74`
+            ID Site Object Density
+157 sample-477   74  Drain    High
+158 sample-222   74  Drain  Medium
+159 sample-224   74  Drain  Medium
+160 sample-223   74  Drain    High
+
+$`75`
+            ID Site   Object Density
+161 sample-478   75 Conveyor     Low
+162 sample-225   75 Conveyor     Low
+163 sample-227   75 Conveyor     Low
+164 sample-226   75 Conveyor     Low
+
+$`76`
+            ID Site Object Density
+165 sample-230   76   Hose  Medium
+166 sample-229   76   Hose     Low
+
+$`77`
+            ID Site Object Density
+167 sample-479   77  Drain  Medium
+168 sample-232   77  Drain  Medium
+
+$`80`
+            ID Site        Object Density
+171 sample-242   80 FPE Structure     Low
+172 sample-244   80 FPE Structure  Medium
+173 sample-243   80 FPE Structure    High
+
+$`81`
+            ID Site       Object Density
+174 sample-482   81 Floor Object    High
+175 sample-251   81 Floor Object    High
+176 sample-253   81 Floor Object  Medium
+
+$`82`
+            ID Site   Object Density
+177 sample-254   82 Fan/Vent     Low
+178 sample-255   82 Fan/Vent     Low
+
+$`83`
+            ID Site               Object Density
+179 sample-483   83 Forklift/Pallet Jack  Medium
+180 sample-259   83 Forklift/Pallet Jack  Medium
+181 sample-258   83 Forklift/Pallet Jack  Medium
+
+$`84`
+           ID Site Object Density
+182 sample-96   84  Drain     Low
+183 sample-97   84  Drain  Medium
+
+$`93`
+            ID Site       Object Density
+192 sample-144   93 Floor Object    High
+193 sample-145   93 Floor Object    High
+194 sample-283   93 Floor Object    High
+
+$`94`
+            ID Site Object Density
+195 sample-360   94  Drain    High
+196 sample-359   94  Drain    High
+
+$`95`
+            ID Site               Object Density
+197 sample-390   95 Forklift/Pallet Jack    High
+198 sample-392   95 Forklift/Pallet Jack    High
+
+$`96`
+            ID Site               Object Density
+199 sample-399   96 Forklift/Pallet Jack  Medium
+200 sample-401   96 Forklift/Pallet Jack    High
+
+$`97`
+            ID Site Object Density
+201 sample-402   97   Door     Low
+202 sample-403   97   Door     Low
+
+$`98`
+            ID Site Object Density
+203 sample-404   98  Drain    High
+204 sample-406   98  Drain    High
+205 sample-405   98  Drain    High
+
+$`99`
+            ID Site Object Density
+206 sample-284   99   Hose    High
+207 sample-408   99   Hose    High
+
+$`100`
+            ID Site Object Density
+208 sample-285  100   Hose  Medium
+209 sample-287  100   Hose    High
+210 sample-286  100   Hose    High
+
+$`102`
+            ID Site   Object Density
+212 sample-291  102 Fan/Vent  Medium
+213 sample-293  102 Fan/Vent     Low
+214 sample-292  102 Fan/Vent  Medium
+
+$`103`
+            ID Site        Object Density
+215 sample-294  103 FPE Structure  Medium
+216 sample-296  103 FPE Structure     Low
+217 sample-295  103 FPE Structure    High
+
+$`104`
+            ID Site       Object Density
+218 sample-299  104 Floor Object    High
+219 sample-298  104 Floor Object     Low
+
+$`106`
+            ID Site       Object Density
+221 sample-302  106 Floor Object     Low
+222 sample-303  106 Floor Object  Medium
+
+$`109`
+            ID Site Object Density
+225 sample-311  109  Drain  Medium
+226 sample-312  109  Drain    High
+
+$`110`
+            ID Site Object Density
+227 sample-314  110   Door  Medium
+228 sample-316  110   Door  Medium
+
+$`113`
+            ID Site       Object Density
+231 sample-320  113 Floor Object     Low
+232 sample-322  113 Floor Object     Low
+233 sample-321  113 Floor Object  Medium
+
+$`115`
+            ID Site Object Density
+235 sample-326  115   Hose     Low
+236 sample-328  115   Hose  Medium
+237 sample-327  115   Hose     Low
+
+$`116`
+            ID Site Object Density
+238 sample-331  116   Hose  Medium
+239 sample-330  116   Hose  Medium
+
+$`117`
+            ID Site        Object Density
+240 sample-332  117 FPE Structure    High
+241 sample-333  117 FPE Structure  Medium
+
+$`121`
+            ID Site            Object Density
+245 sample-343  121 Non-FPE Structure     Low
+246 sample-344  121 Non-FPE Structure     Low
+
+$`123`
+            ID Site       Object Density
+248 sample-349  123 Wall/Ceiling  Medium
+249 sample-351  123 Wall/Ceiling  Medium
+250 sample-350  123 Wall/Ceiling    High
+
+$`124`
+            ID Site            Object Density
+251 sample-352  124 Non-FPE Structure     Low
+252 sample-353  124 Non-FPE Structure     Low
+
+$`126`
+            ID Site               Object Density
+254 sample-355  126 Forklift/Pallet Jack    High
+255 sample-357  126 Forklift/Pallet Jack    High
+256 sample-356  126 Forklift/Pallet Jack  Medium
+
+$`127`
+            ID Site            Object Density
+257 sample-361  127 Cart/Rolling Bins  Medium
+258 sample-363  127 Cart/Rolling Bins     Low
+259 sample-362  127 Cart/Rolling Bins    High
+
+$`128`
+            ID Site            Object Density
+260 sample-502  128 Cart/Rolling Bins  Medium
+261 sample-364  128 Cart/Rolling Bins    High
+262 sample-366  128 Cart/Rolling Bins    High
+
+$`129`
+            ID Site Object Density
+263 sample-367  129  Drain  Medium
+264 sample-369  129  Drain    High
+265 sample-368  129  Drain  Medium
+
+$`130`
+            ID Site               Object Density
+266 sample-370  130 Forklift/Pallet Jack    High
+267 sample-372  130 Forklift/Pallet Jack    High
+
+$`131`
+            ID Site       Object Density
+268 sample-505  131 Floor Object  Medium
+269 sample-373  131 Floor Object     Low
+270 sample-374  131 Floor Object  Medium
+
+$`132`
+            ID Site   Object Density
+271 sample-375  132 Conveyor     Low
+272 sample-377  132 Conveyor    High
+273 sample-376  132 Conveyor     Low
+
+$`133`
+            ID Site Object Density
+274 sample-378  133  Drain    High
+275 sample-380  133  Drain    High
+276 sample-379  133  Drain    High
+
+$`135`
+            ID Site Object Density
+278 sample-384  135   Door  Medium
+279 sample-386  135   Door  Medium
+
+$`136`
+            ID Site   Object Density
+280 sample-387  136 Fan/Vent     Low
+281 sample-388  136 Fan/Vent  Medium
+
+$`137`
+            ID Site   Object Density
+282 sample-511  137 Fan/Vent     Low
+283 sample-393  137 Fan/Vent     Low
+284 sample-394  137 Fan/Vent     Low
+
+$`143`
+            ID Site Object Density
+290 sample-116  143  Drain    High
+291 sample-413  143  Drain    High
+
+$`144`
+            ID Site   Object Density
+292 sample-121  144 Conveyor     Low
+293 sample-122  144 Conveyor    High
+
+$`145`
+            ID Site   Object Density
+294 sample-126  145 Conveyor    High
+295 sample-415  145 Conveyor  Medium
+
+$`147`
+            ID Site       Object Density
+298 sample-136  147 Floor Object  Medium
+299 sample-137  147 Floor Object    High
+

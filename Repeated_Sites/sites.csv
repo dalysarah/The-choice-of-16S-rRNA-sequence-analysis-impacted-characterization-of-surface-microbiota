@@ -1,0 +1,301 @@
+ID,Site,Object,Density
+sample-1,1,Drain,Medium
+sample-2,1,Drain,Medium
+sample-28,2,Hose,Low
+sample-30,2,Hose,Low
+sample-29,2,Hose,Low
+sample-56,3,Hose,Medium
+sample-55,3,Hose,Low
+sample-69,4,Cleaning Tools,Low
+sample-450,4,Cleaning Tools,Low
+sample-72,5,Door,Low
+sample-75,6,Floor Object,Low
+sample-77,7,Drain,Low
+sample-79,8,Floor Object,Medium
+sample-81,8,Floor Object,Medium
+sample-4,9,Cleaning Tools,Medium
+sample-5,9,Cleaning Tools,Low
+sample-9,10,Door,Medium
+sample-11,11,Floor Object,High
+sample-428,11,Floor Object,High
+sample-13,12,Conveyor,High
+sample-15,12,Conveyor,Low
+sample-132,146,Floor Object,High
+sample-14,12,Conveyor,High
+sample-431,12,Conveyor,High
+sample-16,13,Wall/Ceiling,High
+sample-21,14,Conveyor,High
+sample-20,14,Conveyor,High
+sample-22,15,Wall/Ceiling,Low
+sample-24,15,Wall/Ceiling,Medium
+sample-23,15,Wall/Ceiling,High
+sample-432,15,Wall/Ceiling,High
+sample-27,16,Cart/Rolling Bins,Medium
+sample-26,16,Cart/Rolling Bins,High
+sample-31,17,Non-FPE Structure,Low
+sample-33,17,Non-FPE Structure,Low
+sample-32,17,Non-FPE Structure,Medium
+sample-34,18,Drain,High
+sample-35,18,Drain,High
+sample-435,18,Drain,High
+sample-36,19,Non-FPE Structure,Medium
+sample-38,19,Non-FPE Structure,High
+sample-37,19,Non-FPE Structure,High
+sample-39,20,FPE Structure,Medium
+sample-41,21,Fan/Vent,High
+sample-45,22,Door,Low
+sample-48,23,Forklift/Pallet Jack,Low
+sample-49,24,Floor Object,Low
+sample-51,24,Floor Object,Low
+sample-442,24,Floor Object,Medium
+sample-53,25,Cleaning Tools,Low
+sample-52,25,Cleaning Tools,Medium
+sample-59,26,Non-FPE Structure,High
+sample-58,26,Non-FPE Structure,High
+sample-444,26,Non-FPE Structure,High
+sample-60,27,Forklift/Pallet Jack,Medium
+sample-62,27,Forklift/Pallet Jack,Medium
+sample-61,27,Forklift/Pallet Jack,Medium
+sample-445,27,Forklift/Pallet Jack,Low
+sample-64,28,Forklift/Pallet Jack,Medium
+sample-446,28,Forklift/Pallet Jack,Low
+sample-66,29,Door,Low
+sample-68,29,Door,Medium
+sample-67,29,Door,Medium
+sample-103,30,Non-FPE Structure,Low
+sample-83,30,Non-FPE Structure,Medium
+sample-95,31,Non-FPE Structure,Low
+sample-84,31,Non-FPE Structure,Low
+sample-108,32,Forklift/Pallet Jack,Medium
+sample-85,32,Forklift/Pallet Jack,Medium
+sample-86,33,Non-FPE Structure,High
+sample-117,34,Conveyor,Medium
+sample-118,34,Conveyor,Medium
+sample-123,35,Door,Low
+sample-88,35,Door,Medium
+sample-128,36,Non-FPE Structure,Medium
+sample-133,149,Floor Object,Low
+sample-134,37,Non-FPE Structure,Medium
+sample-90,37,Non-FPE Structure,Low
+sample-139,38,Floor Object,Medium
+sample-143,39,FPE Structure,High
+sample-92,39,FPE Structure,Low
+sample-457,40,Floor Object,Low
+sample-150,40,Floor Object,High
+sample-152,40,Floor Object,Medium
+sample-151,40,Floor Object,Low
+sample-464,41,Non-FPE Structure,Medium
+sample-174,41,Non-FPE Structure,High
+sample-197,42,Forklift/Pallet Jack,High
+sample-219,43,Forklift/Pallet Jack,Medium
+sample-221,43,Forklift/Pallet Jack,High
+sample-220,43,Forklift/Pallet Jack,Medium
+sample-481,44,Cleaning Tools,Medium
+sample-249,150,Floor Object,High
+sample-260,45,Non-FPE Structure,Low
+sample-262,45,Non-FPE Structure,Low
+sample-261,45,Non-FPE Structure,Medium
+sample-484,46,Door,Medium
+sample-263,46,Door,High
+sample-485,47,Floor Object,High
+sample-266,47,Floor Object,High
+sample-268,47,Floor Object,High
+sample-267,47,Floor Object,High
+sample-270,48,Non-FPE Structure,High
+sample-458,49,Wall/Ceiling,High
+sample-153,49,Wall/Ceiling,High
+sample-154,49,Wall/Ceiling,High
+sample-459,50,Drain,High
+sample-159,50,Drain,High
+sample-161,50,Drain,High
+sample-160,50,Drain,High
+sample-460,51,Drain,Medium
+sample-162,51,Drain,High
+sample-164,51,Drain,High
+sample-461,52,Floor Object,High
+sample-167,52,Floor Object,High
+sample-166,52,Floor Object,High
+sample-462,53,Floor Object,Medium
+sample-169,53,Floor Object,Medium
+sample-170,54,Hose,Medium
+sample-172,54,Hose,Medium
+sample-171,54,Hose,Medium
+sample-176,55,Wall/Ceiling,Low
+sample-177,56,Forklift/Pallet Jack,Medium
+sample-178,56,Forklift/Pallet Jack,Low
+sample-181,57,Drain,Medium
+sample-180,57,Drain,High
+sample-184,58,Drain,Medium
+sample-183,58,Drain,Low
+sample-467,59,Conveyor,Medium
+sample-186,59,Conveyor,High
+sample-185,59,Conveyor,Medium
+sample-468,60,Non-FPE Structure,Low
+sample-469,61,Drain,High
+sample-188,61,Drain,Medium
+sample-191,62,Cleaning Tools,Low
+sample-470,63,Conveyor,High
+sample-193,63,Conveyor,Medium
+sample-199,64,Hose,Low
+sample-200,65,Door,Low
+sample-201,65,Door,Low
+sample-202,66,FPE Structure,Low
+sample-203,66,FPE Structure,Medium
+sample-472,67,Door,Medium
+sample-204,67,Door,Medium
+sample-206,67,Door,Low
+sample-207,68,FPE Structure,High
+sample-473,69,Door,Medium
+sample-208,69,Door,Low
+sample-209,70,FPE Structure,Low
+sample-210,70,FPE Structure,Low
+sample-211,71,Conveyor,Low
+sample-215,72,FPE Structure,Medium
+sample-214,72,FPE Structure,Low
+sample-216,73,Conveyor,Low
+sample-218,73,Conveyor,Low
+sample-217,73,Conveyor,Low
+sample-477,74,Drain,High
+sample-222,74,Drain,Medium
+sample-224,74,Drain,Medium
+sample-223,74,Drain,High
+sample-478,75,Conveyor,Low
+sample-225,75,Conveyor,Low
+sample-227,75,Conveyor,Low
+sample-226,75,Conveyor,Low
+sample-230,76,Hose,Medium
+sample-229,76,Hose,Low
+sample-479,77,Drain,Medium
+sample-232,77,Drain,Medium
+sample-234,78,Non-FPE Structure,Low
+sample-241,79,Non-FPE Structure,High
+sample-242,80,FPE Structure,Low
+sample-244,80,FPE Structure,Medium
+sample-243,80,FPE Structure,High
+sample-482,81,Floor Object,High
+sample-251,81,Floor Object,High
+sample-253,81,Floor Object,Medium
+sample-254,82,Fan/Vent,Low
+sample-255,82,Fan/Vent,Low
+sample-483,83,Forklift/Pallet Jack,Medium
+sample-259,83,Forklift/Pallet Jack,Medium
+sample-258,83,Forklift/Pallet Jack,Medium
+sample-96,84,Drain,Low
+sample-97,84,Drain,Medium
+sample-99,85,FPE Structure,Medium
+sample-274,86,Floor Object,High
+sample-110,87,Non-FPE Structure,Medium
+sample-277,88,Conveyor,Low
+sample-278,89,Conveyor,Low
+sample-279,90,Conveyor,Low
+sample-120,91,Non-FPE Structure,Low
+sample-140,92,Wall/Ceiling,Medium
+sample-144,93,Floor Object,High
+sample-145,93,Floor Object,High
+sample-283,93,Floor Object,High
+sample-360,94,Drain,High
+sample-359,94,Drain,High
+sample-390,95,Forklift/Pallet Jack,High
+sample-392,95,Forklift/Pallet Jack,High
+sample-399,96,Forklift/Pallet Jack,Medium
+sample-401,96,Forklift/Pallet Jack,High
+sample-402,97,Door,Low
+sample-403,97,Door,Low
+sample-404,98,Drain,High
+sample-406,98,Drain,High
+sample-405,98,Drain,High
+sample-284,99,Hose,High
+sample-408,99,Hose,High
+sample-285,100,Hose,Medium
+sample-287,100,Hose,High
+sample-286,100,Hose,High
+sample-290,101,Non-FPE Structure,High
+sample-291,102,Fan/Vent,Medium
+sample-293,102,Fan/Vent,Low
+sample-292,102,Fan/Vent,Medium
+sample-294,103,FPE Structure,Medium
+sample-296,103,FPE Structure,Low
+sample-295,103,FPE Structure,High
+sample-299,104,Floor Object,High
+sample-298,104,Floor Object,Low
+sample-301,105,Non-FPE Structure,Low
+sample-302,106,Floor Object,Low
+sample-303,106,Floor Object,Medium
+sample-307,107,Wall/Ceiling,Low
+sample-310,108,Fan/Vent,Low
+sample-311,109,Drain,Medium
+sample-312,109,Drain,High
+sample-314,110,Door,Medium
+sample-316,110,Door,Medium
+sample-317,111,Cart/Rolling Bins,Low
+sample-318,112,Hose,Medium
+sample-320,113,Floor Object,Low
+sample-322,113,Floor Object,Low
+sample-321,113,Floor Object,Medium
+sample-323,114,FPE Structure,Low
+sample-326,115,Hose,Low
+sample-328,115,Hose,Medium
+sample-327,115,Hose,Low
+sample-331,116,Hose,Medium
+sample-330,116,Hose,Medium
+sample-332,117,FPE Structure,High
+sample-333,117,FPE Structure,Medium
+sample-337,118,Floor Object,Medium
+sample-339,119,Cart/Rolling Bins,Medium
+sample-340,120,FPE Structure,High
+sample-343,121,Non-FPE Structure,Low
+sample-344,121,Non-FPE Structure,Low
+sample-346,122,Drain,High
+sample-349,123,Wall/Ceiling,Medium
+sample-351,123,Wall/Ceiling,Medium
+sample-350,123,Wall/Ceiling,High
+sample-352,124,Non-FPE Structure,Low
+sample-353,124,Non-FPE Structure,Low
+sample-354,125,Door,Low
+sample-355,126,Forklift/Pallet Jack,High
+sample-357,126,Forklift/Pallet Jack,High
+sample-356,126,Forklift/Pallet Jack,Medium
+sample-361,127,Cart/Rolling Bins,Medium
+sample-363,127,Cart/Rolling Bins,Low
+sample-362,127,Cart/Rolling Bins,High
+sample-502,128,Cart/Rolling Bins,Medium
+sample-364,128,Cart/Rolling Bins,High
+sample-366,128,Cart/Rolling Bins,High
+sample-367,129,Drain,Medium
+sample-369,129,Drain,High
+sample-368,129,Drain,Medium
+sample-370,130,Forklift/Pallet Jack,High
+sample-372,130,Forklift/Pallet Jack,High
+sample-505,131,Floor Object,Medium
+sample-373,131,Floor Object,Low
+sample-374,131,Floor Object,Medium
+sample-375,132,Conveyor,Low
+sample-377,132,Conveyor,High
+sample-376,132,Conveyor,Low
+sample-378,133,Drain,High
+sample-380,133,Drain,High
+sample-379,133,Drain,High
+sample-383,134,Door,Low
+sample-384,135,Door,Medium
+sample-386,135,Door,Medium
+sample-387,136,Fan/Vent,Low
+sample-388,136,Fan/Vent,Medium
+sample-511,137,Fan/Vent,Low
+sample-393,137,Fan/Vent,Low
+sample-394,137,Fan/Vent,Low
+sample-396,138,FPE Structure,Low
+sample-409,139,Non-FPE Structure,Low
+sample-410,140,Conveyor,Low
+sample-411,141,Conveyor,Low
+sample-111,142,Drain,High
+sample-116,143,Drain,High
+sample-413,143,Drain,High
+sample-121,144,Conveyor,Low
+sample-122,144,Conveyor,High
+sample-126,145,Conveyor,High
+sample-415,145,Conveyor,Medium
+sample-131,146,Floor Object,High
+sample-416,146,Floor Object,Medium
+sample-136,147,Floor Object,Medium
+sample-137,147,Floor Object,High
+sample-142,148,Door,Low
